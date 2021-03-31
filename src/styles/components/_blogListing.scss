@@ -1,0 +1,32 @@
+.blog-listing {
+  transition-property: background-color, transform;
+  transition-duration: 0.25s;
+  cursor: pointer;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #20202077;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(130, 130, 130, 0.25);
+  .blog-meta {
+    color: $text-color-half;
+  }
+  &:hover {
+    background-color: #202020;
+    transform: scale(1.01);
+  }
+}
+.blog-listing-with-image {
+  max-width: 1000px;
+  .blog-info {
+    display: inline-block;
+    max-width: 872px;
+  }
+  .blog-image {
+    width: 128px;
+    height: 128px;
+    float: left;
+    margin-right: 20px;
+  }
+}

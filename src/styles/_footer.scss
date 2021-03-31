@@ -1,0 +1,76 @@
+footer {
+  width: 100%;
+  background-color: $footer-background;
+  color: $footer-text-color;
+  clear: both;
+  height: $footer-height;
+  margin-top: -$footer-height;
+  overflow: hidden;
+}
+
+footer .topfooter {
+  border-top: 1px solid $footer-border-top-color;
+  height: $footer-top-height;
+}
+
+footer .topfooter,
+footer .bottomfooter {
+  width: 100%;
+}
+
+footer .bottomfooter {
+  background-color: $footer-bottom-background;
+  height: $footer-bottom-height;
+}
+
+.bottomfooter .left-text {
+  height: 100%;
+  font-size: 0.75rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 12px;
+  padding-bottom: 4px;
+}
+
+.topfooter img.footer-small {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .topfooter img.footer-small {
+    display: inline;
+    margin-left: 5px;
+  }
+  .topfooter img.footer-large {
+    display: none;
+  }
+}
+
+.topfooter .github {
+  margin-top: $footer-top-height / 4;
+  width: $footer-github-width;
+  float: right;
+}
+
+.topfooter .github * {
+  transition-duration: 0.25s;
+  -webkit-transition-duration: 0.25s;
+  color: $footer-text-color;
+}
+
+.topfooter .github:hover * {
+  color: $link-color;
+}
+
+.topfooter .github span {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.topfooter .github a {
+  color: $footer-text-color;
+}
+
+.topfooter .github a:hover {
+  color: $link-color;
+}

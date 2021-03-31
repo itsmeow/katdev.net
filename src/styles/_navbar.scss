@@ -1,0 +1,62 @@
+#site-navbar {
+  background-color: $navbar-background;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-size: 1.2rem;
+  border-bottom: 1px solid $navbar-border-color;
+  min-height: $navbar-height;
+  transition: background-color 0.1s, border-bottom-color 0.1s;
+  transition-timing-function: linear, linear;
+  font-family: "Courier New", Courier, monospace;
+  .navbar-brand {
+    padding: 0 15px;
+    height: $navbar-height;
+    line-height: $navbar-height;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $navbar-brand-color;
+  }
+  .navbar-nav {
+    .nav-item {
+      margin-right: 15px;
+      .nav-link {
+        -webkit-transition-duration: 0.1s;
+        transition-duration: 0.1s;
+        -webkit-transition-property: color;
+        transition-property: color;
+      }
+      .active {
+        font-weight: bold;
+      }
+    }
+  }
+  .navbar-toggle {
+    margin-top: ($navbar-height - 34px) / 2;
+    padding: 9px 10px !important;
+  }
+  @media (max-height: $bootstrap-md) {
+    .navbar-nav {
+      .nav-item {
+        span {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+#site-navbar.scrolled {
+  background-color: $navbar-background-scrolled;
+  border-bottom-color: $navbar-border-color-scrolled;
+  .nav-link {
+    color: $navbar-text-color-scrolled-prehover !important;
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    color: $navbar-text-color-scrolled !important;
+  }
+  .navbar-brand {
+    color: $navbar-brand-color-scrolled;
+  }
+}

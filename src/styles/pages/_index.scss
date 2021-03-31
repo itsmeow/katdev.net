@@ -1,0 +1,120 @@
+#site-navbar:not(.scrolled) {
+  background-color: #20202055;
+  border-color: #0c0c0c55;
+}
+
+main {
+  #picture-credit {
+    position: absolute;
+    left: 0;
+    top: 100vh;
+    transform: translateY(-100%);
+    padding: 5px;
+    z-index: 1;
+    color: #e8e8e855;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    text-shadow: 0px 0px 3px #121212;
+  }
+  .mainpage-profile-container {
+    height: 100vh;
+    width: 100%;
+    .mainpage-profile-vert {
+      width: 100%;
+      margin: 0;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      .mainpage-profile {
+        max-width: 500px;
+        transform: translateY($navbar-height);
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #00000088;
+        box-shadow: 0 0 10px #000000dd;
+        border-radius: 10px;
+        padding: 20px;
+        .mainpage-profile-image {
+          div.gatsby-image-wrapper {
+            border-radius: 500px;
+            background: linear-gradient(
+              to right,
+              red,
+              orange,
+              yellow,
+              green,
+              cyan,
+              blue,
+              violet
+            );
+            img {
+              max-height: 40vh;
+              padding: 5px;
+              border-radius: 500px;
+            }
+          }
+        }
+        .mainpage-profile-text {
+          hr {
+            max-width: 90vw;
+          }
+          .socials {
+            font-size: 3rem;
+            svg {
+              color: $link-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-height: 600px) {
+  main {
+    .mainpage-profile-container {
+      .mainpage-profile-vert {
+        top: 40%;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  #site-navbar:not(.scrolled) {
+    background-color: $navbar-background-scrolled;
+    border-bottom-color: $navbar-border-color-scrolled;
+    .nav-link {
+      color: $navbar-text-color-scrolled-prehover !important;
+    }
+    .nav-link:hover,
+    .nav-link.active {
+      color: $navbar-text-color-scrolled !important;
+    }
+    .navbar-brand {
+      color: $navbar-brand-color-scrolled;
+    }
+  }
+
+  main {
+    .mainpage-profile-container {
+      .mainpage-profile-vert {
+        top: 0;
+        transform: none;
+        .mainpage-profile {
+          margin: 0;
+          background-color: $primary-background;
+          box-shadow: none;
+          border-radius: 0;
+          padding: 20px;
+          .mainpage-profile-text {
+            .socials {
+              font-size: 2.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

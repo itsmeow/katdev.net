@@ -1,0 +1,26 @@
+// Init
+@import "variables";
+// Assign bootstrap SCSS variables
+@import "bootstrap-mappings";
+// Get bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Component styles
+@import "layout";
+@import "footer";
+@import "navbar";
+@import "components/blogListing";
+
+// Per-page styles
+#page-index,
+#page-footer-index {
+  @import "pages/index";
+}
+#page-blog,
+#page-footer-blog {
+  @import "pages/blog";
+}
+#page-blog-page,
+#page-footer-blog-page {
+  @import "pages/blog-page";
+}

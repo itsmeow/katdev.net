@@ -1,0 +1,36 @@
+// Body colors
+$primary-background: #121212;
+
+// Text colors
+$text-color: #e8e8e8;
+$link-color: #00ff00; //#007bff;
+$hr-color: rgba(130, 130, 130, 0.75);
+$text-color-half: #a1a1a1;
+
+// Footer Colors
+$footer-border-top-color: black;
+$footer-background: #0c0c0c;
+$footer-bottom-background: $footer-background;
+$footer-text-color: #9b9b9b;
+
+// Footer Sizing
+$footer-top-height: 80px;
+$footer-bottom-height: 40px;
+$footer-height: $footer-top-height + $footer-bottom-height;
+$footer-github-width: 100px;
+
+// Navbar
+$navbar-background: transparent;
+$navbar-border-color: transparent;
+$navbar-height: 50px;
+$navbar-background-scrolled: #202020ee;
+$navbar-border-color-scrolled: #0c0c0cee;
+$navbar-text-color-scrolled: $text-color;
+$navbar-text-color-scrolled-prehover: #d8d8d8;
+$navbar-brand-color: #00ff00;
+$navbar-brand-color-scrolled: $navbar-brand-color;
+
+// Bootstrap
+$bootstrap-sm: 768px;
+$bootstrap-md: 992px;
+$bootstrap-lg: 1200px;

@@ -1,0 +1,8 @@
+main {
+  margin-top: $navbar-height;
+  padding-left: 5%;
+  padding-right: 5%;
+  > hr {
+    max-width: 1000px;
+  }
+}
