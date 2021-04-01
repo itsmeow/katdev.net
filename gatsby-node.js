@@ -41,11 +41,11 @@ exports.onCreateNode = async ({
     let image_svg = node.frontmatter.image_svg
     if (image) {
       let fileNodeId = evalImageId(getNodesByType, image, "")
-      node.frontmatter.image___NODE = fileNodeId
+      node.frontmatter.image_file___NODE = fileNodeId
     }
     if (image_svg) {
       let fileNodeId = evalImageId(getNodesByType, image_svg, "")
-      node.frontmatter.image_svg___NODE = fileNodeId
+      node.frontmatter.image_svg_file___NODE = fileNodeId
     }
   }
 }
@@ -53,8 +53,10 @@ exports.onCreateNode = async ({
 exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
   const typeDefs = `
   type MarkdownRemarkFrontmatter {
-    image: File @link(from: "image___NODE")
-    image_svg: File @link(from: "image_svg___NODE")
+    image: String
+    image_svg: String
+    image_file: File @link(from: "image_file___NODE")
+    image_svg_file: File @link(from: "image_svg_file___NODE")
   }
   type MarkdownRemark implements Node {
     frontmatter: MarkdownRemarkFrontmatter

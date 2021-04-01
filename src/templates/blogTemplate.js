@@ -7,7 +7,7 @@ const BlogTemplate = ({
     markdownRemark: { frontmatter, html, wordCount, tableOfContents },
   },
 }) => {
-  let hasImage = frontmatter.image || frontmatter.image_svg
+  let hasImage = frontmatter.image_file || frontmatter.image_svg_file
   return (
     <Layout eventkey="blog-page">
       <SEO
@@ -22,16 +22,16 @@ const BlogTemplate = ({
             `personal blog`,
             `writing`,
           ])}
-        image={frontmatter?.image?.publicURL}
+        image={frontmatter?.image_file?.publicURL}
       />
       <main>
         <article id="blog-content-wrapper">
           <div id="blog-top">
             {hasImage ? (
-              frontmatter.image_svg ? (
+              frontmatter.image_svg_file ? (
                 <img
                   id="blog-image"
-                  src={frontmatter.image_svg.publicURL}
+                  src={frontmatter.image_svg_file.publicURL}
                   alt={frontmatter.image_alt}
                   width={128}
                   height={128}
@@ -39,7 +39,7 @@ const BlogTemplate = ({
               ) : (
                 <GatsbyImage
                   id="blog-image"
-                  image={frontmatter.image.childImageSharp.gatsbyImageData}
+                  image={frontmatter.image_file.childImageSharp.gatsbyImageData}
                   alt={frontmatter.image_alt}
                 />
               )
@@ -84,10 +84,10 @@ export const pageQuery = graphql`
         header
         keywords
         description
-        image_svg {
+        image_svg_file {
           publicURL
         }
-        image {
+        image_file {
           publicURL
         }
       }

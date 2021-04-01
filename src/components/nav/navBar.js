@@ -18,18 +18,18 @@ const CustomNavbar = ({ eventkey }) => {
       className={scrolled ? "scrolled" : ""}
     >
       <Navbar.Brand className="navbar-brand">
-        {width < 365 ? (
+        <div className="navbar-brand-large">
+          <img src={infinity} alt="rainbow infinity" height={50} width={50} />{" "}
+          wyattdev.net
+        </div>
+        <div className="navbar-brand-small">
           <img
             src={icon_square}
             alt="rainbow infinity (square) wyattdev.net"
             height={42}
+            width={42}
           />
-        ) : (
-          <>
-            <img src={infinity} alt="rainbow infinity" height={50} />{" "}
-            wyattdev.net
-          </>
-        )}
+        </div>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

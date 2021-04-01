@@ -80,20 +80,22 @@ const IndexPage = () => {
                     href="https://www.instagram.com/wyatt.dev/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Instagram"
                   >
-                    <FaInstagram />
+                    <FaInstagram aria-label="Instagram link" />
                   </a>{" "}
                   -{" "}
-                  <a href="mailto:wyatt@wyattdev.net">
-                    <FaEnvelope />
+                  <a href="mailto:wyatt@wyattdev.net" aria-label="Email">
+                    <FaEnvelope aria-label="Email link" />
                   </a>{" "}
                   -{" "}
                   <a
                     href="https://itsmeow.dev/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Brand Website"
                   >
-                    <FaLink />
+                    <FaLink aria-label="Brand Website link" />
                   </a>
                 </p>
               </section>

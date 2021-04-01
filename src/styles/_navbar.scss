@@ -16,6 +16,9 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: $navbar-brand-color;
+    .navbar-brand-small {
+      display: none;
+    }
   }
   .navbar-nav {
     .nav-item {
@@ -41,6 +44,16 @@
         span {
           padding-left: 10px;
         }
+      }
+    }
+  }
+  @media (max-width: 364px) {
+    .navbar-brand {
+      .navbar-brand-large {
+        display: none;
+      }
+      .navbar-brand-small {
+        display: block;
       }
     }
   }

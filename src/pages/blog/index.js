@@ -15,10 +15,10 @@ const IndexPage = () => {
             title
             description
             date
-            image_svg {
+            image_svg_file {
               publicURL
             }
-            image {
+            image_file {
               childImageSharp {
                 gatsbyImageData(
                   width: 128
@@ -42,7 +42,6 @@ const IndexPage = () => {
       key={node.frontmatter.slug}
       frontmatter={node.frontmatter}
       words={node.wordCount.words}
-      rawImage={node.raw_image}
     />
   ))
   return (

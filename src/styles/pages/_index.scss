@@ -37,7 +37,8 @@ main {
         padding: 20px;
         .mainpage-profile-image {
           div.gatsby-image-wrapper {
-            border-radius: 500px;
+            width: auto;
+            border-radius: 1000px;
             background: linear-gradient(
               to right,
               red,
@@ -50,8 +51,9 @@ main {
             );
             img {
               max-height: 40vh;
+              width: auto;
               padding: 5px;
-              border-radius: 500px;
+              border-radius: 1000px;
             }
           }
         }
@@ -111,6 +113,15 @@ main {
           .mainpage-profile-text {
             .socials {
               font-size: 2.8rem;
+            }
+          }
+          .mainpage-profile-image {
+            div.gatsby-image-wrapper {
+              img {
+                width: 100%;
+                height: 100%;
+                max-height: none;
+              }
             }
           }
         }

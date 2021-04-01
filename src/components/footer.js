@@ -11,12 +11,14 @@ const Footer = () => {
           <img
             className="footer-large"
             height={80}
+            width={320}
             src={wyattdev_linear}
             alt="wyattdev linear logo"
           />
           <img
             className="footer-small"
             height={80}
+            width={80}
             src={wyattdev_square}
             alt="wyattdev square logo"
           />
@@ -27,9 +29,8 @@ const Footer = () => {
             className="link-no-style"
             target="_blank"
             rel="noopener noreferrer"
-            alt="GitHub logo"
           >
-            <FaGithub />
+            <FaGithub alt="GitHub" />
             <span>Source</span>
           </a>
         </div>
