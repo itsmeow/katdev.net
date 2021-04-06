@@ -4,6 +4,8 @@ import { Link } from "gatsby"
 
 const BlogListing = ({ frontmatter, words }) => {
   let hasImage = frontmatter.image_file || frontmatter.image_svg_file
+  let dt = new Date(frontmatter.date)
+  dt = dt.valueOf() + dt.getTimezoneOffset() * 60 * 1000 // cancel out timezone differences
   return (
     <Link
       to={`/blog/${frontmatter.slug}`}
@@ -36,8 +38,7 @@ const BlogListing = ({ frontmatter, words }) => {
           <hr className="title-hr" />
           <p className="blog-description">{frontmatter.description}</p>
           <div className="blog-meta">
-            {format(Date.parse(frontmatter.date), "EEEE, MMMM io, yyyy")} -{" "}
-            {words} words
+            {format(dt, "PPPP")} - {words} words
           </div>
         </div>
       </article>
