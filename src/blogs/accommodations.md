@@ -11,7 +11,7 @@ keywords: "accommodations, 504, IEP, ADHD, autism, autistic, actually autistic, 
 
 Recently, I decided to look into using my diagnosis in order to get accommodations that I thought would be helpful to me.
 
-As a senior in high school who has committed to a university, I was looking at the procedures at my uni for accommodations related to autism or ADHD. I was also looking at AP testing accommodations from the College Board (which I could write a whole blog on whole awful the College Board is, but it's a story that's been written 1,000 times).
+As a senior in high school who has committed to a university, I was looking at the procedures at my uni for accommodations related to autism or ADHD. I was also looking at AP testing accommodations from the College Board (which I could write a whole blog on how awful the College Board is, but it's a story that's been written 1,000 times).
 
 What I discovered is: It sucks. It really sucks to try and get accommodations.
 
