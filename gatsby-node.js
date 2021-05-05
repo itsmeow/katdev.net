@@ -26,6 +26,11 @@ exports.sourceNodes = async ({ actions: { createRedirect } }) => {
     toPath: "/blog/neurodiversity",
     isPermanent: true,
   })
+  createRedirect({
+    fromPath: "/blog/accomodations",
+    toPath: "/blog/accommodations",
+    isPermanent: true,
+  })
 }
 
 exports.onCreateNode = async ({ node, getNodesByType }) => {
