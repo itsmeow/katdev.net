@@ -85,7 +85,7 @@ export const pageQuery = graphql`
         words
       }
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMMM D, YYYY")
         slug
         title
         header
