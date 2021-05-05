@@ -82,6 +82,33 @@ main {
     }
     #blog-text {
       font-family: Arial, Helvetica, sans-serif;
+      @mixin block {
+        background-color: #202020;
+        padding: 10px;
+        border-top: 1px solid #606060;
+        border-bottom: 1px solid #606060;
+      }
+      blockquote {
+        @include block;
+        &:not(.noquote) {
+          p {
+            font-style: italic;
+            &:first-child::before {
+              content: '"';
+              display: inline;
+            }
+            &:last-child::after {
+              content: '"';
+              display: inline;
+            }
+          }
+        }
+        p {
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
     }
     #blog-end {
       position: absolute;
