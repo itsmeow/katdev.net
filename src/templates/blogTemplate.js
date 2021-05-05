@@ -25,7 +25,10 @@ const BlogTemplate = ({
         image={frontmatter?.image_file?.publicURL}
       />
       <main>
-        <article id="blog-content-wrapper">
+        <article
+          id="blog-content-wrapper"
+          className={!hasImage ? "no-image" : ""}
+        >
           <div id="blog-top">
             {hasImage ? (
               frontmatter.image_svg_file ? (
@@ -54,14 +57,18 @@ const BlogTemplate = ({
             </div>
           </div>
           <hr />
-          <div
-            id="blog-table-of-contents"
-            dangerouslySetInnerHTML={{
-              __html:
-                '<h2 style="margin-top:0;font-size:1.25rem;">Table of Contents</h2>' +
-                tableOfContents,
-            }}
-          />
+          {frontmatter.toc ? (
+            <div
+              id="blog-table-of-contents"
+              dangerouslySetInnerHTML={{
+                __html:
+                  '<h2 style="margin-top:0;font-size:1.25rem;">Table of Contents</h2>' +
+                  tableOfContents,
+              }}
+            />
+          ) : (
+            <></>
+          )}
           <div id="blog-text" dangerouslySetInnerHTML={{ __html: html }} />
           <div id="blog-end">Written by Wyatt. Thank you for reading.</div>
         </article>
@@ -84,6 +91,7 @@ export const pageQuery = graphql`
         header
         keywords
         description
+        toc
         image_svg_file {
           publicURL
         }

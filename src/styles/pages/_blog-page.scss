@@ -15,21 +15,31 @@
 main {
   background-color: #0a0a0a;
   margin-top: $navbar-height;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  $blog-content-padding-y: 50px;
+  padding-top: $blog-content-padding-y;
+  padding-bottom: $blog-content-padding-y;
   #blog-content-wrapper {
+    min-height: calc(
+      100vh - #{$navbar-height} - #{$footer-height} -
+        (2 * #{$blog-content-padding-y})
+    );
     max-width: 65rem;
     min-width: 200px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 95px;
     background-color: #121212;
     padding-left: 2rem;
     padding-right: 2rem;
     border-radius: 5px;
     height: 100%;
+    &.no-image {
+      #blog-top {
+        min-height: 0;
+      }
+    }
     #blog-top {
       min-height: 128px;
       #blog-info {
@@ -74,9 +84,9 @@ main {
       font-family: Arial, Helvetica, sans-serif;
     }
     #blog-end {
-      margin-top: 50px;
-      margin-bottom: 10px;
+      position: absolute;
       color: $text-color-half;
+      bottom: $blog-content-padding-y + 15px;
     }
   }
 }

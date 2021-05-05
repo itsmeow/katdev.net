@@ -28,14 +28,7 @@ exports.sourceNodes = async ({ actions: { createRedirect } }) => {
   })
 }
 
-exports.onCreateNode = async ({
-  actions: { createNode },
-  node,
-  createNodeId,
-  cache,
-  store,
-  getNodesByType,
-}) => {
+exports.onCreateNode = async ({ node, getNodesByType }) => {
   if (node.internal.type === "MarkdownRemark") {
     let image = node.frontmatter.image
     let image_svg = node.frontmatter.image_svg
@@ -46,6 +39,9 @@ exports.onCreateNode = async ({
     if (image_svg) {
       let fileNodeId = evalImageId(getNodesByType, image_svg, "")
       node.frontmatter.image_svg_file___NODE = fileNodeId
+    }
+    if (node.frontmatter.toc === undefined) {
+      node.frontmatter.toc = true
     }
   }
 }
