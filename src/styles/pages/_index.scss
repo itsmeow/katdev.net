@@ -27,7 +27,6 @@ main {
       transform: translateY(-50%);
       .mainpage-profile {
         max-width: 500px;
-        transform: translateY($navbar-height);
         text-align: center;
         margin-left: auto;
         margin-right: auto;
@@ -73,39 +72,22 @@ main {
   }
 }
 
-@media (max-height: 600px) {
-  main {
-    .mainpage-profile-container {
-      .mainpage-profile-vert {
-        top: 40%;
-      }
-    }
-  }
-}
-
 @media (max-width: 500px) {
-  #site-navbar:not(.scrolled) {
-    background-color: $navbar-background-scrolled;
-    border-bottom-color: $navbar-border-color-scrolled;
-    .nav-link {
-      color: $navbar-text-color-scrolled-prehover !important;
-    }
-    .nav-link:hover,
-    .nav-link.active {
-      color: $navbar-text-color-scrolled !important;
-    }
-    .navbar-brand {
-      color: $navbar-brand-color-scrolled;
-    }
-  }
-
   main {
+    height: 100%;
     .mainpage-profile-container {
+      height: 100%;
+      .background-slider {
+        display: none;
+      }
       .mainpage-profile-vert {
+        height: 100%;
         top: 0;
         transform: none;
         .mainpage-profile {
           margin: 0;
+          margin-top: $navbar-height;
+          height: 100%;
           background-color: $primary-background;
           box-shadow: none;
           border-radius: 0;
@@ -116,6 +98,9 @@ main {
             }
           }
           .mainpage-profile-image {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 300px;
             div.gatsby-image-wrapper {
               img {
                 width: 100%;

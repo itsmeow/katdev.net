@@ -2,13 +2,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { StaticImage } from "gatsby-plugin-image"
 import { useStaticQuery, graphql } from "gatsby"
-import { FaInstagram, FaLink, FaEnvelope } from "react-icons/fa"
+import { FaInstagram, FaLink, FaEnvelope, FaLastfm } from "react-icons/fa"
 import BackgroundSlider from "../components/slider"
-import useWindowDimensions from "../hooks/useWindowDimensions"
-import ClientOnly from "../components/clientonly"
 
 const IndexPage = () => {
-  const { height, width } = useWindowDimensions()
   const data = useStaticQuery(graphql`
     query {
       backgrounds: allFile(filter: { relativeDirectory: { eq: "bgs" } }) {
@@ -21,10 +18,6 @@ const IndexPage = () => {
       }
     }
   `)
-  let ratio = width / height
-  if (ratio === NaN) {
-    ratio = 2
-  }
   return (
     <Layout eventkey="index">
       <SEO
@@ -42,24 +35,15 @@ const IndexPage = () => {
       />
       <main>
         <div className="mainpage-profile-container">
-          <ClientOnly>
-            {ratio >= 1.6 ? (
-              <>
-                <BackgroundSlider
-                  style={{
-                    height: "100vh",
-                  }}
-                  alt="background"
-                  query={data}
-                  duration={20}
-                  transition={5}
-                />
-                <p id="picture-credit">Photo Credit: self</p>
-              </>
-            ) : (
-              <></>
-            )}
-          </ClientOnly>
+          <div className="background-slider">
+            <BackgroundSlider
+              alt="background"
+              query={data}
+              duration={20}
+              transition={5}
+            />
+            <p id="picture-credit">Photo Credit: self</p>
+          </div>
           <div className="mainpage-profile-vert">
             <div className="mainpage-profile">
               <div className="mainpage-profile-image">
@@ -96,6 +80,15 @@ const IndexPage = () => {
                     aria-label="Brand Website"
                   >
                     <FaLink aria-label="Brand Website link" />
+                  </a>{" "}
+                  -{" "}
+                  <a
+                    href="https://www.last.fm/user/wyattdev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LastFM"
+                  >
+                    <FaLastfm aria-label="LastFM link" />
                   </a>
                 </p>
               </section>

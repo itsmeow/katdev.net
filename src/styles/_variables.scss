@@ -3,7 +3,7 @@ $primary-background: #121212;
 
 // Text colors
 $text-color: #e8e8e8;
-$link-color: #00ff00; //#007bff;
+$link-color: #ff00dd; //#00ff00; //#007bff;
 $hr-color: rgba(130, 130, 130, 0.75);
 $text-color-half: #a1a1a1;
 
@@ -27,7 +27,7 @@ $navbar-background-scrolled: #202020ee;
 $navbar-border-color-scrolled: #0c0c0cee;
 $navbar-text-color-scrolled: $text-color;
 $navbar-text-color-scrolled-prehover: #d8d8d8;
-$navbar-brand-color: #00ff00;
+$navbar-brand-color: $link-color; //#00ff00;
 $navbar-brand-color-scrolled: $navbar-brand-color;
 
 // Bootstrap

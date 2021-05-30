@@ -17,7 +17,12 @@
     font-weight: bold;
     color: $navbar-brand-color;
     .navbar-brand-small {
+      height: 100%;
       display: none;
+      img {
+        margin-top: 4px;
+        vertical-align: baseline;
+      }
     }
   }
   .navbar-nav {
@@ -38,7 +43,23 @@
     margin-top: ($navbar-height - 34px) / 2;
     padding: 9px 10px !important;
   }
-  @media (max-height: $bootstrap-md) {
+  @media (max-width: $bootstrap-sm) {
+    &:not(.scrolled) {
+      background-color: $navbar-background-scrolled;
+      border-bottom-color: $navbar-border-color-scrolled;
+      .nav-link {
+        color: $navbar-text-color-scrolled-prehover !important;
+      }
+      .nav-link:hover,
+      .nav-link.active {
+        color: $navbar-text-color-scrolled !important;
+      }
+      .navbar-brand {
+        color: $navbar-brand-color-scrolled;
+      }
+    }
+  }
+  @media (max-width: $bootstrap-sm) {
     .navbar-nav {
       .nav-item {
         span {
