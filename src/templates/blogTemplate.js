@@ -77,7 +77,7 @@ const BlogTemplate = ({
   )
 }
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       tableOfContents
@@ -98,6 +98,7 @@ export const pageQuery = graphql`
         image_file {
           publicURL
         }
+        image_alt
       }
     }
   }
