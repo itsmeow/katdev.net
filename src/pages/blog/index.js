@@ -25,6 +25,7 @@ const IndexPage = () => {
                   height: 128
                   quality: 90
                   layout: FIXED
+                  placeholder: BLURRED
                 )
               }
             }

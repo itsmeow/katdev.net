@@ -1,6 +1,7 @@
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const BlogTemplate = ({
   data: {
@@ -96,7 +97,15 @@ export const pageQuery = graphql`
           publicURL
         }
         image_file {
-          publicURL
+          childImageSharp {
+            gatsbyImageData(
+              width: 128
+              height: 128
+              quality: 90
+              layout: FIXED
+              placeholder: BLURRED
+            )
+          }
         }
         image_alt
       }
