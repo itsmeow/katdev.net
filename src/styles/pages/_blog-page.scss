@@ -1,6 +1,4 @@
 #site-navbar:not(.scrolled) {
-  background-color: $navbar-background-scrolled;
-  border-bottom-color: $navbar-border-color-scrolled;
   .nav-link {
     color: $navbar-text-color-scrolled-prehover !important;
   }
@@ -30,7 +28,9 @@ main {
     margin-top: 0;
     padding-top: 15px;
     padding-bottom: 95px;
-    background-color: #121212;
+    background-color: $primary-background;
+    border: 1px solid $box-border-color;
+    box-shadow: 0 0 5px $box-border-color;
     padding-left: 2rem;
     padding-right: 2rem;
     border-radius: 5px;
@@ -63,7 +63,9 @@ main {
     }
     #blog-table-of-contents {
       padding: 10px;
-      background-color: #202020;
+      background-color: #0a0a0a;
+      border: 1px solid $box-border-color;
+      box-shadow: 0 0 5px $box-border-color;
       ul {
         list-style: disc;
       }
@@ -72,7 +74,6 @@ main {
         margin-bottom: 10px;
       }
       ul li a {
-        background-color: #0a0a0a;
         padding: 5px;
         border-radius: 8px;
       }
@@ -80,6 +81,7 @@ main {
         margin: 0;
         padding: 0;
       }
+      margin-bottom: 10px;
     }
     #blog-text {
       font-family: Arial, Helvetica, sans-serif;
@@ -87,10 +89,10 @@ main {
         fill: $link-color;
       }
       @mixin block {
-        background-color: #202020;
+        background-color: #0a0a0a;
         padding: 10px;
-        border-top: 1px solid #606060;
-        border-bottom: 1px solid #606060;
+        border-top: 1px solid $box-border-color;
+        border-bottom: 1px solid $box-border-color;
       }
       blockquote {
         @include block;
@@ -127,6 +129,18 @@ main {
     #blog-content-wrapper {
       padding-left: 5%;
       padding-right: 5%;
+    }
+  }
+}
+
+@media (max-width: 65rem) {
+  main {
+    height: 100%;
+    margin: 0;
+    background-color: $primary-background;
+    #blog-content-wrapper {
+      border: none;
+      box-shadow: none;
     }
   }
 }

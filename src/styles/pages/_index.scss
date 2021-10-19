@@ -1,24 +1,15 @@
 #site-navbar:not(.scrolled) {
-  background-color: #20202055;
-  border-color: #0c0c0c55;
+  background-color: #000000c0;
 }
 
 main {
-  #picture-credit {
-    position: absolute;
-    left: 0;
-    top: 100vh;
-    transform: translateY(-100%);
-    padding: 5px;
-    z-index: 1;
-    color: #e8e8e855;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
-    text-shadow: 0px 0px 3px #121212;
-  }
   .mainpage-profile-container {
     height: 100vh;
     width: 100%;
+    background: linear-gradient(
+      rgba(0, 93, 121, 0.89),
+      rgba(110, 70, 114, 0.89)
+    );
     .mainpage-profile-vert {
       width: 100%;
       margin: 0;
@@ -30,9 +21,10 @@ main {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
-        background-color: #00000088;
-        box-shadow: 0 0 10px #000000dd;
-        border-radius: 10px;
+        background-color: #000000de;
+        border: 1px solid $box-border-color;
+        box-shadow: 0 0 15px $box-border-color;
+        border-radius: 2px;
         padding: 20px;
         .mainpage-profile-image {
           div.gatsby-image-wrapper {
@@ -63,7 +55,14 @@ main {
           .socials {
             font-size: 3rem;
             svg {
+              overflow: visible;
               color: $link-color;
+              transition-duration: 0.25s;
+              &:hover {
+                color: $link-color-hover;
+                filter: drop-shadow(0 0 5px $link-color-hover);
+              }
+              filter: drop-shadow(0 0 5px $link-color-glow);
             }
           }
         }
@@ -89,6 +88,7 @@ main {
           margin-top: $navbar-height;
           height: 100%;
           background-color: $primary-background;
+          border: none;
           box-shadow: none;
           border-radius: 0;
           padding: 20px;

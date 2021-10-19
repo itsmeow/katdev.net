@@ -5,6 +5,7 @@
   width: 100%;
   font-size: 1.2rem;
   border-bottom: 1px solid $navbar-border-color;
+  box-shadow: 0 0 5px $navbar-border-color;
   min-height: $navbar-height;
   transition: background-color 0.1s, border-bottom-color 0.1s;
   transition-timing-function: linear, linear;
@@ -19,9 +20,15 @@
     .navbar-brand-small {
       height: 100%;
       display: none;
-      img {
+      svg {
         margin-top: 4px;
         vertical-align: baseline;
+        #r > #an,
+        #r > #ar {
+          > path:empty {
+            fill: $link-color !important;
+          }
+        }
       }
     }
   }
@@ -29,9 +36,7 @@
     .nav-item {
       margin-right: 15px;
       .nav-link {
-        -webkit-transition-duration: 0.1s;
         transition-duration: 0.1s;
-        -webkit-transition-property: color;
         transition-property: color;
       }
       .active {
@@ -46,7 +51,6 @@
   @media (max-width: $bootstrap-sm) {
     &:not(.scrolled) {
       background-color: $navbar-background-scrolled;
-      border-bottom-color: $navbar-border-color-scrolled;
       .nav-link {
         color: $navbar-text-color-scrolled-prehover !important;
       }
@@ -83,6 +87,7 @@
 #site-navbar.scrolled {
   background-color: $navbar-background-scrolled;
   border-bottom-color: $navbar-border-color-scrolled;
+  box-shadow: none;
   .nav-link {
     color: $navbar-text-color-scrolled-prehover !important;
   }

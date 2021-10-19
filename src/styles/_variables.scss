@@ -1,15 +1,19 @@
 // Body colors
-$primary-background: #121212;
+$primary-background: black;
 
 // Text colors
 $text-color: #e8e8e8;
 $link-color: #ff00dd; //#00ff00; //#007bff;
-$hr-color: rgba(130, 130, 130, 0.75);
+$link-color-hover: #a200ff;
+$link-color-glow: #ff00ddaa;
+$hr-color: #ff00ddcc; //rgba(130, 130, 130, 0.75);
 $text-color-half: #a1a1a1;
+$box-border-color: #ff00dd75; //rgba(130, 130, 130, 0.25)
+$box-border-color-hover: #ff00ddcc;
 
 // Footer Colors
-$footer-border-top-color: black;
-$footer-background: #0c0c0c;
+$footer-border-top-color: $hr-color;
+$footer-background: #090909;
 $footer-bottom-background: $footer-background;
 $footer-text-color: #9b9b9b;
 
@@ -21,10 +25,10 @@ $footer-github-width: 100px;
 
 // Navbar
 $navbar-background: transparent;
-$navbar-border-color: transparent;
+$navbar-border-color: $hr-color;
 $navbar-height: 50px;
-$navbar-background-scrolled: #202020ee;
-$navbar-border-color-scrolled: #0c0c0cee;
+$navbar-background-scrolled: #000000c0;
+$navbar-border-color-scrolled: transparent;
 $navbar-text-color-scrolled: $text-color;
 $navbar-text-color-scrolled-prehover: #d8d8d8;
 $navbar-brand-color: $link-color; //#00ff00;

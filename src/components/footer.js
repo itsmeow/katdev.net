@@ -1,25 +1,23 @@
 import { Link } from "gatsby"
 import { FaGithub } from "react-icons/fa"
-import wyattdev_linear from "../data/icon_linear.svg"
-import wyattdev_square from "../data/icon_square.svg"
+import IconLinear from "../data/svg/icon_linear.inline.svg"
+import IconSquare from "../data/svg/icon_square.inline.svg"
 
 const Footer = () => {
   return (
     <footer>
       <div className="topfooter">
         <Link to="/" className="link-no-style">
-          <img
+          <IconLinear
             className="footer-large"
             height={80}
             width={320}
-            src={wyattdev_linear}
             alt="wyattdev linear logo"
           />
-          <img
+          <IconSquare
             className="footer-small"
             height={80}
             width={80}
-            src={wyattdev_square}
             alt="wyattdev square logo"
           />
         </Link>

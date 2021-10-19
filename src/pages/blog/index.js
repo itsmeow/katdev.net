@@ -59,7 +59,9 @@ const IndexPage = () => {
         ]}
       />
       <main>
-        <h2 align="center">Blogs by Wyatt</h2>
+        <h2 className="page-header" align="center">
+          Blogs by Wyatt
+        </h2>
         <hr />
         <section id="blogs">{blog_articles}</section>
       </main>

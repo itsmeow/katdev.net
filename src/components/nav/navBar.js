@@ -3,8 +3,8 @@ import { Navbar, Nav } from "react-bootstrap"
 import NavItem from "./navItem.js"
 import usePageScrolled from "../../hooks/usePageScrolled"
 import useWindowDimensions from "../../hooks/useWindowDimensions"
-import infinity from "../../data/infinity.svg"
-import icon_square from "../../data/icon_square.svg"
+import Infinity from "../../data/svg/infinity.inline.svg"
+import IconSquare from "../../data/svg/icon_square.inline.svg"
 
 const CustomNavbar = ({ eventkey }) => {
   const { width } = useWindowDimensions()
@@ -19,12 +19,11 @@ const CustomNavbar = ({ eventkey }) => {
     >
       <Navbar.Brand className="navbar-brand">
         <div className="navbar-brand-large">
-          <img src={infinity} alt="rainbow infinity" height={50} width={50} />{" "}
+          <Infinity alt="rainbow infinity" height={50} width={50} />{" "}
           wyattdev.net
         </div>
         <div className="navbar-brand-small">
-          <img
-            src={icon_square}
+          <IconSquare
             alt="rainbow infinity (square) wyattdev.net"
             height={42}
             width={42}

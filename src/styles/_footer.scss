@@ -32,16 +32,31 @@ footer .bottomfooter {
   padding-bottom: 4px;
 }
 
-.topfooter img.footer-small {
+.topfooter svg {
+  #an,
+  #ar {
+    g path:nth-child(2) {
+      fill: $link-color !important;
+    }
+  }
+  #r > #an,
+  #r > #ar {
+    > path:empty {
+      fill: $link-color !important;
+    }
+  }
+}
+
+.topfooter svg.footer-small {
   display: none;
 }
 
 @media (max-width: 500px) {
-  .topfooter img.footer-small {
+  .topfooter svg.footer-small {
     display: inline;
     margin-left: 5px;
   }
-  .topfooter img.footer-large {
+  .topfooter svg.footer-large {
     display: none;
   }
 }
@@ -53,8 +68,7 @@ footer .bottomfooter {
 }
 
 .topfooter .github * {
-  transition-duration: 0.25s;
-  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.1s;
   color: $footer-text-color;
 }
 

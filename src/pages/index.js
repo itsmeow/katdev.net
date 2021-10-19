@@ -42,7 +42,6 @@ const IndexPage = () => {
               duration={20}
               transition={5}
             />
-            <p id="picture-credit">Photo Credit: self</p>
           </div>
           <div className="mainpage-profile-vert">
             <div className="mainpage-profile">
@@ -55,10 +54,36 @@ const IndexPage = () => {
               </div>
               <section className="mainpage-profile-text">
                 <h1>Wyatt S</h1>
+                <p>
+                  <span
+                    style={{
+                      position: "relative",
+                      left: "0.28rem",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    they/them{" "}
+                    <a
+                      href="https://en.wikipedia.org/wiki/Singular_they"
+                      style={{
+                        position: "relative",
+                        top: "5px",
+                        fontSize: "0.6rem",
+                      }}
+                      title="what's this?"
+                      aria-label="Pronouns (what's this?)"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      ?
+                    </a>
+                  </span>
+                </p>
                 <hr />
                 <p>
                   Human, Software Developer, Tech Enthusiast, Learner, Advocate
                 </p>
+
                 <p className="socials">
                   <a
                     href="https://www.instagram.com/wyatt.dev/"
