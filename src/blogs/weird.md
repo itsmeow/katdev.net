@@ -9,7 +9,7 @@ keywords: "weird, weirdness, nonconformity, punk, freedom of expression, fascism
 
 ## Introduction
 
-Generally, we are taught, or at least conditioned to believe that blending in, conforming, is the ultimate route to acceptance. This _is_ true, according to common social standards. However, this is is a belief that is held by many people, not an undeniable fact of the universe.
+Generally, we are taught, or at least conditioned to believe that blending in, conforming, is the ultimate route to acceptance. This _is_ true, according to common social standards. However, this is a belief that is held by many people, not an undeniable fact of the universe.
 
 The general consensus is that nonconformity:
 
