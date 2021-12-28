@@ -64,7 +64,7 @@ const IndexPage = () => {
                   >
                     they/them{" "}
                     <a
-                      href="https://en.wikipedia.org/wiki/Singular_they"
+                      href="https://www.mypronouns.org/"
                       style={{
                         position: "relative",
                         top: "5px",
