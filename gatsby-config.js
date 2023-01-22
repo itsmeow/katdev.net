@@ -1,17 +1,33 @@
-console.log("BUILD ON: " + process.env.NODE_ENV)
+const path = require("path")
+const gatsbyRequiredRules = path.join(
+  process.cwd(),
+  "node_modules",
+  "gatsby",
+  "dist",
+  "utils",
+  "eslint-rules"
+)
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {
-    title: `wyattdev.net`,
-    description: `Wyatt S - Human, Software Developer, Tech Enthusiast, Learner, Advocate`,
-    author: `wyattdev`,
-    siteURL: `https://wyattdev.net`,
+    title: `katdev.net`,
+    description: `Kat S - Human, Software Developer, Tech Enthusiast, Learner, Advocate`,
+    author: `katdev`,
+    siteURL: `https://katdev.net`,
   },
   flags: {
-    DEV_SSR: true,
     FAST_DEV: true,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-eslint",
+      options: {
+        rulePaths: [gatsbyRequiredRules],
+        stages: ["develop"],
+        extensions: ["js", "jsx"],
+        exclude: ["node_modules", ".cache", "public"],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -95,12 +111,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-image`,
+    `gatsby-plugin-netlify`,
     `babel-preset-gatsby`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `wyattdev.net`,
-        short_name: `wyattdev.net`,
+        name: `katdev.net`,
+        short_name: `katdev.net`,
         start_url: `/`,
         background_color: `#121212`,
         theme_color: `#121212`,

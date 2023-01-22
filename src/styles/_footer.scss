@@ -1,3 +1,4 @@
+@use "sass:math";
 footer {
   width: 100%;
   background-color: $footer-background;
@@ -62,7 +63,7 @@ footer .bottomfooter {
 }
 
 .topfooter .github {
-  margin-top: $footer-top-height / 4;
+  margin-top: math.div($footer-top-height, 4);
   width: $footer-github-width;
   float: right;
 }
@@ -70,6 +71,7 @@ footer .bottomfooter {
 .topfooter .github * {
   transition-duration: 0.1s;
   color: $footer-text-color;
+  text-decoration: none;
 }
 
 .topfooter .github:hover * {

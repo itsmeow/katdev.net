@@ -5,6 +5,7 @@ title: "Weird"
 header: "Weird: Why we should celebrate nonconformity"
 description: "Conformity is generally seen as respectable, normal, and accepted within our society. Let's take a step back to analyze this."
 keywords: "weird, weirdness, nonconformity, punk, freedom of expression, fascism, social justice"
+toc: true
 ---
 
 ## Introduction

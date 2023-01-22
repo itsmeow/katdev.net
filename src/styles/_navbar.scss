@@ -1,3 +1,4 @@
+@use "sass:math";
 #site-navbar {
   background-color: $navbar-background;
   padding: 0;
@@ -35,6 +36,9 @@
   .navbar-nav {
     .nav-item {
       margin-right: 15px;
+      a {
+        text-decoration: none;
+      }
       .nav-link {
         transition-duration: 0.1s;
         transition-property: color;
@@ -45,7 +49,7 @@
     }
   }
   .navbar-toggle {
-    margin-top: ($navbar-height - 34px) / 2;
+    margin-top: math.div($navbar-height - 34px, 2);
     padding: 9px 10px !important;
   }
   @media (max-width: $bootstrap-sm) {

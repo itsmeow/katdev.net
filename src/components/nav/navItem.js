@@ -1,4 +1,3 @@
-import React from "react"
 import { Link } from "gatsby"
 import { Nav } from "react-bootstrap"
 import PropTypes from "prop-types"

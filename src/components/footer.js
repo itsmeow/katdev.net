@@ -12,18 +12,18 @@ const Footer = () => {
             className="footer-large"
             height={80}
             width={320}
-            alt="wyattdev linear logo"
+            alt="katdev linear logo"
           />
           <IconSquare
             className="footer-small"
             height={80}
             width={80}
-            alt="wyattdev square logo"
+            alt="katdev square logo"
           />
         </Link>
         <div className="github">
           <a
-            href="https://github.com/itsmeow/wyattdev.net"
+            href="https://github.com/itsmeow/katdev.net"
             className="link-no-style"
             target="_blank"
             rel="noopener noreferrer"
@@ -35,7 +35,7 @@ const Footer = () => {
       </div>
       <div className="bottomfooter">
         <div className="left-text">
-          by Wyatt S - © {new Date().getFullYear()} - MIT License - Thanks for
+          by Kat S - © {new Date().getFullYear()} - MIT License - Thanks for
           visiting!
         </div>
       </div>

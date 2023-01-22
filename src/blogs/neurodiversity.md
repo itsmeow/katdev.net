@@ -5,8 +5,9 @@ title: "Neurodiversity"
 header: "Neurodiversity: Why autism isn't real (the way you think it is)"
 description: "Neurodiversity: Why autism isn't real (the way you think it is) - How is society, and the very idea of autism, ableist?"
 keywords: "autism, autistic, actually autistic, neurodiversity, neurodivergence, neurotypical, neuronormativity, ableism, social justice"
-image_svg: "infinity.svg"
+image_svg: "infinity.inline.svg"
 image_alt: "Neurodiversity rainbow infinity symbol"
+toc: true
 ---
 
 ## Prelude
@@ -167,7 +168,7 @@ I would further suggest reading through ASAN's website, in general. It has some 
 
 ### An elaboration on my story/Being “Cured” and perceived as neurotypical, self-image
 
-I struggled through third grade, I had a lot of meltdowns and sometimes my anger led to physical violence, usually directed at my environment. Desks were flipped, tables were banged on, and it really did not paint a good picture of who I was. Why would you want to talk to the kid who gets mad every time you do something he doesn’t like and hits things? What if he hits you? There isn’t really any good understanding or awareness of what it means to be autistic among children, and among adults it’s about as weak. I personally feel most of my social separation was not because I was unable to notice social cues (I wasn’t to some extent, but I don’t think it was the main factor), but because no one could understand or relate to my struggles. No one had any perspective to base their views on me except their own, and as we know… that doesn’t work.
+I struggled through third grade, I had a lot of meltdowns and sometimes my anger led to physical violence, usually directed at my environment. Desks were flipped, tables were banged on, and it really did not paint a good picture of who I was. Why would you want to talk to the kid who gets mad every time you do something they don’t like and hits things? What if they hit you? There isn’t really any good understanding or awareness of what it means to be autistic among children, and among adults it’s about as weak. I personally feel most of my social separation was not because I was unable to notice social cues (I wasn’t to some extent, but I don’t think it was the main factor), but because no one could understand or relate to my struggles. No one had any perspective to base their views on me except their own, and as we know… that doesn’t work.
 
 I was further socially isolated by the fact I was in a “gifted” program at my school, which is nice, except at my elementary school this means almost all of your social interaction takes place within a 30-kid classroom, while other students got a completely new set of classmates every year, the gifted program didn’t change much at all. You were stuck with them until middle school. For this, and concerns about the teacher I would have in fourth grade, I left the program for fourth grade and got a teacher who we thought would be more accommodating. And… it helped. It helped a lot. I had a new set of kids in my class that knew nothing about me, and I had a teacher who was understanding (side note: my third grade experience also involved like 3 different teachers because the original teacher I had left on maternity leave about three months in, which also could not have helped my situation. So much change, pressure, emotions, and social separation was bound to make a bad year).
 

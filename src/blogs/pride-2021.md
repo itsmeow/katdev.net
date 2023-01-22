@@ -5,8 +5,9 @@ title: "Pride 2021"
 header: "Pride 2021: Some thoughts on sexuality and gender"
 description: "Pride 2021: Some thoughts on sexuality and gender"
 keywords: "lgbt, lgbtq, lgbtq+, pride, lesbian, gay, bi, bisexual, trans, transgender, sexuality, gender, pride month, asexual, non-binary, pan, pansexual"
-image: "blog-images/pride_flag.jpg"
+image: "pride_flag.jpg"
 image_alt: "Rainbow Flag"
+toc: true
 ---
 
 ## Dumb Rambling

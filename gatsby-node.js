@@ -1,17 +1,15 @@
-const path = require("path")
 const blogPostTemplate = require.resolve(`./src/templates/blogTemplate.js`)
 
-const evalImageId = (getNodesByType, image, folder) => {
-  const localAbsolutePath = path.resolve(__dirname, "src/data/" + folder, image)
+const evalImageId = (getNodesByType, image) => {
+  const localRelativePath = "blog-images/" + image
   let res = getNodesByType("File").find(
-    node =>
-      node.absolutePath.replace(/\\/g, "/") ===
-      localAbsolutePath.replace(/\\/g, "/")
+    node => node.relativePath === localRelativePath
   )
   if (res) {
     return res.id
   } else {
-    throw Error("COULD NOT FIND FILE MATCHING " + localAbsolutePath)
+    console.log("COULD NOT FIND FILE MATCHING " + localRelativePath)
+    throw Error("COULD NOT FIND FILE MATCHING " + localRelativePath)
   }
 }
 
@@ -38,15 +36,13 @@ exports.onCreateNode = async ({ node, getNodesByType }) => {
     let image = node.frontmatter.image
     let image_svg = node.frontmatter.image_svg
     if (image) {
-      let fileNodeId = evalImageId(getNodesByType, image, "")
-      node.frontmatter.image_file___NODE = fileNodeId
+      node.frontmatter.image_file_id = evalImageId(getNodesByType, image)
     }
     if (image_svg) {
-      let fileNodeId = evalImageId(getNodesByType, image_svg, "")
-      node.frontmatter.image_svg_file___NODE = fileNodeId
-    }
-    if (node.frontmatter.toc === undefined) {
-      node.frontmatter.toc = true
+      node.frontmatter.image_svg_file_id = evalImageId(
+        getNodesByType,
+        image_svg
+      )
     }
   }
 }
@@ -56,8 +52,9 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
   type MarkdownRemarkFrontmatter {
     image: String
     image_svg: String
-    image_file: File @link(from: "image_file___NODE")
-    image_svg_file: File @link(from: "image_svg_file___NODE")
+    image_file: File @link(from: "image_file_id")
+    image_svg_file: File @link(from: "image_svg_file_id")
+    toc: Boolean
   }
   type MarkdownRemark implements Node {
     frontmatter: MarkdownRemarkFrontmatter
@@ -73,10 +70,7 @@ exports.createPages = async ({
 }) => {
   const result = await graphql(`
     {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
+      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
         edges {
           node {
             frontmatter {

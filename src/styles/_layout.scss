@@ -1,4 +1,17 @@
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+ol,
+ul {
+  padding-left: 2.5rem;
+}
+
 a.link-no-style {
+  text-decoration: none;
   &:hover {
     text-decoration: none;
   }
@@ -15,6 +28,7 @@ hr {
   background-color: $hr-color;
   width: 100%;
   box-shadow: 0 0 5px $hr-color;
+  opacity: 1;
 }
 
 h1,
@@ -28,4 +42,8 @@ h5 {
 div.main {
   min-height: 100vh;
   padding-bottom: $footer-height;
+}
+
+.no-gutters {
+  --bs-gutter-x: 0;
 }

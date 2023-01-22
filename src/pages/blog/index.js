@@ -8,7 +8,7 @@ const IndexPage = () => {
     allMarkdownRemark: { nodes },
   } = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+      allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
         nodes {
           frontmatter {
             slug
@@ -59,10 +59,10 @@ const IndexPage = () => {
         ]}
       />
       <main>
-        <h2 className="page-header" align="center">
-          Blogs by Wyatt
+        <h2 className="page-header" style={{ textAlign: "center" }}>
+          Blogs by Kat
         </h2>
-        <hr />
+        <hr style={{ margin: "1rem auto" }} />
         <section id="blogs">{blog_articles}</section>
       </main>
     </Layout>

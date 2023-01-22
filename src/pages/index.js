@@ -21,15 +21,15 @@ const IndexPage = () => {
   return (
     <Layout eventkey="index">
       <SEO
-        title="wyattdev.net"
+        title="katdev.net"
         rawTitle
         keywords={[
           `developer`,
           `software`,
           `technology`,
-          `wyatt`,
-          `Wyatt S`,
-          `wyattdev`,
+          `kat`,
+          `Kat S`,
+          `katdev`,
           `dev`,
         ]}
       />
@@ -53,7 +53,7 @@ const IndexPage = () => {
                 />
               </div>
               <section className="mainpage-profile-text">
-                <h1>Wyatt S</h1>
+                <h1>Kat S</h1>
                 <p>
                   <span
                     style={{
@@ -62,9 +62,9 @@ const IndexPage = () => {
                       fontWeight: "bold",
                     }}
                   >
-                    they/them{" "}
+                    they/she{" "}
                     <a
-                      href="https://www.mypronouns.org/"
+                      href="https://pronouns.org/"
                       style={{
                         position: "relative",
                         top: "5px",
@@ -86,7 +86,7 @@ const IndexPage = () => {
 
                 <p className="socials">
                   <a
-                    href="https://www.instagram.com/wyatt.dev/"
+                    href="https://www.instagram.com/kat.main/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
@@ -94,7 +94,7 @@ const IndexPage = () => {
                     <FaInstagram aria-label="Instagram link" />
                   </a>{" "}
                   -{" "}
-                  <a href="mailto:wyatt@wyattdev.net" aria-label="Email">
+                  <a href="mailto:kat@katdev.net" aria-label="Email">
                     <FaEnvelope aria-label="Email link" />
                   </a>{" "}
                   -{" "}
@@ -108,7 +108,7 @@ const IndexPage = () => {
                   </a>{" "}
                   -{" "}
                   <a
-                    href="https://www.last.fm/user/wyattdev"
+                    href="https://www.last.fm/user/katdevfm"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LastFM"

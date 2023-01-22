@@ -71,7 +71,7 @@ const BlogTemplate = ({
             <></>
           )}
           <div id="blog-text" dangerouslySetInnerHTML={{ __html: html }} />
-          <div id="blog-end">Written by Wyatt. Thank you for reading.</div>
+          <div id="blog-end">Written by Kat. Thank you for reading.</div>
         </article>
       </main>
     </Layout>

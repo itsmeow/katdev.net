@@ -183,7 +183,7 @@ const BackgroundSlider = ({
   }
 
   // Runs once after DOM is loaded; effectively `componentDidMount`
-  useEffect(initEffect, [])
+  useEffect(initEffect, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return <React.Fragment>{imgs}</React.Fragment>
 }
@@ -215,7 +215,7 @@ export const Pagination = ({ callbacks }) => {
       buttonRefs[newIndex].current.style.color = "white"
       buttonRefs[newIndex].current.style.transform = "scale(1.2, 1.2)"
     }
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <React.Fragment>
