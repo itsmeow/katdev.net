@@ -1,15 +1,17 @@
+const path = require("path")
 const blogPostTemplate = require.resolve(`./src/templates/blogTemplate.js`)
 
-const evalImageId = (getNodesByType, image) => {
-  const localRelativePath = "blog-images/" + image
+const evalImageId = (getNodesByType, image, folder) => {
+  const localAbsolutePath = path.resolve(__dirname, "src/data/" + folder, image)
   let res = getNodesByType("File").find(
-    node => node.relativePath === localRelativePath
+    node =>
+      node.absolutePath.replace(/\\/g, "/") ===
+      localAbsolutePath.replace(/\\/g, "/")
   )
   if (res) {
     return res.id
   } else {
-    console.log("COULD NOT FIND FILE MATCHING " + localRelativePath)
-    throw Error("COULD NOT FIND FILE MATCHING " + localRelativePath)
+    throw Error("COULD NOT FIND FILE MATCHING " + localAbsolutePath)
   }
 }
 
@@ -33,16 +35,14 @@ exports.sourceNodes = async ({ actions: { createRedirect } }) => {
 
 exports.onCreateNode = async ({ node, getNodesByType }) => {
   if (node.internal.type === "MarkdownRemark") {
-    let image = node.frontmatter.image
-    let image_svg = node.frontmatter.image_svg
+    let frontmatter = node.frontmatter
+    let image = frontmatter.image
+    let image_svg = frontmatter.image_svg
     if (image) {
-      node.frontmatter.image_file_id = evalImageId(getNodesByType, image)
+      node.image_file___NODE = evalImageId(getNodesByType, image, "blog-images")
     }
     if (image_svg) {
-      node.frontmatter.image_svg_file_id = evalImageId(
-        getNodesByType,
-        image_svg
-      )
+      node.image_svg_file___NODE = evalImageId(getNodesByType, image_svg, "svg")
     }
   }
 }
@@ -52,8 +52,8 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
   type MarkdownRemarkFrontmatter {
     image: String
     image_svg: String
-    image_file: File @link(from: "image_file_id")
-    image_svg_file: File @link(from: "image_svg_file_id")
+    image_file: File @link(from: "image_file___NODE")
+    image_svg_file: File @link(from: "image_svg_file___NODE")
     toc: Boolean
   }
   type MarkdownRemark implements Node {
