@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import { useStaticQuery, graphql } from "gatsby"
 import { FaInstagram, FaLink, FaEnvelope, FaLastfm } from "react-icons/fa"
 import BackgroundSlider from "../components/slider"
+import TraktBlack from "../data/svg/trakt-icon-black.inline.svg"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -114,6 +115,19 @@ const IndexPage = () => {
                     aria-label="LastFM"
                   >
                     <FaLastfm aria-label="LastFM link" />
+                  </a>{" "}
+                  -{" "}
+                  <a
+                    href="https://trakt.tv/users/katdev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Trakt"
+                  >
+                    <TraktBlack
+                      width="1em"
+                      height="1em"
+                      aria-label="Trakt link"
+                    />
                   </a>
                 </p>
               </section>
