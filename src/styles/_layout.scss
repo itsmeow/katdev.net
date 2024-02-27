@@ -47,3 +47,16 @@ div.main {
 .no-gutters {
   --bs-gutter-x: 0;
 }
+
+.monospace {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.pre-wrap {
+  white-space: pre-wrap;
+}
+
+small {
+  font-size: 0.7rem;
+  color: #e8e8e8da;
+}
