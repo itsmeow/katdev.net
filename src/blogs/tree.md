@@ -1,6 +1,6 @@
 ---
 slug: "tree"
-date: "2024-05-24"
+date: "2024-06-07"
 title: "tree"
 header: "tree"
 description: ""
