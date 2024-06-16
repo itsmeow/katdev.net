@@ -4,11 +4,11 @@ date: "2024-05-30"
 title: "mourning"
 header: "mourning"
 description: ""
-keywords: "writing, poem"
+keywords: ""
 toc: false
+poem: true
 ---
 
-<div class="monospace pre-wrap">
 i'm mourning the fact that I can't keep a spring
 i would love the sound of myself when i sing
 there's this feeling<br />
@@ -29,4 +29,3 @@ it's because i'm getting the feeling<br />
 that one it's like-<br />
 god, it's just dizzying<br />
 all wrong, everything<br />
-</div>

@@ -31,6 +31,11 @@ exports.sourceNodes = async ({ actions: { createRedirect } }) => {
     toPath: "/blog/accommodations",
     isPermanent: true,
   })
+  createRedirect({
+    fromPath: "/poem",
+    toPath: "/poems",
+    isPermanent: true,
+  })
 }
 
 exports.onCreateNode = async ({ node, getNodesByType }) => {
@@ -55,6 +60,8 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
     image_file: File @link(from: "image_file___NODE")
     image_svg_file: File @link(from: "image_svg_file___NODE")
     toc: Boolean
+    poem: Boolean
+    format_poem: Boolean
   }
   type MarkdownRemark implements Node {
     frontmatter: MarkdownRemarkFrontmatter
@@ -64,7 +71,7 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
 }
 
 exports.createPages = async ({
-  actions: { createPage },
+  actions: { createPage, createRedirect },
   graphql,
   reporter,
 }) => {
@@ -75,6 +82,7 @@ exports.createPages = async ({
           node {
             frontmatter {
               slug
+              poem
             }
           }
         }
@@ -89,11 +97,19 @@ exports.createPages = async ({
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
-      path: "blog/" + node.frontmatter.slug,
+      path:
+        (node.frontmatter.poem ? "poem" : "blog") + "/" + node.frontmatter.slug,
       component: blogPostTemplate,
       context: {
         slug: node.frontmatter.slug,
       },
     })
+    if (node.frontmatter.poem) {
+      createRedirect({
+        fromPath: "/blog/" + node.frontmatter.slug,
+        toPath: "/poem/" + node.frontmatter.slug,
+        isPermanent: true,
+      })
+    }
   })
 }

@@ -5,7 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 const BlogTemplate = ({
   data: {
-    markdownRemark: { frontmatter, html, wordCount, tableOfContents },
+    markdownRemark: { excerpt, frontmatter, html, wordCount, tableOfContents },
   },
 }) => {
   let hasImage = frontmatter.image_file || frontmatter.image_svg_file
@@ -13,16 +13,18 @@ const BlogTemplate = ({
     <Layout eventkey="blog-page">
       <SEO
         title={frontmatter.title}
-        description={frontmatter.description}
+        description={
+          frontmatter.poem && !frontmatter.description?.length
+            ? excerpt
+            : frontmatter.description
+        }
         keywords={frontmatter.keywords
           .split(",")
-          .concat([
-            `blog`,
-            `blogs`,
-            `technology blog`,
-            `personal blog`,
-            `writing`,
-          ])}
+          .concat(
+            !frontmatter.poem
+              ? [`blog`, `blogs`, `technology blog`, `personal blog`, `writing`]
+              : [`poem`, `poetry`, `writing`, `creative writing`]
+          )}
         image={frontmatter?.image_file?.publicURL}
       />
       <main>
@@ -70,7 +72,15 @@ const BlogTemplate = ({
           ) : (
             <></>
           )}
-          <div id="blog-text" dangerouslySetInnerHTML={{ __html: html }} />
+          <div
+            className={
+              frontmatter.poem && frontmatter.format_poem !== false
+                ? "poem"
+                : null
+            }
+            id="blog-text"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
           <div id="blog-end">Written by Kat. Thank you for reading.</div>
         </article>
       </main>
@@ -85,6 +95,7 @@ export const pageQuery = graphql`
       wordCount {
         words
       }
+      excerpt
       frontmatter {
         date(formatString: "MMMM D, YYYY")
         slug
@@ -93,6 +104,8 @@ export const pageQuery = graphql`
         keywords
         description
         toc
+        poem
+        format_poem
         image_svg_file {
           publicURL
         }

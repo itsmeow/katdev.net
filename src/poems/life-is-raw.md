@@ -6,6 +6,8 @@ header: "Life is raw."
 description: "A poem, with a side of self-analysis."
 keywords: "autism, autistic, non-binary, lgbtq, poem"
 toc: false
+poem: true
+format_poem: false
 ---
 
 ## Boneless

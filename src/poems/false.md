@@ -4,11 +4,11 @@ date: "2024-05-24"
 title: "false"
 header: "false"
 description: ""
-keywords: "writing, poem"
+keywords: ""
 toc: false
+poem: true
 ---
 
-<div class="monospace pre-wrap">
 why can't I<br />
 look at you
 and see it too<br />
@@ -38,5 +38,3 @@ appreciate you<br />
 could i be
 instantaneously
 without; carefree
-
-</div>

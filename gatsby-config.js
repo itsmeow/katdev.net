@@ -41,6 +41,13 @@ module.exports = {
         name: `blogs`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/poems/`,
+        name: `poems`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-sass`,

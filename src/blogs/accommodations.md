@@ -6,6 +6,7 @@ header: "Accommodations: What the hell are schools doing?"
 description: "Accommodations: What the hell are schools doing? Our systems are ableist, classist, neuronormative, and simply inconsiderate."
 keywords: "accommodations, 504, IEP, ADHD, autism, autistic, actually autistic, neurodiversity, ableism, social justice"
 toc: true
+poem: false
 ---
 
 ## Prelude

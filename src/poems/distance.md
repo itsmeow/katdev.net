@@ -4,11 +4,11 @@ date: "2024-05-12"
 title: "Distance"
 header: "Distance"
 description: ""
-keywords: "writing, poem"
+keywords: ""
 toc: false
+poem: true
 ---
 
-<div class="monospace pre-wrap">
 There is a world where
 We stand on the same ground
 "It's raining."
@@ -26,5 +26,3 @@ If we had abandoned
 Our dreams, unbound
 Could we stand
 Forever enwound
-
-</div>

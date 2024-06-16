@@ -4,11 +4,11 @@ date: "2024-06-07"
 title: "tree"
 header: "tree"
 description: ""
-keywords: "writing, poem"
+keywords: ""
 toc: false
+poem: true
 ---
 
-<div class="monospace pre-wrap">
 twisting
 winding
 slivers<br />
@@ -24,5 +24,3 @@ ether<br />
 encompassing;
 everything<br />
 tapers
-
-</div>

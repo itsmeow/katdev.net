@@ -2,13 +2,13 @@ import { format } from "date-fns"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 
-const BlogListing = ({ frontmatter, words }) => {
+const BlogListing = ({ frontmatter, words, poem }) => {
   let hasImage = frontmatter.image_file || frontmatter.image_svg_file
   let dt = new Date(frontmatter.date)
   dt = dt.valueOf() + dt.getTimezoneOffset() * 60 * 1000 // cancel out timezone differences
   return (
     <Link
-      to={`/blog/${frontmatter.slug}`}
+      to={`/${poem ? "poem" : "blog"}/${frontmatter.slug}`}
       className="blog-listing-wrapper link-unstyle"
     >
       <article

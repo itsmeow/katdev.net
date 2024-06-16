@@ -8,6 +8,7 @@ keywords: "autism, autistic, actually autistic, neurodiversity, neurodivergence,
 image_svg: "infinity.inline.svg"
 image_alt: "Neurodiversity rainbow infinity symbol"
 toc: true
+poem: false
 ---
 
 ## Prelude

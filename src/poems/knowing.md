@@ -4,11 +4,11 @@ date: "2024-06-16"
 title: "knowing"
 header: "knowing"
 description: ""
-keywords: "writing, poem"
+keywords: ""
 toc: false
+poem: true
 ---
 
-<div class="monospace pre-wrap">
 all these conversations feel empty<br />
 do you love anyone<br />
 can't get enough<br />
@@ -27,5 +27,3 @@ two lives; no sense in that<br />
 make them one or kill it now<br />
 i am tired<br />
 can't we switch sides?<br />
-
-</div>

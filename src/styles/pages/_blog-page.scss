@@ -85,6 +85,11 @@ main {
     }
     #blog-text {
       font-family: Arial, Helvetica, sans-serif;
+      &.poem {
+        font-family: "Courier New", Courier, monospace;
+        white-space: pre;
+        padding-top: 25px;
+      }
       a.before.anchor svg {
         fill: $link-color;
       }

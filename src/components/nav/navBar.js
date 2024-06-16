@@ -35,6 +35,9 @@ const CustomNavbar = ({ eventkey }) => {
           <NavItem to="/blog" eventkey="blog">
             Blog
           </NavItem>
+          <NavItem to="/poems" eventkey="poems">
+            Poems
+          </NavItem>
           <NavItem to="https://itsmeow.dev/" external>
             Brand Website
           </NavItem>

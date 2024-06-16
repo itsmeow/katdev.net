@@ -10,7 +10,7 @@ const IndexPage = () => {
     query {
       allMarkdownRemark(
         sort: { frontmatter: { date: DESC } }
-        filter: { frontmatter: { poem: { ne: true } } }
+        filter: { frontmatter: { poem: { eq: true } } }
       ) {
         nodes {
           frontmatter {
@@ -41,32 +41,27 @@ const IndexPage = () => {
       }
     }
   `)
-  let blog_articles = nodes.map(node => (
+  let poem_list = nodes.map(node => (
     <BlogListing
       key={node.frontmatter.slug}
       frontmatter={node.frontmatter}
       words={node.wordCount.words}
+      poem
     />
   ))
   return (
-    <Layout eventkey="blog">
+    <Layout eventkey="poems">
       <SEO
-        title="Blog"
-        description="Technology, Life, and *Intruiging Stuff*"
-        keywords={[
-          `blog`,
-          `blogs`,
-          `technology blog`,
-          `personal blog`,
-          `writing`,
-        ]}
+        title="Poems"
+        description="A collection of poetry, mostly introspective. Have a nice visit."
+        keywords={[`poetry`, `writing`, `poems`, `creative writing`]}
       />
       <main>
         <h2 className="page-header" style={{ textAlign: "center" }}>
-          Blogs by Kat
+          Poems by Kat
         </h2>
         <hr style={{ margin: "1rem auto" }} />
-        <section id="blogs">{blog_articles}</section>
+        <section id="poems">{poem_list}</section>
       </main>
     </Layout>
   )

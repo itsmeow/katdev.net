@@ -8,6 +8,7 @@ keywords: "lgbt, lgbtq, lgbtq+, pride, lesbian, gay, bi, bisexual, trans, transg
 image: "pride_flag.jpg"
 image_alt: "Rainbow Flag"
 toc: true
+poem: false
 ---
 
 ## Dumb Rambling
