@@ -1,6 +1,6 @@
 ---
 slug: "sunshine"
-date: "2024-05-12"
+date: "2024-06-21"
 title: "to a lonesome child"
 header: "to a lonesome child"
 description: ""
@@ -16,7 +16,13 @@ what makes you fall to the brink
 and what makes you shrink<br />
 is brilliant and hot pink
 atop your head they can see
-your nature, it's beloved to those who see<br />
+your nature, it's beloved to<br />
+that chosen few
+they will leave
+but you will never cease
+you don't have to please
+anyone, just be
+and they will come with ease<br />
 i would listen to you tell me
 about the density of a black hole
 and the fact of a supernova<br />
