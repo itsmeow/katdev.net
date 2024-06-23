@@ -9,28 +9,26 @@
     "animate.css": "^4.1.0",
     "bootstrap": "^5.2.3",
     "date-fns": "^2.29.3",
-    "gatsby": "^5.4.2",
+    "gatsby": "^5.13.6",
     "gatsby-plugin-gtag": "^1.0.13",
-    "gatsby-plugin-image": "^3.4.0",
-    "gatsby-plugin-manifest": "^5.4.0",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-meta-redirect": "^1.1.1",
-    "gatsby-plugin-netlify": "^5.1.0",
-    "gatsby-plugin-offline": "^6.4.0",
-    "gatsby-plugin-react-helmet": "^6.4.0",
+    "gatsby-plugin-netlify": "^5.1.1",
+    "gatsby-plugin-offline": "^6.13.2",
     "gatsby-plugin-react-svg": "^3.3.0",
-    "gatsby-plugin-sass": "^6.4.0",
-    "gatsby-plugin-sharp": "^5.4.0",
-    "gatsby-remark-autolink-headers": "^6.4.0",
-    "gatsby-source-filesystem": "^5.4.0",
-    "gatsby-transformer-json": "^5.4.0",
-    "gatsby-transformer-remark": "^6.4.0",
-    "gatsby-transformer-sharp": "^5.4.0",
+    "gatsby-plugin-sass": "^6.13.1",
+    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-remark-autolink-headers": "^6.13.1",
+    "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-transformer-json": "^5.13.1",
+    "gatsby-transformer-remark": "^6.13.1",
+    "gatsby-transformer-sharp": "^5.13.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-animate-on-scroll": "^2.1.5",
     "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
     "react-icons": "^4.7.1"
   },
   "devDependencies": {
@@ -39,12 +37,12 @@
     "eslint-plugin-react": "^7.32.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-webpack-plugin": "^3.2.0",
-    "gatsby-plugin-eslint": "^4.0.3",
+    "gatsby-plugin-eslint": "^4.0.4",
     "prettier": "^2.3.0",
     "sass": "^1.57.1"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "keywords": [
     "gatsby"
@@ -65,5 +63,6 @@
   },
   "bugs": {
     "url": "https://github.com/itsmeow/katdev.net/issues"
-  }
+  },
+  "packageManager": "yarn@4.3.1"
 }

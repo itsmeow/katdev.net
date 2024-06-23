@@ -5,28 +5,12 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 const BlogTemplate = ({
   data: {
-    markdownRemark: { excerpt, frontmatter, html, wordCount, tableOfContents },
+    markdownRemark: { frontmatter, html, wordCount, tableOfContents },
   },
 }) => {
   let hasImage = frontmatter.image_file || frontmatter.image_svg_file
   return (
     <Layout eventkey="blog-page">
-      <SEO
-        title={frontmatter.title}
-        description={
-          frontmatter.poem && !frontmatter.description?.length
-            ? excerpt
-            : frontmatter.description
-        }
-        keywords={frontmatter.keywords
-          .split(",")
-          .concat(
-            !frontmatter.poem
-              ? [`blog`, `blogs`, `technology blog`, `personal blog`, `writing`]
-              : [`poem`, `poetry`, `writing`, `creative writing`]
-          )}
-        image={frontmatter?.image_file?.publicURL}
-      />
       <main>
         <article
           id="blog-content-wrapper"
@@ -87,6 +71,30 @@ const BlogTemplate = ({
     </Layout>
   )
 }
+
+export const Head = ({
+  data: {
+    markdownRemark: { excerpt, frontmatter },
+  },
+}) => (
+  <SEO
+    title={frontmatter.title}
+    description={
+      frontmatter.poem && !frontmatter.description?.length
+        ? excerpt
+        : frontmatter.description
+    }
+    keywords={frontmatter.keywords
+      .split(",")
+      .concat(
+        !frontmatter.poem
+          ? [`blog`, `blogs`, `technology blog`, `personal blog`, `writing`]
+          : [`poem`, `poetry`, `writing`, `creative writing`]
+      )}
+    image={frontmatter?.image_file?.publicURL}
+  />
+)
+
 export const pageQuery = graphql`
   query ($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {

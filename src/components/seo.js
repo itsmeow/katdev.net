@@ -1,8 +1,7 @@
 import PropTypes from "prop-types"
-import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, keywords, title, image, rawTitle }) {
+function SEO({ description, lang, keywords, title, image, rawTitle }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -24,66 +23,37 @@ function SEO({ description, lang, meta, keywords, title, image, rawTitle }) {
       ? site.siteMetadata.siteURL + image
       : image
   const metaDescription = description || site.siteMetadata.description
+  const metaTitle = `${
+    rawTitle ? title : `${title} @ ${site.siteMetadata.title}`
+  }`
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={rawTitle ? `%s` : `%s @ ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `og:image`,
-          content: imageDef,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        {
-          name: `twitter:image`,
-          content: imageDef,
-        },
-      ]
-        .concat(
-          keywords.length > 0
-            ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
-            : []
-        )
-        .concat(meta)}
-    />
+    <>
+      {lang && <html lang={lang} />}
+      {metaTitle && <title>{metaTitle}</title>}
+      {metaDescription && <meta name="description" content={metaDescription} />}
+      {keywords?.filter(keyword => keyword?.length > 0)?.length > 0 && (
+        <meta
+          name="keywords"
+          content={keywords.filter(keyword => keyword?.length > 0).join(",")}
+        />
+      )}
+      {metaTitle && <meta name="og:title" content={metaTitle} />}
+      {metaDescription && (
+        <meta name="og:description" content={metaDescription} />
+      )}
+      <meta name="og:type" content="website" />
+      {imageDef && <meta name="og:image" content={imageDef} />}
+      {metaTitle && <meta name="twitter:title" content={metaTitle} />}
+      {metaDescription && (
+        <meta name="twitter:description" content={metaDescription} />
+      )}
+      <meta name="twitter:card" content="summary" />
+      {imageDef && <meta name="twitter:image" content={imageDef} />}
+      {site.siteMetadata.author && (
+        <meta name="twitter:creator" content={site.siteMetadata.author} />
+      )}
+    </>
   )
 }
 
@@ -99,7 +69,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   rawTitle: PropTypes.bool,
 }
 

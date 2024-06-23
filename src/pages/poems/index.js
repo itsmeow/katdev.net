@@ -51,11 +51,6 @@ const IndexPage = () => {
   ))
   return (
     <Layout eventkey="poems">
-      <SEO
-        title="Poems"
-        description="A collection of poetry, mostly introspective. Have a nice visit."
-        keywords={[`poetry`, `writing`, `poems`, `creative writing`]}
-      />
       <main>
         <h2 className="page-header" style={{ textAlign: "center" }}>
           Poems by Kat
@@ -66,5 +61,13 @@ const IndexPage = () => {
     </Layout>
   )
 }
+
+export const Head = () => (
+  <SEO
+    title="Poems"
+    description="A collection of poetry, mostly introspective. Have a nice visit."
+    keywords={[`poetry`, `writing`, `poems`, `creative writing`]}
+  />
+)
 
 export default IndexPage

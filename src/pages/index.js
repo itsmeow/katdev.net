@@ -21,19 +21,6 @@ const IndexPage = () => {
   `)
   return (
     <Layout eventkey="index">
-      <SEO
-        title="katdev.net"
-        rawTitle
-        keywords={[
-          `developer`,
-          `software`,
-          `technology`,
-          `kat`,
-          `Kat S`,
-          `katdev`,
-          `dev`,
-        ]}
-      />
       <main>
         <div className="mainpage-profile-container">
           <div className="background-slider">
@@ -81,9 +68,7 @@ const IndexPage = () => {
                   </span>
                 </p>
                 <hr />
-                <p>
-                  Human, Software Developer, Tech Enthusiast, Learner, Advocate
-                </p>
+                <p>Human, Software Developer, Queer, Your Local Autistic</p>
 
                 <div className="socials">
                   <div>
@@ -148,5 +133,21 @@ const IndexPage = () => {
     </Layout>
   )
 }
+
+export const Head = () => (
+  <SEO
+    title="katdev.net"
+    rawTitle
+    keywords={[
+      `developer`,
+      `software`,
+      `technology`,
+      `kat`,
+      `Kat S`,
+      `katdev`,
+      `dev`,
+    ]}
+  />
+)
 
 export default IndexPage

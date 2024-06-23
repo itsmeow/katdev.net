@@ -11,7 +11,7 @@ module.exports = {
   pathPrefix: "/",
   siteMetadata: {
     title: `katdev.net`,
-    description: `Kat S - Human, Software Developer, Tech Enthusiast, Learner, Advocate`,
+    description: `Kat S - Human, Software Developer, Queer, Your Local Autistic`,
     author: `katdev`,
     siteURL: `https://katdev.net`,
   },
@@ -48,7 +48,6 @@ module.exports = {
         name: `poems`,
       },
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {

@@ -50,17 +50,6 @@ const IndexPage = () => {
   ))
   return (
     <Layout eventkey="blog">
-      <SEO
-        title="Blog"
-        description="Technology, Life, and *Intruiging Stuff*"
-        keywords={[
-          `blog`,
-          `blogs`,
-          `technology blog`,
-          `personal blog`,
-          `writing`,
-        ]}
-      />
       <main>
         <h2 className="page-header" style={{ textAlign: "center" }}>
           Blogs by Kat
@@ -71,5 +60,13 @@ const IndexPage = () => {
     </Layout>
   )
 }
+
+export const Head = () => (
+  <SEO
+    title="Blog"
+    description="Technology, Life, and *Intriguing Stuff*"
+    keywords={[`blog`, `blogs`, `technology blog`, `personal blog`, `writing`]}
+  />
+)
 
 export default IndexPage

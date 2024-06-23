@@ -35,8 +35,8 @@ const Footer = () => {
       </div>
       <div className="bottomfooter">
         <div className="left-text">
-          by Kat S - © {new Date().getFullYear()} - MIT License - Thanks for
-          visiting!
+          by Kat S - © {new Date().getFullYear()} - All Rights Reserved - Thanks
+          for visiting!
         </div>
       </div>
     </footer>
