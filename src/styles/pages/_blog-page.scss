@@ -129,6 +129,18 @@ main {
   }
 }
 
+@media (max-width: 500px) {
+  main {
+    #blog-content-wrapper {
+      $blog-content-padding-y: 50px;
+      min-height: calc(
+        100vh - #{$navbar-height} - #{$footer-height-small} -
+          (2 * #{$blog-content-padding-y})
+      );
+    }
+  }
+}
+
 @media (max-width: 400px) {
   main {
     #blog-content-wrapper {

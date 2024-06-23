@@ -53,6 +53,19 @@ footer .bottomfooter {
 }
 
 @media (max-width: 500px) {
+  footer {
+    height: $footer-height-small;
+    margin-top: -$footer-height-small;
+  }
+  footer .topfooter {
+    height: $footer-top-height-small;
+  }
+  footer .bottomfooter {
+    height: $footer-bottom-height-small;
+  }
+  .topfooter .github {
+    margin-top: math.div($footer-top-height-small, 4);
+  }
   .topfooter svg.footer-small {
     display: inline;
     margin-left: 5px;

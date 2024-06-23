@@ -44,6 +44,12 @@ div.main {
   padding-bottom: $footer-height;
 }
 
+@media (max-width: 500px) {
+  div.main {
+    padding-bottom: $footer-height-small;
+  }
+}
+
 .no-gutters {
   --bs-gutter-x: 0;
 }

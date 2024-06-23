@@ -11,7 +11,7 @@ const Layout = ({ eventkey, children }) => {
           <Col>{children}</Col>
         </Row>
       </Container>
-      <Container fluid className="px-0" id={`page-footer-${eventkey}`}>
+      <Container fluid className="px-0">
         <Row className="no-gutters">
           <Col>
             <Footer />

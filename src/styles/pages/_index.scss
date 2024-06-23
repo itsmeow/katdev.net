@@ -53,6 +53,14 @@ main {
             max-width: 90vw;
           }
           .socials {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            div.seperator {
+              margin: 0.2rem;
+              flex-basis: 0px;
+            }
             font-size: 3rem;
             svg {
               overflow: visible;
@@ -73,7 +81,6 @@ main {
 
 @media (max-width: 500px) {
   main {
-    height: 100%;
     .mainpage-profile-container {
       height: 100%;
       .background-slider {
@@ -92,9 +99,13 @@ main {
           box-shadow: none;
           border-radius: 0;
           padding: 20px;
+          padding-bottom: 40px;
           .mainpage-profile-text {
             .socials {
-              font-size: 2.8rem;
+              font-size: 2.5rem;
+              div.seperator {
+                margin: 0.1rem;
+              }
             }
           }
           .mainpage-profile-image {

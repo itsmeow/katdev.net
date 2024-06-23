@@ -85,51 +85,61 @@ const IndexPage = () => {
                   Human, Software Developer, Tech Enthusiast, Learner, Advocate
                 </p>
 
-                <p className="socials">
-                  <a
-                    href="https://www.instagram.com/kat.main/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                  >
-                    <FaInstagram aria-label="Instagram link" />
-                  </a>{" "}
-                  -{" "}
-                  <a href="mailto:kat@katdev.net" aria-label="Email">
-                    <FaEnvelope aria-label="Email link" />
-                  </a>{" "}
-                  -{" "}
-                  <a
-                    href="https://itsmeow.dev/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Brand Website"
-                  >
-                    <FaLink aria-label="Brand Website link" />
-                  </a>{" "}
-                  -{" "}
-                  <a
-                    href="https://www.last.fm/user/katdevfm"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LastFM"
-                  >
-                    <FaLastfm aria-label="LastFM link" />
-                  </a>{" "}
-                  -{" "}
-                  <a
-                    href="https://trakt.tv/users/katdev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Trakt"
-                  >
-                    <TraktBlack
-                      width="1em"
-                      height="1em"
-                      aria-label="Trakt link"
-                    />
-                  </a>
-                </p>
+                <div className="socials">
+                  <div>
+                    <a
+                      href="https://www.instagram.com/kat.main/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                    >
+                      <FaInstagram aria-label="Instagram link" />
+                    </a>
+                  </div>
+                  <div className="seperator"> • </div>
+                  <div>
+                    <a href="mailto:kat@katdev.net" aria-label="Email">
+                      <FaEnvelope aria-label="Email link" />
+                    </a>
+                  </div>
+                  <div className="seperator"> • </div>
+                  <div>
+                    <a
+                      href="https://itsmeow.dev/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Brand Website"
+                    >
+                      <FaLink aria-label="Brand Website link" />
+                    </a>
+                  </div>
+                  <div className="seperator"> • </div>
+                  <div>
+                    <a
+                      href="https://www.last.fm/user/katdevfm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LastFM"
+                    >
+                      <FaLastfm aria-label="LastFM link" />
+                    </a>
+                  </div>
+                  <div className="seperator"> • </div>
+                  <div>
+                    <a
+                      href="https://trakt.tv/users/katdev"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Trakt"
+                    >
+                      <TraktBlack
+                        width="1em"
+                        height="1em"
+                        aria-label="Trakt link"
+                      />
+                    </a>
+                  </div>
+                </div>
               </section>
             </div>
           </div>
