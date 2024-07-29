@@ -28,7 +28,7 @@ i want to invest in you no more index fund
 it's difficult though let me explain
 
 i really do feel so much damn empathy
-i cry when everytime i watch the tv
+i cry everytime i watch the tv
 i just can't shake the complexity
 
 i can't care anymore i'm tired yousee
@@ -71,7 +71,7 @@ but i have to explicitly say everything
 because i'm not you and you're not me
 and my brain is a goddamn mystery
 
-i'm shit and small talk and i don't know how to show that i care about people
+i'm shit at small talk and i don't know how to show that i care about people
 i try but i'm really quite a miss at offering anything past a daily conversation
 i'm terrified of gifts they really stress me
 i'd do whatever you need but you really gotta ask me
