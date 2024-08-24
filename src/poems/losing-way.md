@@ -1,6 +1,6 @@
 ---
 slug: "losing-way"
-date: "2024-08-24"
+date: "2024-08-05"
 title: "losing way"
 header: "losing way"
 description: ""
