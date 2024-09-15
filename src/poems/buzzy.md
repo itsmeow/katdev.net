@@ -39,7 +39,7 @@ and how they love the light.
 
 they're there and they are everywhere and they are everywhere and i can't get out please please run away there's nowhere to go but forward and they're there i can see them please don't make go that way i want inside please let me inside open the door so i can run past there is no one around and no way out
 
-buzz bzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz- SLAM it's hit my face
+buzz bzzzzzzzzzzzzzzzzzzzz zzzzzzzzzzzzzzz zzzzzzzzzzzzz- SLAM it's hit my face
 it's in my mouth oh please get out
 swarms of hard exoskeletons and legs and massive eyes that stare no thoughts to even compare they're not even all there they just watch and mate and pair and eggs in my hair i can't stop them and i'm itching it's not fair
 i am dirty dirty now i have to get them off
