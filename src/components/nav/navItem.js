@@ -15,7 +15,14 @@ const NavItem = ({ to, eventkey, external, children }) => {
         >
           <Nav.Link as="span">
             {children}
-            <span style={{ marginLeft: "5px" }}>
+            <span
+              style={{
+                marginLeft: "8px",
+                fontSize: "1.5rem",
+                lineHeight: "32px",
+                verticalAlign: "middle",
+              }}
+            >
               <FaExternalLinkAlt />
             </span>
           </Nav.Link>

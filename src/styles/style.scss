@@ -5,6 +5,17 @@
 // Get bootstrap
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+// Fonts
+
+@font-face {
+  font-family: "Abaddon Light";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url("/fonts/Abaddon Light.woff2") format("woff2");
+}
+
 // Component styles
 @import "layout";
 @import "footer";

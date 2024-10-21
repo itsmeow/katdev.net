@@ -4,18 +4,20 @@
   padding: 0;
   margin: 0;
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 32px;
   border-bottom: 1px solid $navbar-border-color;
   box-shadow: 0 0 5px $navbar-border-color;
   min-height: $navbar-height;
   transition: background-color 0.1s, border-bottom-color 0.1s;
   transition-timing-function: linear, linear;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Abaddon Light", "Courier New", Courier, monospace;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
   .navbar-brand {
     padding: 0 15px;
     height: $navbar-height;
     line-height: $navbar-height;
-    font-size: 1.5rem;
+    font-size: 32px;
     font-weight: bold;
     color: $navbar-brand-color;
     .navbar-brand-small {
@@ -35,13 +37,14 @@
   }
   .navbar-nav {
     .nav-item {
-      margin-right: 15px;
+      margin-right: 24px;
       a {
         text-decoration: none;
       }
       .nav-link {
         transition-duration: 0.1s;
         transition-property: color;
+        padding-bottom: 0;
       }
       .active {
         font-weight: bold;

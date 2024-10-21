@@ -6,10 +6,27 @@ main {
   .mainpage-profile-container {
     height: 100vh;
     width: 100%;
-    background: linear-gradient(
-      rgba(0, 93, 121, 0.89),
-      rgba(110, 70, 114, 0.89)
-    );
+    /*background: linear-gradient(rgba(0, 93, 121, 0.5), rgba(110, 70, 114, 0.5));*/
+    .background-stars-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: -1;
+      .background-stars {
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75"><path fill="%23ff0095dd" d="m25.810649 12.7-4.621077 7.424985L12.7 22.225443l5.633589 6.689352-.625767 8.72314 8.102826-3.290739 8.102826 3.290739-.625767-8.72314 5.63359-6.689351-8.489572-2.100459z"/></svg>');
+        background-position: top left;
+        background-size: 80px;
+        background-repeat: repeat;
+        width: 9000px;
+        height: 9000px;
+        transform: translate(-50%, -50%) rotate(45deg);
+        animation: slide 240s linear infinite;
+      }
+    }
+
     .mainpage-profile-vert {
       width: 100%;
       margin: 0;
@@ -21,7 +38,7 @@ main {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
-        background-color: #000000de;
+        background-color: #000000;
         border: 1px solid $box-border-color;
         box-shadow: 0 0 15px $box-border-color;
         border-radius: 2px;
@@ -30,7 +47,7 @@ main {
           div.gatsby-image-wrapper {
             width: auto;
             border-radius: 1000px;
-            background: linear-gradient(
+            background: #ff0095; /*linear-gradient(
               to right,
               red,
               orange,
@@ -39,7 +56,7 @@ main {
               cyan,
               blue,
               violet
-            );
+            );*/
             img {
               max-height: 40vh;
               width: auto;
@@ -86,6 +103,13 @@ main {
       .background-slider {
         display: none;
       }
+      .background-stars-wrapper {
+        height: inherit;
+        max-height: 100%;
+        .background-stars {
+          opacity: 0.25;
+        }
+      }
       .mainpage-profile-vert {
         height: 100%;
         top: 0;
@@ -94,7 +118,7 @@ main {
           margin: 0;
           margin-top: $navbar-height;
           height: 100%;
-          background-color: $primary-background;
+          background-color: transparent;
           border: none;
           box-shadow: none;
           border-radius: 0;
@@ -123,5 +147,14 @@ main {
         }
       }
     }
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translate3d(-2000px, -2000px, 0) rotate(-45deg);
+  }
+  100% {
+    transform: translate3d(-6000px, -6000px, 0) rotate(-45deg);
   }
 }

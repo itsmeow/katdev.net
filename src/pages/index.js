@@ -1,35 +1,16 @@
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { StaticImage } from "gatsby-plugin-image"
-import { useStaticQuery, graphql } from "gatsby"
 import { FaInstagram, FaLink, FaEnvelope, FaLastfm } from "react-icons/fa"
-import BackgroundSlider from "../components/slider"
 import TraktBlack from "../data/svg/trakt-icon-black.inline.svg"
 
 const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      backgrounds: allFile(filter: { relativeDirectory: { eq: "bgs" } }) {
-        nodes {
-          relativePath
-          childImageSharp {
-            gatsbyImageData(quality: 90, layout: FULL_WIDTH)
-          }
-        }
-      }
-    }
-  `)
   return (
     <Layout eventkey="index">
       <main>
         <div className="mainpage-profile-container">
-          <div className="background-slider">
-            <BackgroundSlider
-              alt="background"
-              query={data}
-              duration={20}
-              transition={5}
-            />
+          <div className="background-stars-wrapper">
+            <div className="background-stars" />
           </div>
           <div className="mainpage-profile-vert">
             <div className="mainpage-profile">
@@ -68,8 +49,6 @@ const IndexPage = () => {
                   </span>
                 </p>
                 <hr />
-                <p>Human, Software Developer, Queer, Your Local Autistic</p>
-
                 <div className="socials">
                   <div>
                     <a
