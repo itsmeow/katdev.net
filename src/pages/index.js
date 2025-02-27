@@ -3,15 +3,14 @@ import SEO from "../components/seo"
 import { StaticImage } from "gatsby-plugin-image"
 import { FaInstagram, FaLink, FaEnvelope, FaLastfm } from "react-icons/fa"
 import TraktBlack from "../data/svg/trakt-icon-black.inline.svg"
+import BackgroundSpace from "../components/backgroundSpace"
 
 const IndexPage = () => {
   return (
     <Layout eventkey="index">
       <main>
         <div className="mainpage-profile-container">
-          <div className="background-stars-wrapper">
-            <div className="background-stars" />
-          </div>
+          <BackgroundSpace />
           <div className="mainpage-profile-vert">
             <div className="mainpage-profile">
               <div className="mainpage-profile-image">

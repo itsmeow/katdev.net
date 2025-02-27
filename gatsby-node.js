@@ -15,6 +15,14 @@ const evalImageId = (getNodesByType, image, folder) => {
   }
 }
 
+// Allow use of canvas
+// Thanks to https://github.com/gatsbyjs/gatsby/issues/17661#issuecomment-665800908
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    externals: ["canvas"],
+  })
+}
+
 exports.sourceNodes = async ({ actions: { createRedirect } }) => {
   createRedirect({
     fromPath: "/neurodiversity.html",

@@ -8,6 +8,7 @@
     "@babel/core": "^7.20.12",
     "animate.css": "^4.1.0",
     "bootstrap": "^5.2.3",
+    "canvas": "^3.1.0",
     "date-fns": "^2.29.3",
     "gatsby": "^5.13.6",
     "gatsby-plugin-gtag": "^1.0.13",
@@ -24,12 +25,14 @@
     "gatsby-transformer-json": "^5.13.1",
     "gatsby-transformer-remark": "^6.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
+    "konva": "^9.3.18",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-animate-on-scroll": "^2.1.5",
     "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.7.1"
+    "react-icons": "^4.7.1",
+    "simplex-noise": "^4.0.3"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
