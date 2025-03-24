@@ -44,4 +44,10 @@
   #site-navbar:not(.scrolled) {
     background-color: #00000070;
   }
+  @media (max-width: 500px) {
+    .background-stars-wrapper {
+      height: 100vh;
+      max-height: 100vh;
+    }
+  }
 }
