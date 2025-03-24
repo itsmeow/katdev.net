@@ -1,7 +1,6 @@
 .blog-listing {
   transition-property: background-color, transform, border-color, box-shadow;
   transition-duration: 0.2s;
-  cursor: pointer;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -14,10 +13,18 @@
     color: $text-color-half;
   }
   &:hover {
-    border-color: $box-border-color-hover;
     box-shadow: 0 0 5px $box-border-color-hover;
-    background-color: #0f0f0f;
-    transform: scale(1.01);
+  }
+}
+a {
+  .blog-listing {
+    cursor: pointer;
+    &:hover {
+      border-color: $box-border-color-hover;
+      box-shadow: 0 0 5px $box-border-color-hover;
+      background-color: #0f0f0f;
+      transform: scale(1.01);
+    }
   }
 }
 .blog-listing-with-image {
@@ -26,6 +33,7 @@
     display: inline-block;
     max-width: 810px;
     width: 100%;
+    min-height: 128px;
   }
   .blog-image {
     width: 128px;

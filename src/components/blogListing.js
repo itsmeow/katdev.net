@@ -1,20 +1,16 @@
 import { format } from "date-fns"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
+import GenericListing from "./genericListing"
 
 const BlogListing = ({ frontmatter, words, poem }) => {
   let hasImage = frontmatter.image_file || frontmatter.image_svg_file
   let dt = new Date(frontmatter.date)
   dt = dt.valueOf() + dt.getTimezoneOffset() * 60 * 1000 // cancel out timezone differences
   return (
-    <Link
-      to={`/${poem ? "poem" : "blog"}/${frontmatter.slug}`}
-      className="blog-listing-wrapper link-unstyle"
-    >
-      <article
-        className={`blog-listing${hasImage ? " blog-listing-with-image" : ""}`}
-      >
-        {hasImage ? (
+    <GenericListing
+      linkTo={`/${poem ? "poem" : "blog"}/${frontmatter.slug}`}
+      image={
+        hasImage ? (
           frontmatter.image_svg_file ? (
             <img
               className="blog-image"
@@ -30,19 +26,12 @@ const BlogListing = ({ frontmatter, words, poem }) => {
               alt={frontmatter.image_alt}
             />
           )
-        ) : (
-          <></>
-        )}
-        <div className="blog-info">
-          <h3 className="blog-title">{frontmatter.title}</h3>
-          <hr className="title-hr" />
-          <p className="blog-description">{frontmatter.description}</p>
-          <div className="blog-meta">
-            {format(dt, "PPPP")} - {words} words
-          </div>
-        </div>
-      </article>
-    </Link>
+        ) : null
+      }
+      title={frontmatter.title}
+      description={frontmatter.description}
+      meta={`${format(dt, "PPPP")} - ${words} words`}
+    />
   )
 }
 

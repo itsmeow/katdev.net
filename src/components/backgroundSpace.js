@@ -3,9 +3,8 @@ import { useEffect, useRef, useState } from "react"
 import { renderCanvasWebGL } from "./backgroundSpaceWebGL"
 
 const BackgroundSpace = () => {
-  const spaceRef = useRef(null)
-  const spaceRefWebGL = useRef(null)
-  const supportsWebGL = useRef(false)
+  const konvaContainerRef = useRef(null)
+  const webGLCanvasRef = useRef(null)
   const animationLoopID = useRef(null)
   const glResult = useRef(null)
   const lastStage = useRef(null)
@@ -33,7 +32,7 @@ const BackgroundSpace = () => {
   const renderCanvasInternal = (rerender = true, webgl = null) => {
     const tryUseWebGL = webgl === null ? useWebGL : webgl
     const gl = tryUseWebGL
-      ? spaceRefWebGL?.current?.getContext("webgl", {
+      ? webGLCanvasRef?.current?.getContext("webgl", {
           premultipliedAlpha: false,
           alpha: false,
         })
@@ -48,7 +47,6 @@ const BackgroundSpace = () => {
         }
         lastStage.current.destroy()
       }
-      supportsWebGL.current = true
       if (rerender && animationLoopID.current) {
         window.cancelAnimationFrame(animationLoopID.current)
       }
@@ -64,12 +62,12 @@ const BackgroundSpace = () => {
       if (tryUseWebGL) {
         setWebGLUnsupported(true)
       }
-      renderCanvas(spaceRef, lastStage, setShowPreview)
+      renderCanvas(konvaContainerRef, lastStage, setShowPreview)
     }
   }
 
   const debouncedRenderCanvas = debounce(renderCanvasInternal, () =>
-    supportsWebGL.current ? 500 : 2500
+    useWebGL ? 500 : 2500
   )
 
   const debouncedRenderCanvasResize = debounce(renderCanvasInternal, () => 2500)
@@ -121,8 +119,8 @@ const BackgroundSpace = () => {
         }`}
       >
         <div className="background-stars" />
-        <div id="background-space" ref={spaceRef} />
-        <canvas id="background-space-webgl" ref={spaceRefWebGL} />
+        <div id="background-space" ref={konvaContainerRef} />
+        <canvas id="background-space-webgl" ref={webGLCanvasRef} />
       </div>
     </>
   )

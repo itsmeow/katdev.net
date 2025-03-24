@@ -21,6 +21,7 @@
 @import "footer";
 @import "navbar";
 @import "components/blogListing";
+@import "components/space";
 
 // Per-page styles
 #page-index,
@@ -30,10 +31,17 @@
 #page-blog,
 #page-footer-blog,
 #page-poems,
-#page-footer-poems {
+#page-footer-poems,
+#page-art,
+#page-footer-art {
   @import "pages/blog";
 }
 #page-blog-page,
 #page-footer-blog-page {
   @import "pages/blog-page";
+}
+#page-space {
+  #site-navbar:not(.scrolled) {
+    background-color: #00000070;
+  }
 }

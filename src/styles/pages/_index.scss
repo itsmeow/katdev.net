@@ -7,57 +7,6 @@ main {
     height: 100vh;
     width: 100%;
     /*background: linear-gradient(rgba(0, 93, 121, 0.5), rgba(110, 70, 114, 0.5));*/
-    .background-space-button,
-    .background-space-button-2 {
-      border: 1px solid #af0f5a;
-      background-color: #090316;
-      color: white;
-      position: absolute;
-      padding: 10px;
-      bottom: 8px;
-      right: 8px;
-      z-index: 50;
-      border-radius: 2px;
-      box-shadow: 0 0 5px #af0f5a;
-      transition: all 0.2s ease-in-out;
-      width: 9rem;
-      &:hover {
-        background-color: #342061;
-        box-shadow: 0 0 10px #af0f5a;
-      }
-    }
-    .background-space-button-2 {
-      right: calc(9rem + 16px);
-    }
-    .background-stars-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      z-index: -1;
-      .background-stars {
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75"><path fill="%23ff0095dd" d="m25.810649 12.7-4.621077 7.424985L12.7 22.225443l5.633589 6.689352-.625767 8.72314 8.102826-3.290739 8.102826 3.290739-.625767-8.72314 5.63359-6.689351-8.489572-2.100459z"/></svg>');
-        background-position: top left;
-        background-size: 80px;
-        background-repeat: repeat;
-        width: 9000px;
-        height: 9000px;
-        transform: translate(-50%, -50%) rotate(45deg);
-        animation: slide 240s linear infinite;
-      }
-      #background-space-webgl {
-        width: 100%;
-        height: 100%;
-      }
-    }
-    .background-stars-wrapper-live {
-      .background-stars {
-        display: none;
-      }
-    }
-
     .mainpage-profile-vert {
       width: 100%;
       margin: 0;
@@ -134,18 +83,6 @@ main {
       .background-slider {
         display: none;
       }
-      .background-stars-wrapper {
-        height: inherit;
-        max-height: 100%;
-        background-color: #00000077;
-        .background-stars {
-          opacity: 0.25;
-        }
-      }
-      .background-space-button,
-      .background-space-button-2 {
-        position: fixed;
-      }
       .mainpage-profile-vert {
         height: 100%;
         top: 0;
@@ -183,14 +120,5 @@ main {
         }
       }
     }
-  }
-}
-
-@keyframes slide {
-  0% {
-    transform: translate3d(-2000px, -2000px, 0) rotate(-45deg);
-  }
-  100% {
-    transform: translate3d(-6000px, -6000px, 0) rotate(-45deg);
   }
 }
