@@ -62,6 +62,7 @@ function setupProgram(gl, vertexShaderSource, fragmentShaderSource) {
   const offsetLocation = gl.getUniformLocation(program, "u_offset")
   const timeLocation = gl.getUniformLocation(program, "u_time")
   const colorLocation = gl.getUniformLocation(program, "u_color")
+  const detailUniformLocation = gl.getUniformLocation(program, "u_detail")
   const positionUniformLocation = gl.getUniformLocation(program, "u_position")
   const sizeUniformLocation = gl.getUniformLocation(program, "u_size")
 
@@ -72,6 +73,7 @@ function setupProgram(gl, vertexShaderSource, fragmentShaderSource) {
     offsetLocation,
     timeLocation,
     colorLocation,
+    detailUniformLocation,
     positionUniformLocation,
     sizeUniformLocation,
   ]
@@ -129,6 +131,7 @@ function drawLayer(
   setupResult,
   canvasWidth,
   canvasHeight,
+  detail,
   color,
   randomOffset,
   now,
@@ -142,6 +145,7 @@ function drawLayer(
     offsetUniformLocation,
     timeUniformLocation,
     colorUniformLocation,
+    detailUniformLocation,
     positionUniformLocation,
     sizeUniformLocation,
   ] = setupResult
@@ -151,6 +155,7 @@ function drawLayer(
   gl.uniform1f(timeUniformLocation, now)
   gl.uniform2f(resolutionUniformLocation, canvasWidth, canvasHeight)
   gl.uniform4f(colorUniformLocation, color[0], color[1], color[2], color[3])
+  gl.uniform1f(detailUniformLocation, detail)
   gl.uniform1f(offsetUniformLocation, randomOffset)
 
   if (localPosition !== null && localSize !== null) {
@@ -269,23 +274,32 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
     )
   }
 
-  const layerCount = 3 + Math.round(Math.random() * 2)
-  const layerLocalOffsets = []
-  for (let i = 0; i < 25; i++) {
-    layerLocalOffsets.push([
+  const darknessOffsets = []
+  const darknessLocalOffsets = []
+  for (let i = 0; i < Math.round(Math.random() * 3) + 1; i++) {
+    darknessOffsets.push(
+      Math.floor(i * gl.canvas.width * 100 + Math.random() * gl.canvas.width)
+    )
+    darknessLocalOffsets.push([
       Math.floor(Math.random() * gl.canvas.width),
       Math.floor(Math.random() * gl.canvas.height),
     ])
   }
 
   const selectedAccentColors = []
+  const accentOffsets = []
   const accentLocalOffsets = []
+  const accentDetails = []
   for (let i = 0; i < Math.round(Math.random() * 4); i++) {
     selectedAccentColors.push(randomElement(accentColors, Math.random()))
+    accentOffsets.push(
+      Math.floor(i * gl.canvas.width * 100 + Math.random() * gl.canvas.width)
+    )
     accentLocalOffsets.push([
       Math.floor(Math.random() * gl.canvas.width),
       Math.floor(Math.random() * gl.canvas.height),
     ])
+    accentDetails.push(Math.random() * 3 + 1.25)
   }
 
   const renderSize = 4
@@ -322,21 +336,8 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
       cloudLayerProgram,
       renderScale,
       renderScale,
+      1.5,
       layerColors[0],
-      layerOffsets[0],
-      scaledTime
-    )
-
-    drawLayer(
-      gl,
-      vertexBuffer,
-      indexBuffer,
-      vertexCount,
-      "additive",
-      cloudLayerProgram,
-      renderScale,
-      renderScale,
-      layerColors[1],
       layerOffsets[1],
       scaledTime
     )
@@ -350,13 +351,29 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
       cloudLayerProgram,
       renderScale,
       renderScale,
-      layerColors[2],
+      1.5,
+      layerColors[1],
       layerOffsets[2],
       scaledTime
     )
 
+    drawLayer(
+      gl,
+      vertexBuffer,
+      indexBuffer,
+      vertexCount,
+      "additive",
+      cloudLayerProgram,
+      renderScale,
+      renderScale,
+      1.5,
+      layerColors[2],
+      layerOffsets[3],
+      scaledTime
+    )
+
     // Darkening clouds
-    for (let i = 0; i < layerCount; i++) {
+    for (let i = 0; i < darknessOffsets.length; i++) {
       drawLayer(
         gl,
         vertexBuffer,
@@ -366,10 +383,11 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
         cloudLayerBoundedProgram,
         renderScale,
         renderScale,
+        1.25,
         darkColor,
-        layerOffsets[3 + i],
+        darknessOffsets[i],
         0,
-        layerLocalOffsets[i],
+        darknessLocalOffsets[i],
         150
       )
     }
@@ -384,8 +402,9 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
         cloudLayerBoundedProgram,
         renderScale,
         renderScale,
+        accentDetails[i],
         selectedAccentColors[i],
-        layerOffsets[3 + layerCount + i],
+        accentOffsets[i],
         scaledTime * 0.45,
         accentLocalOffsets[i],
         60

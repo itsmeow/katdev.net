@@ -10,6 +10,7 @@ uniform float   u_time;
 uniform vec4    u_color;
 uniform vec2    u_position;
 uniform float   u_size;
+uniform float   u_detail;
 
 #define FBM_OCTAVES 5
 #define FBM_AMPLITUDE_SCALAR 0.25
@@ -21,7 +22,7 @@ uniform float   u_size;
 void main(void) {
     vec4 color = u_color;
     vec2 pixel = 1.0/u_resolution.xy;
-    vec2 st = gl_FragCoord.xy * pixel;
+    vec2 st = gl_FragCoord.xy * pixel * u_detail;
 
     vec2 dist = u_position.xy - gl_FragCoord.xy;
     dist *= dist;
@@ -46,5 +47,5 @@ void main(void) {
     gl_FragColor.a *= calculatedAlpha;
 
     // premultiply alpha
-    gl_FragColor.rgb *= clamp(gl_FragColor.a, 0.0, 1.0);
+    gl_FragColor.rgb *= clamp(gl_FragColor.a * 1.75, 0.0, 1.0);
 }
