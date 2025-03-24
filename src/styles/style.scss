@@ -44,10 +44,12 @@
   #site-navbar:not(.scrolled) {
     background-color: #00000070;
   }
-  @media (max-width: 500px) {
+  main {
+    min-height: calc(100vh - $navbar-height - $footer-height) !important;
+    height: 100vh;
     .background-stars-wrapper {
-      height: 100vh;
-      max-height: 100vh;
+      height: 100% !important;
+      max-height: 100vh !important;
     }
   }
 }
