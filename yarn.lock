@@ -1621,6 +1621,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@davcri/webpack-glsl-loader@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@davcri/webpack-glsl-loader@npm:1.0.2"
+  checksum: 10c0/fde53bed0a9a6299d493a5e07aeb918e1f1e554dbdb3ca590246179915dddb725bc0472e7be914c8364dd90c40d4c31d8fc04aa13e5df0a18b8c7e4f88164130
+  languageName: node
+  linkType: hard
+
 "@eslint-community/eslint-utils@npm:^4.2.0":
   version: 4.4.0
   resolution: "@eslint-community/eslint-utils@npm:4.4.0"
@@ -10724,6 +10731,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.20.12"
     "@babel/eslint-parser": "npm:^7.19.1"
+    "@davcri/webpack-glsl-loader": "npm:^1.0.2"
     animate.css: "npm:^4.1.0"
     bootstrap: "npm:^5.2.3"
     canvas: "npm:^3.1.0"
@@ -10749,6 +10757,7 @@ __metadata:
     gatsby-transformer-remark: "npm:^6.13.1"
     gatsby-transformer-sharp: "npm:^5.13.1"
     konva: "npm:^9.3.18"
+    lygia: "npm:^1.3.0"
     prettier: "npm:^2.3.0"
     prop-types: "npm:^15.8.1"
     react: "npm:^18.2.0"
@@ -11263,6 +11272,13 @@ __metadata:
   dependencies:
     es5-ext: "npm:~0.10.2"
   checksum: 10c0/83517032b46843601c4528be65e8aaf85f5a7860a9cfa3e4f2b5591da436e7cd748d95b450c91434c4ffb75d3ae4c069ddbdd9f71ada56a99a00c03088c51b4d
+  languageName: node
+  linkType: hard
+
+"lygia@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "lygia@npm:1.3.0"
+  checksum: 10c0/d8360cf40508b8c518c07fa405b41dbe8d48c5d27d0e59e42292feda0613f049d1ef420652158d912053f6dbb123b4671f75b384bde83f595716f314d25edf2f
   languageName: node
   linkType: hard
 

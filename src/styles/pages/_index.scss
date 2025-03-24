@@ -7,7 +7,8 @@ main {
     height: 100vh;
     width: 100%;
     /*background: linear-gradient(rgba(0, 93, 121, 0.5), rgba(110, 70, 114, 0.5));*/
-    .background-space-button {
+    .background-space-button,
+    .background-space-button-2 {
       border: 1px solid #af0f5a;
       background-color: #090316;
       color: white;
@@ -24,6 +25,9 @@ main {
         background-color: #342061;
         box-shadow: 0 0 10px #af0f5a;
       }
+    }
+    .background-space-button-2 {
+      right: calc(9rem + 16px);
     }
     .background-stars-wrapper {
       position: absolute;
@@ -42,6 +46,10 @@ main {
         height: 9000px;
         transform: translate(-50%, -50%) rotate(45deg);
         animation: slide 240s linear infinite;
+      }
+      #background-space-webgl {
+        width: 100%;
+        height: 100%;
       }
     }
     .background-stars-wrapper-live {
@@ -134,7 +142,8 @@ main {
           opacity: 0.25;
         }
       }
-      .background-space-button {
+      .background-space-button,
+      .background-space-button-2 {
         position: fixed;
       }
       .mainpage-profile-vert {

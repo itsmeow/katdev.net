@@ -20,6 +20,15 @@ const evalImageId = (getNodesByType, image, folder) => {
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     externals: ["canvas"],
+    // Add glsl webpack loader
+    module: {
+      rules: [
+        {
+          test: /\.glsl$/,
+          use: "@davcri/webpack-glsl-loader",
+        },
+      ],
+    },
   })
 }
 
