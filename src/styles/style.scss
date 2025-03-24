@@ -48,6 +48,7 @@
     min-height: calc(100vh - $navbar-height - $footer-height) !important;
     height: 100vh;
     .background-stars-wrapper {
+      position: static; // return to normal layout
       height: 100% !important;
       max-height: 100vh !important;
     }
