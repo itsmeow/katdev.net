@@ -11,7 +11,7 @@ module.exports = {
   pathPrefix: "/",
   siteMetadata: {
     title: `katdev.net`,
-    description: `Kat S - Human, Software Developer, Queer, Your Local Autistic`,
+    description: `Kat S - Socials & Poetry`,
     author: `katdev`,
     siteURL: `https://katdev.net`,
   },
