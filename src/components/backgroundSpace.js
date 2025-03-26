@@ -13,19 +13,14 @@ const BackgroundSpace = () => {
   const [useWebGL, setUseWebGL] = useState(true)
   const [webGLUnsupported, setWebGLUnsupported] = useState(false)
 
-  const debounce = (callback, delay) => {
-    let timer = 0
+  function debounce(func, delay) {
+    let timeoutId
     return () => {
       setShowPreview(true)
-      if (Date.now() - timer > delay()) {
-        callback()
-      } else {
-        setTimeout(() => {
-          callback()
-          timer = Date.now()
-        }, Date.now() - timer)
-      }
-      timer = Date.now()
+      clearTimeout(timeoutId)
+      timeoutId = setTimeout(() => {
+        func()
+      }, delay())
     }
   }
 
@@ -38,6 +33,12 @@ const BackgroundSpace = () => {
         })
       : null
     if (gl) {
+      if (
+        webGLCanvasRef.current &&
+        window.getComputedStyle(webGLCanvasRef.current).display == "none"
+      ) {
+        return
+      }
       if (lastStage.current !== null) {
         for (let child of lastStage.current.children) {
           for (let child2 of child.children) {
@@ -59,6 +60,12 @@ const BackgroundSpace = () => {
       glResult.current = glResultOut
       setShowPreview(false)
     } else {
+      if (
+        konvaContainerRef.current &&
+        window.getComputedStyle(konvaContainerRef.current).display == "none"
+      ) {
+        return
+      }
       if (tryUseWebGL) {
         setWebGLUnsupported(true)
       }
@@ -66,11 +73,21 @@ const BackgroundSpace = () => {
     }
   }
 
+  const switchUse = async () => {
+    setShowPreview(true)
+    setUseWebGL(!useWebGL)
+    renderCanvasInternal(false, !useWebGL)
+  }
+
+  const debouncedSwitchUse = debounce(switchUse, () => 500)
+
   const debouncedRenderCanvas = debounce(renderCanvasInternal, () =>
     useWebGL ? 500 : 2500
   )
 
-  const debouncedRenderCanvasResize = debounce(renderCanvasInternal, () => 2500)
+  const debouncedRenderCanvasResize = debounce(renderCanvasInternal, () =>
+    useWebGL ? 750 : 2500
+  )
 
   useEffect(() => {
     if (!window) {
@@ -102,11 +119,7 @@ const BackgroundSpace = () => {
         <button
           type="button"
           className="background-space-button-2"
-          onClick={async () => {
-            setShowPreview(true)
-            setUseWebGL(!useWebGL)
-            renderCanvasInternal(false, !useWebGL)
-          }}
+          onClick={debouncedSwitchUse}
         >
           {useWebGL ? "<Use Canvas>" : "<Use WebGL>"}
         </button>

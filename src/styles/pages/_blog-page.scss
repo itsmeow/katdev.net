@@ -138,6 +138,7 @@ main {
       }
     }
     #blog-end {
+      font-family: var(--gothic-stack);
       position: relative;
       color: $text-color-half;
       bottom: -$blog-content-padding-y - 15px;
@@ -176,6 +177,8 @@ main {
 }
 
 @media (max-width: 65rem) {
+  #background-space,
+  #background-space-webgl,
   .background-space-button,
   .background-space-button-2 {
     display: none;

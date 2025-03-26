@@ -22,6 +22,7 @@ const IndexPage = () => {
                   layout="constrained"
                   alt="Me"
                   placeholder="none"
+                  aspectRatio={1}
                 />
               </div>
               <section className="mainpage-profile-text">
