@@ -1,7 +1,15 @@
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, keywords, title, image, rawTitle }) {
+function SEO({
+  description,
+  lang,
+  keywords,
+  title,
+  image,
+  rawTitle,
+  children,
+}) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -53,71 +61,48 @@ function SEO({ description, lang, keywords, title, image, rawTitle }) {
       {site.siteMetadata.author && (
         <meta name="twitter:creator" content={site.siteMetadata.author} />
       )}
+
       <link
         rel="preload"
         href="/fonts/Abaddon Light.woff2"
         as="font"
         type="font/woff2"
+        crossOrigin="anonymous"
       />
-      <link
-        rel="preload"
-        href="/fonts/LibreBaskerville-Regular-Latin.woff2"
-        as="font"
-        type="font/woff2"
-      />
-      <link
-        rel="preload"
-        href="/fonts/LibreBaskerville-Bold-Latin.woff2"
-        as="font"
-        type="font/woff2"
-      />
-      <link
-        rel="preload"
-        href="/fonts/LibreBaskerville-Italic-Latin.woff2"
-        as="font"
-        type="font/woff2"
-      />
-      <link
-        rel="preload"
-        href="/fonts/LibreBaskerville-Regular-LatinExt.woff2"
-        as="font"
-        type="font/woff2"
-      />
-      <link
-        rel="preload"
-        href="/fonts/LibreBaskerville-Bold-LatinExt.woff2"
-        as="font"
-        type="font/woff2"
-      />
-      <link
-        rel="preload"
-        href="/fonts/LibreBaskerville-Italic-LatinExt.woff2"
-        as="font"
-        type="font/woff2"
-      />
-      <link
+      {children}
+      {/*<link
         rel="preload"
         href="/fonts/URWGothic-Book.woff2"
         as="font"
         type="font/woff2"
+        crossOrigin="anonymous"
       />
       <link
         rel="preload"
         href="/fonts/URWGothic-BookOblique.woff2"
         as="font"
         type="font/woff2"
+        crossOrigin="anonymous"
       />
       <link
         rel="preload"
         href="/fonts/URWGothic-Demi.woff2"
         as="font"
         type="font/woff2"
+        crossOrigin="anonymous"
       />
       <link
         rel="preload"
         href="/fonts/URWGothic-DemiOblique.woff2"
         as="font"
         type="font/woff2"
+        crossOrigin="anonymous"
+      />*/}
+      <link
+        rel="stylesheet preload"
+        href="/fonts.css"
+        as="style"
+        type="text/css"
       />
     </>
   )
