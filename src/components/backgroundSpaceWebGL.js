@@ -252,17 +252,17 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
   const accentColors = [
     new Float32Array([0, 0.498, 0.322, 0.8]), // eslint-disable-line no-undef
     new Float32Array([0.686, 0.059, 0.353, 0.8]), // eslint-disable-line no-undef
-    new Float32Array([0.8666, 0.302, 0.196, 0.8]), // eslint-disable-line no-undef
+    //new Float32Array([0.8666, 0.302, 0.196, 0.8]), // eslint-disable-line no-undef
     new Float32Array([0.588, 0.133, 0.475, 0.8]), // eslint-disable-line no-undef
-    new Float32Array([0.788, 0.827, 0, 0.8]), // eslint-disable-line no-undef
+    //new Float32Array([0.788, 0.827, 0, 0.8]), // eslint-disable-line no-undef
     new Float32Array([0, 0.761, 0.827, 0.8]), // eslint-disable-line no-undef
-    new Float32Array([0.827, 0, 0.012, 0.8]), // eslint-disable-line no-undef
+    //new Float32Array([0.827, 0, 0.012, 0.8]), // eslint-disable-line no-undef
   ]
   const darkColor = new Float32Array([0, 0, 0, 0.9]) // eslint-disable-line no-undef
   const layerColors = [
     new Float32Array([0.184, 0.749, 0.816, 0.2]), // eslint-disable-line no-undef
     new Float32Array([0.804, 0, 0.012, 0.24]), // eslint-disable-line no-undef
-    new Float32Array([0.263, 0, 0.933, 0.11]), // eslint-disable-line no-undef
+    new Float32Array([0.263, 0, 0.933, 0.09]), // eslint-disable-line no-undef
   ]
 
   resizeCanvasToDisplaySize(gl.canvas)
@@ -278,7 +278,7 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
   const darknessOffsets = []
   const darknessLocalOffsets = []
   const darknessSizes = []
-  for (let i = 0; i < Math.round(Math.random() * 3) + 1; i++) {
+  for (let i = 0; i < Math.round(Math.random() * 3) + 2; i++) {
     darknessOffsets.push(
       Math.floor(i * gl.canvas.width * 100 + Math.random() * gl.canvas.width)
     )
@@ -293,7 +293,7 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
   const accentOffsets = []
   const accentLocalOffsets = []
   const accentDetails = []
-  for (let i = 0; i < Math.round(Math.random() * 4); i++) {
+  for (let i = 0; i < Math.round(Math.random() * 2); i++) {
     selectedAccentColors.push(randomElement(accentColors, Math.random()))
     accentOffsets.push(
       Math.floor(i * gl.canvas.width * 100 + Math.random() * gl.canvas.width)
@@ -379,7 +379,7 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
         darknessOffsets[i],
         0,
         darknessLocalOffsets[i],
-        100 + 400 * darknessSizes[i]
+        500 + 800 * darknessSizes[i]
       )
     }
 
