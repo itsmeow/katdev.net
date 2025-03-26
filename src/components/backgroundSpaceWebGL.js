@@ -79,7 +79,7 @@ function setupProgram(gl, vertexShaderSource, fragmentShaderSource) {
   ]
 }
 
-function drawBackgroundLayer(
+function drawStarsLayer(
   gl,
   vertexBuffer,
   indexBuffer,
@@ -117,8 +117,9 @@ function drawBackgroundLayer(
   )
   gl.enableVertexAttribArray(positionAttributeLocation)
 
-  gl.disable(gl.BLEND)
-  gl.disable(gl.DEPTH_TEST)
+  gl.enable(gl.BLEND)
+  gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA)
+  gl.blendEquation(gl.FUNC_ADD)
   gl.drawElements(gl.TRIANGLES, vertexCount, gl.UNSIGNED_SHORT, 0)
 }
 
@@ -196,19 +197,19 @@ function setupWebGL(gl) {
   ])
   const quadIndices = new Uint16Array([3, 2, 1, 3, 1, 0]) // eslint-disable-line no-undef
 
-  let backgroundProgram = setupProgram(
+  const starsProgram = setupProgram(
     gl,
     require("../glsl/basic_position_vertex.glsl"),
-    require("../glsl/background_fragment.glsl")
+    require("../glsl/stars_fragment.glsl")
   )
 
-  let cloudLayerProgram = setupProgram(
+  const cloudLayerProgram = setupProgram(
     gl,
     require("../glsl/basic_position_vertex.glsl"),
     require("../glsl/space_layer_fragment.glsl")
   )
 
-  let cloudLayerBoundedProgram = setupProgram(
+  const cloudLayerBoundedProgram = setupProgram(
     gl,
     require("../glsl/basic_position_vertex.glsl"),
     require("../glsl/space_layer_bounded_fragment.glsl")
@@ -231,7 +232,7 @@ function setupWebGL(gl) {
     vertexBuffer,
     indexBuffer,
     6,
-    backgroundProgram,
+    starsProgram,
     cloudLayerProgram,
     cloudLayerBoundedProgram,
   ]
@@ -243,7 +244,7 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
     vertexBuffer,
     indexBuffer,
     vertexCount,
-    backgroundProgram,
+    starsProgram,
     cloudLayerProgram,
     cloudLayerBoundedProgram,
   ] = glResult
@@ -309,23 +310,11 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
 
   const doRender = now => {
     // Clear the canvas
-    gl.clearColor(0, 0, 0, 1)
+    gl.clearColor(0.0353, 0.0118, 0.0863, 1)
     gl.clear(gl.COLOR_BUFFER_BIT)
     gl.clear(gl.DEPTH_BUFFER_BIT)
 
     const scaledTime = now * 0.00005
-
-    drawBackgroundLayer(
-      gl,
-      vertexBuffer,
-      indexBuffer,
-      vertexCount,
-      backgroundProgram,
-      largerScale,
-      largerScale,
-      layerOffsets[0],
-      scaledTime
-    )
 
     drawLayer(
       gl,
@@ -410,6 +399,19 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
         60
       )
     }
+
+    drawStarsLayer(
+      gl,
+      vertexBuffer,
+      indexBuffer,
+      vertexCount,
+      starsProgram,
+      largerScale,
+      largerScale,
+      layerOffsets[0],
+      scaledTime
+    )
+
     animationLoopID.current = window.requestAnimationFrame(doRender)
   }
   animationLoopID.current = window.requestAnimationFrame(doRender)
