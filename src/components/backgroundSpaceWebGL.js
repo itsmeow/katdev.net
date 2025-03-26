@@ -29,9 +29,9 @@ function createProgram(gl, vertexShader, fragmentShader) {
 }
 
 function resizeCanvasToDisplaySize(canvas) {
-  // Lookup the size the browser is displaying the canvas in CSS pixels.
-  const displayWidth = canvas.clientWidth
-  const displayHeight = canvas.clientHeight
+  // Lookup the size the browser is displaying the canvas wrapper in CSS pixels.
+  const displayWidth = canvas.parentElement.clientWidth
+  const displayHeight = canvas.parentElement.clientHeight
 
   // Check if the canvas is not the same size.
   const needResize =
