@@ -381,6 +381,18 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
       )
     }
 
+    drawStarsLayer(
+      gl,
+      vertexBuffer,
+      indexBuffer,
+      vertexCount,
+      starsProgram,
+      largerScale,
+      largerScale,
+      layerOffsets[0],
+      scaledTime
+    )
+
     for (let i = 0; i < selectedAccentColors.length; i++) {
       drawLayer(
         gl,
@@ -399,18 +411,6 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
         60
       )
     }
-
-    drawStarsLayer(
-      gl,
-      vertexBuffer,
-      indexBuffer,
-      vertexCount,
-      starsProgram,
-      largerScale,
-      largerScale,
-      layerOffsets[0],
-      scaledTime
-    )
 
     animationLoopID.current = window.requestAnimationFrame(doRender)
   }
