@@ -13,6 +13,8 @@ poem: false
 
 ## Dumb Rambling
 
+---
+
 It's June 2021.
 
 The main reason June is pride month, from what I know, is as a continuation upon the Stonewall riots in June 1969, which from what I've heard was the _coolest riot on the planet_! Okay, maybe not the part where thousands of LGBTQ+ people were attacked by police, but if that really doesn't show why the police are the worst organization on the face of this poor country's land, I don't know what does. Regardless, who wouldn't want to smack a bunch of homophobic police with bricks!?!
@@ -28,6 +30,8 @@ Just a warning, this blog might be a bit upsetting if mentions of past homophobi
 I also write this to just... get my thoughts out of my head. Maybe I need more friends. Regardless, _get to the point for the love of god_!!!
 
 ## Sexuality
+
+---
 
 Okay, so, sexuality! It's the idea that humans are attracted to things! Wow! How is sexuality applied in heteronormativity?
 
@@ -135,6 +139,8 @@ Most of my close friends know that I'm bi, but now for anyone who doesn't: this 
 
 ## Gender
 
+---
+
 Now that we've had our nice bedtime story and live-happily-ever-after ending, let's talk about gender.
 
 Just some warnings, I will make very broad generalizations to make a point. Understand the point, not the generalizations.
@@ -182,6 +188,8 @@ So yeah, that's some thoughts on gender. Just do what you want. For now, since w
 For me, dunno. That's fine, though. Gender is so huge, overbearing, and unrelenting that I personally find it easier to just: not.
 
 ## A Conclusion: Some Ancient History
+
+---
 
 I'll end this on a fun little note about ancient history. Learned this one off TikTok. Thanks clock app!
 

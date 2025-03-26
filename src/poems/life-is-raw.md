@@ -12,6 +12,8 @@ format_poem: false
 
 ## Boneless
 
+---
+
 > Life is raw.
 >
 > Not undercooked - raw like flesh and bones.
@@ -43,6 +45,8 @@ format_poem: false
 > Belonging with the boneless, burns.
 
 ## Okay Enough Incomprehensible Poetry
+
+---
 
 I've never liked poetry that doesn't explain itself clearly. The ambiguity is unhelpful, but I wanted to write it all fancy for fun.
 

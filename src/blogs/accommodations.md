@@ -11,6 +11,8 @@ poem: false
 
 ## Prelude
 
+---
+
 Recently, I decided to look into using my diagnosis in order to get accommodations that I thought would be helpful to me.
 
 As a senior in high school who has committed to a university, I was looking at the procedures at my uni for accommodations related to autism or ADHD. I was also looking at AP testing accommodations from the College Board (which I could write a whole blog on how awful the College Board is, but it's a story that's been written 1,000 times).
@@ -20,6 +22,8 @@ What I discovered is: It sucks. It really sucks to try and get accommodations.
 Nothing, and I mean nothing is easy about the process. This is definitely something my parents are aware of, but... just. Wow. So, let me get into _why_ it sucks. For this, we're going to use my university's guidelines for ADHD accommodations.
 
 ## University's Requirements
+
+---
 
 [Here](https://www.iit.edu/sites/default/files/2020-10/cdr-add-adhd-guidelines.pdf) is a link to a PDF file from my university listing what is needed to request accommodations. I cannot stress how ableist, classist, and maliciously ignorant this document is. Especially for a college-aged student who is able to understand their own needs and self-advocate, which understandably is not a privilege everyone has, but how can you expect _anyone_ to self-advocate with this type of work needed.
 
@@ -58,6 +62,8 @@ Here's something to consider. I might not _know_ right now! I might not have the
 I will say, this is reasonable. If I were to do this myself (which I am not, I have to get a doctor to tell them this!), I would be able to rationalize my needs within the context of what I know about myself. If I can't, then I can have an evaluator do it, or have a third party write what they know about me.
 
 ## AP Requirements
+
+---
 
 After discovering all the excessive requirements for my university, I decided to move on. Shortly after, I realized AP tests were coming up, and they're online, at home, and prime stressors!
 
@@ -101,6 +107,8 @@ It's not that I need breaks, it's that I think I might. I just want that as an o
 I almost never use my 504 accommodation that allows me to take breaks during class. It's just an option.
 
 ## Conclusion
+
+---
 
 What you've probably discovered today is: it's _exhausting_ to get accommodations. It's not easy. That's not to mention IEPs and 504 plans (the system public schools in the U.S. use for accommodation), which are a whole new beast that I am not qualified to write about.
 

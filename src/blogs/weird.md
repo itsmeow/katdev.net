@@ -11,6 +11,8 @@ poem: false
 
 ## Introduction
 
+---
+
 Generally, we are taught, or at least conditioned to believe that blending in, conforming, is the ultimate route to acceptance. This _is_ true, according to common social standards. However, this is a belief that is held by many people, not an undeniable fact of the universe.
 
 The general consensus is that nonconformity:
@@ -22,6 +24,8 @@ The general consensus is that nonconformity:
 All of these are fallacies in one way or another, and I present this blog as a counter to these claims.
 
 ## Freedom of Expression and Intersectionality
+
+---
 
 The freedom to express yourself is the core value behind idealogies like punk, but is also a secondary result from intersectionality with other minority groups.
 
@@ -36,6 +40,8 @@ My understanding is, within non-white cultures, queerness is less subject to thi
 It's important to understand the cultural context behind the ideas of what is normal and weird, and recognize the biases you're imprinted with by the society you were raised into.
 
 ## Breaking it down
+
+---
 
 The points in my introduction are heavily impacted by this intersectionality of weirdness.
 
@@ -66,6 +72,8 @@ Furthermore, the "attention" required for other tasks is a part of the school-in
 Those influenced and oppressed by this system and unaware of its effects carry its idealogies with them. Often without realizing.
 
 ## Conclusion
+
+---
 
 The problem with weirdness was never what the person is doing, it's always been a result of subconscious biases against nonconformity, ingrained into us by our schools, our friends, our parents, and our society. Nonconformity, weirdness, and freedom of expression are beautiful. In the modern age, we have more routes and ways to express our individuality than ever, and shunning generations of children away from the freedom to be themselves is hardly helpful to our society, and leads to fascist idealogies when taken to the extreme. Homophobia, transphobia, racism, ableism, and basically every other -ism, are all rooted in the idea that weirdness is negative, alongside stereotypical understandings of what it means to be part of these groups.
 

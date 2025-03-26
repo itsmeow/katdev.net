@@ -42,10 +42,7 @@ main {
           }
         }
         .mainpage-profile-text {
-          font-family: "Century Gothic", system-ui, -apple-system, "Segoe UI",
-            Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial,
-            sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-            "Noto Color Emoji";
+          font-family: var(--gothic-stack);
           .mainpage-profile-name {
             font-weight: bold;
             font-size: 3.5rem;

@@ -45,10 +45,7 @@ main {
     }
     #blog-top {
       min-height: 128px;
-      font-family: "Century Gothic", system-ui, -apple-system, "Segoe UI",
-        Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial,
-        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-        "Noto Color Emoji";
+      font-family: var(--gothic-stack);
       #blog-info {
         display: inline-block;
         max-width: calc(65rem - 128px - 84px);
@@ -73,10 +70,7 @@ main {
       background-color: #0a0a0a;
       border: 1px solid $box-border-color;
       box-shadow: 0 0 5px $box-border-color;
-      font-family: "Century Gothic", system-ui, -apple-system, "Segoe UI",
-        Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial,
-        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-        "Noto Color Emoji";
+      font-family: var(--gothic-stack);
       font-size: 1.1rem;
       #blog-table-of-contents-title {
         font-size: 1.5rem;

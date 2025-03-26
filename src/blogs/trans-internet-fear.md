@@ -17,6 +17,8 @@ Almost no social concept is as charged as being transgender in the United States
 
 ## Pre-Internet & The Patriarchy
 
+---
+
 Let's consider the concept of being outside the norm or going against social standards prior to the existence of the internet. We can fairly easily reason about the type of consequences you might face socially.
 
 Your immediate peers may isolate you. You could lose your job. Your family might disown you. You may be denied access to services. This is just a small part of the difficulty that people face for violating perceived social norms.
@@ -42,6 +44,8 @@ That leads to the internet.
 
 ## The Internet and its consequences for hate
 
+---
+
 Now, imagine, you have a herd of _angry_, _angry_, people. They really dislike how many weirdos and freaks are breaking the rules of society. They're hungry for retribution and reprieve. Every downfall of another 'snowflake liberal tranny' is another boost to their ego. Another credit back to the patriarchy.
 
 This hatred is so widespread that it has reached sophisticated levels of organization. Obviously, there are countless angry people who sit alone, commenting out wherever they see, throwing some anger here and there. But then there's the organized haters. These places are real! There are dedicated websites and forums made possible by the internet to explicitly seek out content they disagree with. I'm not going to mention any single one by name at risk of pissing them off, but they're very real.
@@ -53,6 +57,8 @@ At any moment, by just being transgender and existing on the internet, you risk 
 That is the reality of being transgender on the internet.
 
 ## Privacy & Moderation
+
+---
 
 Due to the decentralized nature of the internet, there's no big boss you can call to say "hey, these guys are being mean!!", and if there was, that would probably be detrimental to the free flow of information. But I think there's a lot to be said about the modern uses of the internet and its consequences for hate.
 

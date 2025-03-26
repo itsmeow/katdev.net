@@ -25,9 +25,7 @@ footer .bottomfooter {
 }
 
 .bottomfooter .left-text {
-  font-family: "Century Gothic", system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: var(--gothic-stack);
   height: 100%;
   font-size: 0.9rem;
   padding-left: 10px;
@@ -97,9 +95,7 @@ footer .bottomfooter {
 .topfooter .github span {
   margin-left: 5px;
   margin-right: 5px;
-  font-family: "Century Gothic", system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: var(--gothic-stack);
   font-size: 0.9rem;
 }
 

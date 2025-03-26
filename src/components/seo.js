@@ -61,39 +61,63 @@ function SEO({ description, lang, keywords, title, image, rawTitle }) {
       />
       <link
         rel="preload"
-        href="/fonts/LibreBaskerville-Regular-Latin.ttf"
+        href="/fonts/LibreBaskerville-Regular-Latin.woff2"
         as="font"
-        type="font/ttf"
+        type="font/woff2"
       />
       <link
         rel="preload"
-        href="/fonts/LibreBaskerville-Bold-Latin.ttf"
+        href="/fonts/LibreBaskerville-Bold-Latin.woff2"
         as="font"
-        type="font/ttf"
+        type="font/woff2"
       />
       <link
         rel="preload"
-        href="/fonts/LibreBaskerville-Italic-Latin.ttf"
+        href="/fonts/LibreBaskerville-Italic-Latin.woff2"
         as="font"
-        type="font/ttf"
+        type="font/woff2"
       />
       <link
         rel="preload"
-        href="/fonts/LibreBaskerville-Regular-LatinExt.ttf"
+        href="/fonts/LibreBaskerville-Regular-LatinExt.woff2"
         as="font"
-        type="font/ttf"
+        type="font/woff2"
       />
       <link
         rel="preload"
-        href="/fonts/LibreBaskerville-Bold-LatinExt.ttf"
+        href="/fonts/LibreBaskerville-Bold-LatinExt.woff2"
         as="font"
-        type="font/ttf"
+        type="font/woff2"
       />
       <link
         rel="preload"
-        href="/fonts/LibreBaskerville-Italic-LatinExt.ttf"
+        href="/fonts/LibreBaskerville-Italic-LatinExt.woff2"
         as="font"
-        type="font/ttf"
+        type="font/woff2"
+      />
+      <link
+        rel="preload"
+        href="/fonts/URWGothic-Book.woff2"
+        as="font"
+        type="font/woff2"
+      />
+      <link
+        rel="preload"
+        href="/fonts/URWGothic-BookOblique.woff2"
+        as="font"
+        type="font/woff2"
+      />
+      <link
+        rel="preload"
+        href="/fonts/URWGothic-Demi.woff2"
+        as="font"
+        type="font/woff2"
+      />
+      <link
+        rel="preload"
+        href="/fonts/URWGothic-DemiOblique.woff2"
+        as="font"
+        type="font/woff2"
       />
     </>
   )
