@@ -4,13 +4,16 @@ import { StaticImage } from "gatsby-plugin-image"
 import { FaInstagram, FaLink, FaEnvelope, FaLastfm } from "react-icons/fa"
 import TraktBlack from "../data/svg/trakt-icon-black.inline.svg"
 import BackgroundSpace from "../components/backgroundSpace"
+import ClientOnly from "../components/clientonly"
 
 const IndexPage = () => {
   return (
     <Layout eventkey="index">
       <main>
         <div className="mainpage-profile-container">
-          <BackgroundSpace />
+          <ClientOnly>
+            <BackgroundSpace />
+          </ClientOnly>
           <div className="mainpage-profile-vert">
             <div className="mainpage-profile">
               <div className="mainpage-profile-image">
@@ -18,26 +21,16 @@ const IndexPage = () => {
                   src="./../data/picture.jpg"
                   layout="constrained"
                   alt="Me"
+                  placeholder="none"
                 />
               </div>
               <section className="mainpage-profile-text">
-                <h1>Kat S</h1>
+                <h2 className="mainpage-profile-name">KAT S</h2>
                 <p>
-                  <span
-                    style={{
-                      position: "relative",
-                      left: "0.28rem",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    they/she{" "}
+                  <span className="pronouns">they/she</span>
+                  <span className="pronouns-link">
                     <a
                       href="https://pronouns.org/"
-                      style={{
-                        position: "relative",
-                        top: "5px",
-                        fontSize: "0.6rem",
-                      }}
                       title="what's this?"
                       aria-label="Pronouns (what's this?)"
                       target="_blank"

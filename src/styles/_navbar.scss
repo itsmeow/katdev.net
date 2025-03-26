@@ -1,4 +1,6 @@
 @use "sass:math";
+@use "sass:color";
+
 #site-navbar {
   background-color: $navbar-background;
   padding: 0;
@@ -14,12 +16,18 @@
   font-smooth: never;
   -webkit-font-smoothing: none;
   .navbar-brand {
+    user-select: none;
     padding: 0 15px;
     height: $navbar-height;
     line-height: $navbar-height;
     font-size: 32px;
     font-weight: bold;
     color: $navbar-brand-color;
+    text-shadow: 0 0 5px $navbar-brand-color;
+    .navbar-brand-terminal {
+      animation: terminal 1.25s steps(1, end) infinite;
+      margin-left: 0.25rem;
+    }
     .navbar-brand-small {
       height: 100%;
       display: none;
@@ -55,7 +63,7 @@
     margin-top: math.div($navbar-height - 34px, 2);
     padding: 9px 10px !important;
   }
-  @media (max-width: $bootstrap-sm) {
+  @media (max-width: $bootstrap-md) {
     &:not(.scrolled) {
       background-color: $navbar-background-scrolled;
       .nav-link {
@@ -70,7 +78,7 @@
       }
     }
   }
-  @media (max-width: $bootstrap-sm) {
+  @media (max-width: $bootstrap-md) {
     .navbar-nav {
       .nav-item {
         span {
@@ -95,6 +103,14 @@
   background-color: $navbar-background-scrolled;
   border-bottom-color: $navbar-border-color-scrolled;
   box-shadow: none;
+  .navbar-brand {
+    text-shadow: 0 0 5px
+      color.adjust($navbar-brand-color-scrolled, $lightness: -20%);
+    .navbar-brand-terminal {
+      animation: none;
+      opacity: 0;
+    }
+  }
   .nav-link {
     color: $navbar-text-color-scrolled-prehover !important;
   }
@@ -104,5 +120,17 @@
   }
   .navbar-brand {
     color: $navbar-brand-color-scrolled;
+  }
+}
+
+@keyframes terminal {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

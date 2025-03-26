@@ -1,12 +1,15 @@
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import BackgroundSpace from "../../components/backgroundSpace"
+import ClientOnly from "../../components/clientonly"
 
 const SpacePage = () => {
   return (
     <Layout eventkey="space">
       <main>
-        <BackgroundSpace />
+        <ClientOnly>
+          <BackgroundSpace />
+        </ClientOnly>
       </main>
     </Layout>
   )

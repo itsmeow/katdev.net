@@ -2,6 +2,8 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { GatsbyImage } from "gatsby-plugin-image"
+import ClientOnly from "../components/clientonly"
+import BackgroundSpace from "../components/backgroundSpace"
 
 const BlogTemplate = ({
   data: {
@@ -12,6 +14,9 @@ const BlogTemplate = ({
   return (
     <Layout eventkey="blog-page">
       <main>
+        <ClientOnly>
+          <BackgroundSpace />
+        </ClientOnly>
         <article
           id="blog-content-wrapper"
           className={!hasImage ? "no-image" : ""}
@@ -49,7 +54,7 @@ const BlogTemplate = ({
               id="blog-table-of-contents"
               dangerouslySetInnerHTML={{
                 __html:
-                  '<h2 style="margin-top:0;font-size:1.25rem;">Table of Contents</h2>' +
+                  '<h2 id="blog-table-of-contents-title">Table of Contents</h2>' +
                   tableOfContents,
               }}
             />

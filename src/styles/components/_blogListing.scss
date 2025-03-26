@@ -9,7 +9,19 @@
   margin-bottom: 20px;
   border: 1px solid $box-border-color;
   border-radius: 2px;
+  .blog-title {
+    font-weight: bold;
+    font-family: "Century Gothic", system-ui, -apple-system, "Segoe UI", Roboto,
+      "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+    font-size: 1.8rem;
+  }
   .blog-meta {
+    font-family: "Century Gothic", system-ui, -apple-system, "Segoe UI", Roboto,
+      "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
     color: $text-color-half;
   }
   &:hover {

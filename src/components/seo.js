@@ -53,6 +53,48 @@ function SEO({ description, lang, keywords, title, image, rawTitle }) {
       {site.siteMetadata.author && (
         <meta name="twitter:creator" content={site.siteMetadata.author} />
       )}
+      <link
+        rel="preload"
+        href="/fonts/Abaddon Light.woff2"
+        as="font"
+        type="font/woff2"
+      />
+      <link
+        rel="preload"
+        href="/fonts/LibreBaskerville-Regular-Latin.ttf"
+        as="font"
+        type="font/ttf"
+      />
+      <link
+        rel="preload"
+        href="/fonts/LibreBaskerville-Bold-Latin.ttf"
+        as="font"
+        type="font/ttf"
+      />
+      <link
+        rel="preload"
+        href="/fonts/LibreBaskerville-Italic-Latin.ttf"
+        as="font"
+        type="font/ttf"
+      />
+      <link
+        rel="preload"
+        href="/fonts/LibreBaskerville-Regular-LatinExt.ttf"
+        as="font"
+        type="font/ttf"
+      />
+      <link
+        rel="preload"
+        href="/fonts/LibreBaskerville-Bold-LatinExt.ttf"
+        as="font"
+        type="font/ttf"
+      />
+      <link
+        rel="preload"
+        href="/fonts/LibreBaskerville-Italic-LatinExt.ttf"
+        as="font"
+        type="font/ttf"
+      />
     </>
   )
 }

@@ -10,13 +10,14 @@ const CustomNavbar = ({ eventkey }) => {
     <Navbar
       fixed="top"
       variant="dark"
-      expand="md"
+      expand="lg"
       id="site-navbar"
       className={scrolled ? "scrolled" : ""}
     >
       <Navbar.Brand className="navbar-brand">
         <div className="navbar-brand-large">
           <Infinity alt="rainbow infinity" height={50} width={50} /> katdev.net
+          <span className="navbar-brand-terminal">_</span>
         </div>
         <div className="navbar-brand-small">
           <IconSquare

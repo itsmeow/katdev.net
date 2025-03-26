@@ -3,7 +3,7 @@
   border: 1px solid #af0f5a;
   background-color: #090316;
   color: white;
-  position: absolute;
+  position: fixed;
   padding: 10px;
   bottom: 8px;
   right: 8px;
@@ -21,7 +21,7 @@
   right: calc(9rem + 16px);
 }
 .background-stars-wrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -51,16 +51,10 @@
 
 @media (max-width: 500px) {
   .background-stars-wrapper {
-    height: inherit;
-    max-height: 100%;
     background-color: #00000077;
     .background-stars {
       opacity: 0.25;
     }
-  }
-  .background-space-button,
-  .background-space-button-2 {
-    position: fixed;
   }
 }
 
