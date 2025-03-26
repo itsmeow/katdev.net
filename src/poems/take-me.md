@@ -53,30 +53,22 @@ my nervous system
 with price tags
 
 i am a resource
-take it
-take it.
 
-i don't.
+take me.
 
-have enough.
-for you.
+i don't have enough
+for you
 
 take it.
 
 because i don't
-need it.
-
-i am for you.
-i am for you to take, forever
-my life is yours.
+need me
+anymore
 
 my self and my attention and my time and my joy and my sadness
 
 my friends and my home and my laughter and my jokes and my games
 
-have them. turn them into profit.
+have them; turn them into numbers on a screen;
 
 does this make you happy?
-
-i am powerless.
-take me
