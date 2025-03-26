@@ -277,6 +277,7 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
 
   const darknessOffsets = []
   const darknessLocalOffsets = []
+  const darknessSizes = []
   for (let i = 0; i < Math.round(Math.random() * 3) + 1; i++) {
     darknessOffsets.push(
       Math.floor(i * gl.canvas.width * 100 + Math.random() * gl.canvas.width)
@@ -285,6 +286,7 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
       Math.floor(Math.random() * gl.canvas.width),
       Math.floor(Math.random() * gl.canvas.height),
     ])
+    darknessSizes.push(Math.random())
   }
 
   const selectedAccentColors = []
@@ -377,7 +379,7 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
         darknessOffsets[i],
         0,
         darknessLocalOffsets[i],
-        150
+        100 + 400 * darknessSizes[i]
       )
     }
 
