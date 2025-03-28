@@ -40,7 +40,7 @@ void main(void) {
 
     float minimum_brightness = star_density * 0.02 * STARS_OPACITY;
     
-    if(general_density_noise > 0.994) {
+    if(general_density_noise >= 0.994) {
         float base = clamp(sin(u_time * 20.0 + gl_FragCoord.x + gl_FragCoord.y) * 2.0 + 2.4, 0.0, 1.0);
         base *= STARS_OPACITY;
         if(!stray) {
