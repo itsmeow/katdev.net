@@ -428,8 +428,8 @@ export function renderCanvasWebGL(
   const animationFrameHandler = now => {
     if (droppedFrames > 3) {
       droppedFrames = 0
-      // Reduce the framerate by 5fps
-      const newFPS = Math.max(targetFPS - 5, 0)
+      const fpsReduction = targetFPS <= 5 ? 1 : 5
+      const newFPS = Math.max(targetFPS - fpsReduction, 0)
       console.log(
         `More than 3 dropped frames, which is indicative of performance issues. Lowering target FPS to ${newFPS}`
       )
