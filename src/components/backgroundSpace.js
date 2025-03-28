@@ -8,6 +8,7 @@ const BackgroundSpace = () => {
   const animationLoopID = useRef(null)
   const glResult = useRef(null)
   const lastStage = useRef(null)
+  const frozeLastRender = useRef(false)
 
   const [showPreview, setShowPreview] = useState(true)
   const [webGLUnsupported, setWebGLUnsupported] = useState(false)
@@ -41,7 +42,7 @@ const BackgroundSpace = () => {
     }
   }
 
-  const renderCanvasInternal = (rerender = true, fpsOverride = null) => {
+  const renderCanvasInternal = (rerender = true, fps = 45) => {
     cleanup()
     const gl = webGLUnsupported
       ? null
@@ -61,8 +62,9 @@ const BackgroundSpace = () => {
         rerender,
         glResult.current,
         animationLoopID,
-        fpsOverride !== null ? fpsOverride : fps,
-        setFPS
+        fps,
+        setFPS,
+        frozeLastRender
       )
       glResult.current = glResultOut
     } else {
@@ -98,21 +100,41 @@ const BackgroundSpace = () => {
     })
   }
 
-  const debouncedSwitchUse = debounce(switchUse, 500)
+  const debouncedSwitchUse = debounce(switchUse, 750)
 
-  const debouncedRenderCanvas = debounce(renderCanvasInternal, 500)
+  const debouncedRenderCanvas = debounce(
+    () => renderCanvasInternal(false, fps),
+    500
+  )
 
-  const debouncedRenderCanvasResize = debounce(renderCanvasInternal, 750)
+  // When the browser freezes a tab and resumes it, the FPS handler gets confused and can lock the renderer
+  const handleDocumentResume = () => {
+    frozeLastRender.current = true
+  }
+
+  const handleDocumentVisibility = () => {
+    if (!document.hidden) {
+      frozeLastRender.current = true
+      renderCanvasInternal(true, fps)
+    } else {
+      // Document is hidden. Let's stop rendering for now.
+      cleanup()
+    }
+  }
 
   useEffect(() => {
-    if (!window) {
+    if (!window || !document) {
       return
     }
 
-    window.addEventListener("resize", debouncedRenderCanvasResize)
+    window.addEventListener("resize", debouncedRenderCanvas)
+    document.addEventListener("resume", handleDocumentResume)
+    document.addEventListener("visibilitychange", handleDocumentVisibility)
     if (window.HTMLCanvasElement) renderCanvasInternal(false)
     return () => {
-      window.removeEventListener("resize", debouncedRenderCanvasResize)
+      window.removeEventListener("resize", debouncedRenderCanvas)
+      document.removeEventListener("resume", handleDocumentResume)
+      document.removeEventListener("visibilitychange", handleDocumentVisibility)
       if (animationLoopID.current)
         window.cancelAnimationFrame(animationLoopID.current) // eslint-disable-line react-hooks/exhaustive-deps
     }

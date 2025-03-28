@@ -251,7 +251,8 @@ export function renderCanvasWebGL(
   oldGLResult,
   animationLoopID,
   fps,
-  setFPS
+  setFPS,
+  frozeLastRender
 ) {
   const glResult = rerender ? oldGLResult : setupWebGL(gl)
   const [
@@ -425,13 +426,23 @@ export function renderCanvasWebGL(
   let targetFPS = fps
   let lastFrameTime = 0
   let droppedFrames = 0
+  const maxDroppedFrames = 5
   const animationFrameHandler = now => {
-    if (droppedFrames > 3) {
+    // The document just resumed rendering from an OS suspend.
+    // Dropped frames are likely to be incorrect.
+    if (frozeLastRender.current) {
+      console.log(
+        "Document was suspended between now and last render. Resetting dropped frame count."
+      )
+      droppedFrames = 0
+      frozeLastRender.current = false
+    }
+    if (droppedFrames > maxDroppedFrames) {
       droppedFrames = 0
       const fpsReduction = targetFPS <= 5 ? 1 : 5
       const newFPS = Math.max(targetFPS - fpsReduction, 0)
       console.log(
-        `More than 3 dropped frames, which is indicative of performance issues. Lowering target FPS to ${newFPS}`
+        `More than ${maxDroppedFrames} dropped frames, which is indicative of performance issues. Lowering target FPS to ${newFPS}`
       )
       targetFPS = newFPS
       // We're too slow to animate. Don't animate at all.
@@ -450,12 +461,19 @@ export function renderCanvasWebGL(
     let targetFrameDuration = targetFPS === 0 ? 0 : 1000 / targetFPS
     if (timeSinceLastFrame >= targetFrameDuration) {
       // If there is a failure to achieve framerate (device is slow).
-      if (lastFrameTime !== 0 && timeSinceLastFrame > targetFrameDuration + 1) {
+      // Don't do this is the time is longer than 10 seconds, because it's likely due to a browser suspend of some sort.
+      if (
+        lastFrameTime !== 0 &&
+        timeSinceLastFrame > targetFrameDuration + 2 &&
+        timeSinceLastFrame < 10_000
+      ) {
         droppedFrames += 1
         console.log(
           `Last frame was ${Math.round(
             timeSinceLastFrame
-          )}ms ago - the target is ${Math.round(targetFrameDuration)}ms!`
+          )}ms ago - the target is ${Math.round(
+            targetFrameDuration
+          )}ms (${targetFPS} FPS)!`
         )
       }
       doRender(now)
