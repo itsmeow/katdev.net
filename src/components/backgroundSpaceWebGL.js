@@ -30,20 +30,27 @@ function createProgram(gl, vertexShader, fragmentShader) {
 
 function resizeCanvasToDisplaySize(canvas) {
   // Lookup the size the browser is displaying the canvas wrapper in CSS pixels.
-  const displayWidth = canvas.parentElement.clientWidth
-  const displayHeight = canvas.parentElement.clientHeight
+  const cssWidth = canvas.parentElement.clientWidth
+  const cssHeight = canvas.parentElement.clientHeight
 
-  // Check if the canvas is not the same size.
-  const needResize =
-    canvas.width !== displayWidth || canvas.height !== displayHeight
-
-  if (needResize) {
+  // Check if the canvas CSS size is not the same size.
+  if (canvas.style.width !== cssWidth || canvas.style.height !== cssHeight) {
     // Make the canvas the same size
-    canvas.width = displayWidth
-    canvas.height = displayHeight
+    canvas.style.width = `${cssWidth}px`
+    canvas.style.height = `${cssHeight}px`
   }
 
-  return needResize
+  const adjustedWidth = Math.round(cssWidth * window.devicePixelRatio)
+  const adjustedHeight = Math.round(cssHeight * window.devicePixelRatio)
+
+  // Check if the canvas render size is not the same size.
+  if (canvas.width !== adjustedWidth || canvas.height !== adjustedHeight) {
+    // Make the canvas the same size
+    canvas.width = adjustedWidth
+    canvas.height = adjustedHeight
+  }
+
+  return [adjustedWidth, adjustedHeight]
 }
 
 const vertexSize = 3
@@ -265,26 +272,22 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
     new Float32Array([0.263, 0, 0.933, 0.09]), // eslint-disable-line no-undef
   ]
 
-  resizeCanvasToDisplaySize(gl.canvas)
-  gl.viewport(0, 0, gl.canvas.width, gl.canvas.height)
+  let [sizeX, sizeY] = resizeCanvasToDisplaySize(gl.canvas)
+  gl.viewport(0, 0, sizeX, sizeY)
 
   const layerOffsets = []
   for (let i = 0; i < 25; i++) {
-    layerOffsets.push(
-      Math.floor(i * gl.canvas.width * 100 + Math.random() * gl.canvas.width)
-    )
+    layerOffsets.push(Math.floor(i * sizeX * 100 + Math.random() * sizeX))
   }
 
   const darknessOffsets = []
   const darknessLocalOffsets = []
   const darknessSizes = []
   for (let i = 0; i < Math.round(Math.random() * 3) + 2; i++) {
-    darknessOffsets.push(
-      Math.floor(i * gl.canvas.width * 100 + Math.random() * gl.canvas.width)
-    )
+    darknessOffsets.push(Math.floor(i * sizeX * 100 + Math.random() * sizeX))
     darknessLocalOffsets.push([
-      Math.floor(Math.random() * gl.canvas.width),
-      Math.floor(Math.random() * gl.canvas.height),
+      Math.floor(Math.random() * sizeX),
+      Math.floor(Math.random() * sizeY),
     ])
     darknessSizes.push(Math.random())
   }
@@ -295,19 +298,16 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
   const accentDetails = []
   for (let i = 0; i < Math.round(Math.random() * 2); i++) {
     selectedAccentColors.push(randomElement(accentColors, Math.random()))
-    accentOffsets.push(
-      Math.floor(i * gl.canvas.width * 100 + Math.random() * gl.canvas.width)
-    )
+    accentOffsets.push(Math.floor(i * sizeX * 100 + Math.random() * sizeX))
     accentLocalOffsets.push([
-      Math.floor(Math.random() * gl.canvas.width),
-      Math.floor(Math.random() * gl.canvas.height),
+      Math.floor(Math.random() * sizeX),
+      Math.floor(Math.random() * sizeY),
     ])
     accentDetails.push(Math.random() * 3 + 1.25)
   }
 
   const renderSize = 4
-  const largerScale =
-    gl.canvas.width > gl.canvas.height ? gl.canvas.width : gl.canvas.height
+  const largerScale = sizeX > sizeY ? sizeX : sizeY
   const renderScale = largerScale / renderSize
 
   const doRender = now => {
