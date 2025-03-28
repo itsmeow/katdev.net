@@ -1,8 +1,4 @@
-#ifdef GL_FRAGMENT_PRECISION_HIGH
-  precision highp float;
-#else
-  precision mediump float;
-#endif
+precision mediump float;
 
 uniform vec2    u_resolution;
 uniform float   u_offset;
@@ -19,10 +15,14 @@ uniform float   u_time;
 
 #define STARS_OPACITY 0.6
 
+float round_precision(float value) {
+  return floor(value * 10000.0) * 0.0001;
+}
+
 void main(void) {
     vec4 color = vec4(0, 0, 0, 0);
-    vec2 pixel = 1.0/u_resolution.xy;
-    vec2 st = gl_FragCoord.xy * pixel;
+    vec2 res_rounded = vec2(round_precision(1.0/u_resolution.x), round_precision(1.0/u_resolution.y));
+    vec2 st = vec2(round_precision(gl_FragCoord.x * res_rounded.x), round_precision(gl_FragCoord.y * res_rounded.y));
 
     // Generate the clumps where stars will be
     float star_density = fbm(vec3(st * 4., u_offset + (u_time * 0.25))) * 0.5 + 0.25;

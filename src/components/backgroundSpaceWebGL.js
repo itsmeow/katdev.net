@@ -283,6 +283,8 @@ export function renderCanvasWebGL(
   let [sizeX, sizeY] = resizeCanvasToDisplaySize(gl.canvas)
   gl.viewport(0, 0, sizeX, sizeY)
 
+  const starsRandom = Math.max(Math.random(), 0.001)
+
   const layerOffsets = []
   for (let i = 0; i < 25; i++) {
     layerOffsets.push(Math.floor(i * sizeX * 100 + Math.random() * sizeX))
@@ -399,7 +401,7 @@ export function renderCanvasWebGL(
       starsProgram,
       largerScale,
       largerScale,
-      layerOffsets[0],
+      starsRandom,
       scaledTime
     )
 
