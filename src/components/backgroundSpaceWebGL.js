@@ -435,12 +435,12 @@ export function renderCanvasWebGL(
       return
     }
 
-    if (droppedFrames > 5) {
+    if (droppedFrames > 3) {
       droppedFrames = 0
       // Reduce the framerate by 5fps
       const newFPS = Math.max(targetFPS - 5, 0)
       console.log(
-        `More than 5 dropped frames, which is indicative of performance issues. Lowering target FPS to ${newFPS}`
+        `More than 3 dropped frames, which is indicative of performance issues. Lowering target FPS to ${newFPS}`
       )
       targetFPS = newFPS
       setFPS(newFPS)
@@ -449,15 +449,12 @@ export function renderCanvasWebGL(
     let timeSinceLastFrame = now - lastFrameTime
     let targetFrameDuration = targetFPS === 0 ? 0 : 1000 / targetFPS
     if (timeSinceLastFrame >= targetFrameDuration) {
-      // If there is a significant failure to achieve framerate (device is slow).
-      if (
-        lastFrameTime !== 0 &&
-        timeSinceLastFrame > targetFrameDuration * 1.25
-      ) {
+      // If there is a failure to achieve framerate (device is slow).
+      if (lastFrameTime !== 0 && timeSinceLastFrame > targetFrameDuration + 1) {
         droppedFrames += 1
         console.log(
           `Last frame was ${Math.round(
-            targetFrameDuration * 1.25
+            timeSinceLastFrame
           )}ms ago - the target is ${Math.round(targetFrameDuration)}ms!`
         )
       }
