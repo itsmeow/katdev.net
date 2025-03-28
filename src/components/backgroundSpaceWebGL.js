@@ -245,7 +245,14 @@ function setupWebGL(gl) {
   ]
 }
 
-export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
+export function renderCanvasWebGL(
+  gl,
+  rerender,
+  oldGLResult,
+  animationLoopID,
+  fps,
+  setFPS
+) {
   const glResult = rerender ? oldGLResult : setupWebGL(gl)
   const [
     vertexBuffer,
@@ -413,9 +420,55 @@ export function renderCanvasWebGL(gl, rerender, oldGLResult, animationLoopID) {
         60
       )
     }
-
-    animationLoopID.current = window.requestAnimationFrame(doRender)
   }
-  animationLoopID.current = window.requestAnimationFrame(doRender)
+
+  let targetFPS = fps
+  let lastFrameTime = 0
+  let droppedFrames = 0
+  const animationFrameHandler = now => {
+    // We're too slow to animate. Don't animate at all.
+    if (targetFPS <= 0) {
+      console.log("Device is too slow to handle animation. Freezing!")
+      setFPS(0)
+      window.cancelAnimationFrame(animationLoopID.current)
+      animationLoopID.current = null
+      return
+    }
+
+    if (droppedFrames > 5) {
+      droppedFrames = 0
+      // Reduce the framerate by 5fps
+      const newFPS = Math.max(targetFPS - 5, 0)
+      console.log(
+        `More than 5 dropped frames, which is indicative of performance issues. Lowering target FPS to ${newFPS}`
+      )
+      targetFPS = newFPS
+      setFPS(newFPS)
+    }
+
+    let timeSinceLastFrame = now - lastFrameTime
+    let targetFrameDuration = targetFPS === 0 ? 0 : 1000 / targetFPS
+    if (timeSinceLastFrame >= targetFrameDuration) {
+      // If there is a significant failure to achieve framerate (device is slow).
+      if (
+        lastFrameTime !== 0 &&
+        timeSinceLastFrame > targetFrameDuration * 1.25
+      ) {
+        droppedFrames += 1
+        console.log(
+          `Last frame was ${Math.round(
+            targetFrameDuration * 1.25
+          )}ms ago - the target is ${Math.round(targetFrameDuration)}ms!`
+        )
+      }
+      doRender(now)
+      lastFrameTime = now
+    }
+    animationLoopID.current = window.requestAnimationFrame(
+      animationFrameHandler
+    )
+  }
+
+  animationLoopID.current = window.requestAnimationFrame(animationFrameHandler)
   return glResult
 }

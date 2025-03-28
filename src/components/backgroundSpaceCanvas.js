@@ -105,19 +105,9 @@ const perlinFilter = (
   }
 }
 
-export async function renderCanvas(spaceRef, lastStage, setShowPreview) {
+export function renderCanvas(spaceRef) {
   if (!spaceRef.current || !window || !window.HTMLCanvasElement) {
-    return
-  }
-  // no memory leaking pls
-  if (lastStage.current) {
-    for (let child of lastStage.current.children) {
-      for (let child2 of child.children) {
-        child2.destroy()
-      }
-      child.destroy()
-    }
-    lastStage.current.destroy()
+    return null
   }
   const canvas = spaceRef.current
   // Optimizations
@@ -144,7 +134,6 @@ export async function renderCanvas(spaceRef, lastStage, setShowPreview) {
     scaleX: window.innerWidth / canvasWidth,
     scaleY: window.innerHeight / canvasHeight,
   })
-  lastStage.current = stage
 
   // BG
   const backgroundLayer = new Konva.Layer({
@@ -282,5 +271,5 @@ export async function renderCanvas(spaceRef, lastStage, setShowPreview) {
   backgroundLayer.add(starNoise)
 
   stage.add(backgroundLayer)
-  setShowPreview(false)
+  return stage
 }

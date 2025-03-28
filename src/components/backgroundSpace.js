@@ -12,6 +12,7 @@ const BackgroundSpace = () => {
   const [showPreview, setShowPreview] = useState(true)
   const [useWebGL, setUseWebGL] = useState(true)
   const [webGLUnsupported, setWebGLUnsupported] = useState(false)
+  const [fps, setFPS] = useState(45)
 
   function debounce(func, delay) {
     let timeoutId
@@ -24,7 +25,25 @@ const BackgroundSpace = () => {
     }
   }
 
+  const cleanup = () => {
+    if (lastStage.current !== null) {
+      for (let child of lastStage.current.children) {
+        for (let child2 of child.children) {
+          child2.destroy()
+        }
+        child.destroy()
+      }
+      lastStage.current.destroy()
+      lastStage.current = null
+    }
+    if (animationLoopID.current) {
+      window.cancelAnimationFrame(animationLoopID.current)
+      animationLoopID.current = null
+    }
+  }
+
   const renderCanvasInternal = (rerender = true, webgl = null) => {
+    cleanup()
     const tryUseWebGL = webgl === null ? useWebGL : webgl
     const gl = tryUseWebGL
       ? webGLCanvasRef?.current?.getContext("webgl", {
@@ -39,26 +58,15 @@ const BackgroundSpace = () => {
       ) {
         return
       }
-      if (lastStage.current !== null) {
-        for (let child of lastStage.current.children) {
-          for (let child2 of child.children) {
-            child2.destroy()
-          }
-          child.destroy()
-        }
-        lastStage.current.destroy()
-      }
-      if (rerender && animationLoopID.current) {
-        window.cancelAnimationFrame(animationLoopID.current)
-      }
       const glResultOut = renderCanvasWebGL(
         gl,
         rerender,
         glResult.current,
-        animationLoopID
+        animationLoopID,
+        fps,
+        setFPS
       )
       glResult.current = glResultOut
-      setShowPreview(false)
     } else {
       if (
         konvaContainerRef.current &&
@@ -69,14 +77,17 @@ const BackgroundSpace = () => {
       if (tryUseWebGL) {
         setWebGLUnsupported(true)
       }
-      renderCanvas(konvaContainerRef, lastStage, setShowPreview)
+      lastStage.current = renderCanvas(konvaContainerRef)
     }
+    setShowPreview(false)
   }
 
   const switchUse = async () => {
     setShowPreview(true)
-    setUseWebGL(!useWebGL)
-    renderCanvasInternal(false, !useWebGL)
+    setUseWebGL(oldUseWebGL => {
+      renderCanvasInternal(false, !oldUseWebGL)
+      return !oldUseWebGL
+    })
   }
 
   const debouncedSwitchUse = debounce(switchUse, () => 500)
@@ -121,7 +132,7 @@ const BackgroundSpace = () => {
           className="background-space-button-2"
           onClick={debouncedSwitchUse}
         >
-          {useWebGL ? "<Use Canvas>" : "<Use WebGL>"}
+          {useWebGL ? `WebGL (${fps}FPS)` : "Canvas (Static)"}
         </button>
       )}
       <div
