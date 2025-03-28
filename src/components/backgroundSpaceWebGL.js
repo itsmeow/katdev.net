@@ -439,7 +439,8 @@ export function renderCanvasWebGL(
     }
     if (droppedFrames > maxDroppedFrames) {
       droppedFrames = 0
-      const fpsReduction = targetFPS <= 5 ? 1 : 5
+      // The minimum framerate is 20FPS. If your device is slower than that, FREEZE!!
+      const fpsReduction = targetFPS <= 20 ? targetFPS : 5
       const newFPS = Math.max(targetFPS - fpsReduction, 0)
       console.log(
         `More than ${maxDroppedFrames} dropped frames, which is indicative of performance issues. Lowering target FPS to ${newFPS}`
