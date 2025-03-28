@@ -13,9 +13,12 @@
   box-shadow: 0 0 5px #af0f5a;
   transition: all 0.2s ease-in-out;
   width: 9rem;
-  &:hover {
+  &:hover:not(:disabled) {
     background-color: #342061;
     box-shadow: 0 0 10px #af0f5a;
+  }
+  &:disabled {
+    color: gray;
   }
 }
 .background-space-button-2 {

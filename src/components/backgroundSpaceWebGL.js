@@ -426,15 +426,6 @@ export function renderCanvasWebGL(
   let lastFrameTime = 0
   let droppedFrames = 0
   const animationFrameHandler = now => {
-    // We're too slow to animate. Don't animate at all.
-    if (targetFPS <= 0) {
-      console.log("Device is too slow to handle animation. Freezing!")
-      setFPS(0)
-      window.cancelAnimationFrame(animationLoopID.current)
-      animationLoopID.current = null
-      return
-    }
-
     if (droppedFrames > 3) {
       droppedFrames = 0
       // Reduce the framerate by 5fps
@@ -443,6 +434,15 @@ export function renderCanvasWebGL(
         `More than 3 dropped frames, which is indicative of performance issues. Lowering target FPS to ${newFPS}`
       )
       targetFPS = newFPS
+      // We're too slow to animate. Don't animate at all.
+      if (targetFPS <= 0) {
+        console.log("Device is too slow to handle animation. Freezing!")
+        targetFPS = -1
+        setFPS(-1)
+        window.cancelAnimationFrame(animationLoopID.current)
+        animationLoopID.current = null
+        return
+      }
       setFPS(newFPS)
     }
 
@@ -466,6 +466,12 @@ export function renderCanvasWebGL(
     )
   }
 
-  animationLoopID.current = window.requestAnimationFrame(animationFrameHandler)
+  if (fps > 0) {
+    animationLoopID.current = window.requestAnimationFrame(
+      animationFrameHandler
+    )
+  } else {
+    doRender(performance.now())
+  }
   return glResult
 }

@@ -10,7 +10,6 @@ const BackgroundSpace = () => {
   const lastStage = useRef(null)
 
   const [showPreview, setShowPreview] = useState(true)
-  const [useWebGL, setUseWebGL] = useState(true)
   const [webGLUnsupported, setWebGLUnsupported] = useState(false)
   const [fps, setFPS] = useState(45)
 
@@ -21,7 +20,7 @@ const BackgroundSpace = () => {
       clearTimeout(timeoutId)
       timeoutId = setTimeout(() => {
         func()
-      }, delay())
+      }, delay)
     }
   }
 
@@ -42,15 +41,14 @@ const BackgroundSpace = () => {
     }
   }
 
-  const renderCanvasInternal = (rerender = true, webgl = null) => {
+  const renderCanvasInternal = (rerender = true, fpsOverride = null) => {
     cleanup()
-    const tryUseWebGL = webgl === null ? useWebGL : webgl
-    const gl = tryUseWebGL
-      ? webGLCanvasRef?.current?.getContext("webgl", {
+    const gl = webGLUnsupported
+      ? null
+      : webGLCanvasRef?.current?.getContext("webgl", {
           premultipliedAlpha: false,
           alpha: false,
         })
-      : null
     if (gl) {
       if (
         webGLCanvasRef.current &&
@@ -63,19 +61,18 @@ const BackgroundSpace = () => {
         rerender,
         glResult.current,
         animationLoopID,
-        fps,
+        fpsOverride !== null ? fpsOverride : fps,
         setFPS
       )
       glResult.current = glResultOut
     } else {
+      // Fallback method using Canvas API
+      setWebGLUnsupported(true)
       if (
         konvaContainerRef.current &&
         window.getComputedStyle(konvaContainerRef.current).display == "none"
       ) {
         return
-      }
-      if (tryUseWebGL) {
-        setWebGLUnsupported(true)
       }
       lastStage.current = renderCanvas(konvaContainerRef)
     }
@@ -83,22 +80,29 @@ const BackgroundSpace = () => {
   }
 
   const switchUse = async () => {
+    // Do nothing, it was locked by the WebGL engine at static
+    if (fps === -1) {
+      return
+    }
     setShowPreview(true)
-    setUseWebGL(oldUseWebGL => {
-      renderCanvasInternal(false, !oldUseWebGL)
-      return !oldUseWebGL
+    setFPS(oldFPS => {
+      if (oldFPS > 0) {
+        cleanup()
+        renderCanvasInternal(true, 0)
+        return 0
+      } else {
+        cleanup()
+        renderCanvasInternal(true, 45)
+        return 45
+      }
     })
   }
 
-  const debouncedSwitchUse = debounce(switchUse, () => 500)
+  const debouncedSwitchUse = debounce(switchUse, 500)
 
-  const debouncedRenderCanvas = debounce(renderCanvasInternal, () =>
-    useWebGL ? 500 : 2500
-  )
+  const debouncedRenderCanvas = debounce(renderCanvasInternal, 500)
 
-  const debouncedRenderCanvasResize = debounce(renderCanvasInternal, () =>
-    useWebGL ? 750 : 2500
-  )
+  const debouncedRenderCanvasResize = debounce(renderCanvasInternal, 750)
 
   useEffect(() => {
     if (!window) {
@@ -131,8 +135,9 @@ const BackgroundSpace = () => {
           type="button"
           className="background-space-button-2"
           onClick={debouncedSwitchUse}
+          disabled={fps === -1}
         >
-          {useWebGL ? `WebGL (${fps}FPS)` : "Canvas (Static)"}
+          {fps > 0 ? `WebGL (${fps}FPS)` : "WebGL (Static)"}
         </button>
       )}
       <div
