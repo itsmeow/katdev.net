@@ -2,6 +2,7 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import GenericListing from "../../components/genericListing"
 import { StaticImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 
 const ArtIndexPage = () => {
   return (
@@ -24,6 +25,19 @@ const ArtIndexPage = () => {
                 height={128}
                 alt="Nebula Art"
                 className="blog-image"
+              />
+            }
+          />
+          <GenericListing
+            title="bleed"
+            description={<Link to="/poem/dust">dust</Link>}
+            imageAfter={
+              <StaticImage
+                src="../../data/art/bleed.png"
+                quality={100}
+                layout="constrained"
+                placeholder="blurred"
+                alt={`heavily distorted, noisy, and chunked image that reads: "i will fall like the rest (I BASK IN YOUR LIGHT AND I GIVE LIFE) - growing red (growing red) (and i bleed) and i bleed - my husk emptied (i am alive and i am bright x4) - and so lives on the tree - without me."`}
               />
             }
           />

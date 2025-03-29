@@ -97,19 +97,7 @@ export const Head = ({
           : [`poem`, `poetry`, `writing`, `creative writing`]
       )}
     image={frontmatter?.image_file?.publicURL}
-  >
-    {frontmatter.poem ? (
-      <>
-        <link
-          rel="preload"
-          href="/fonts/LibreBaskerville-Regular-Latin.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-      </>
-    ) : null}
-  </SEO>
+  />
 )
 
 export const pageQuery = graphql`
