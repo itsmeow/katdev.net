@@ -34,6 +34,7 @@ const ArtIndexPage = () => {
               <StaticImage
                 src="../../data/art/escape.png"
                 quality={100}
+                webpOptions={{ lossless: true }}
                 layout="constrained"
                 placeholder="blurred"
                 alt={`Picture of an earth-like planet in space, with red, rounded circular tendrils surrounding it. There is a small area cleared around the planet itself as they appear to turn to face it. Large white text covers the planet: "ESCAPE."`}
@@ -47,6 +48,7 @@ const ArtIndexPage = () => {
               <StaticImage
                 src="../../data/art/bleed.png"
                 quality={100}
+                webpOptions={{ lossless: true }}
                 layout="constrained"
                 placeholder="blurred"
                 alt={`heavily distorted, noisy, and chunked image that reads: "i will fall like the rest (I BASK IN YOUR LIGHT AND I GIVE LIFE) - growing red (growing red) (and i bleed) and i bleed - my husk emptied (i am alive and i am bright x4) - and so lives on the tree - without me."`}
@@ -60,6 +62,7 @@ const ArtIndexPage = () => {
               <StaticImage
                 src="../../data/art/space-static.jpg"
                 quality={100}
+                webpOptions={{ lossless: true }}
                 layout="constrained"
                 placeholder="blurred"
                 alt="Nebula Art"
@@ -72,6 +75,7 @@ const ArtIndexPage = () => {
               <StaticImage
                 src="../../data/art/change.jpg"
                 quality={100}
+                webpOptions={{ lossless: true }}
                 layout="constrained"
                 placeholder="blurred"
                 alt={`Image of a person, duotone, pink and cyan. 
@@ -87,6 +91,7 @@ Text states: CHANGE YOURSELF, and know that you'll be fine. Hidden behind the te
               <StaticImage
                 src="../../data/art/masking.png"
                 quality={100}
+                webpOptions={{ lossless: true }}
                 layout="constrained"
                 placeholder="blurred"
                 alt={`Edited photo of Google Search page, featuring dramatic blurred text on a green background, with various intersecting lines and skewed perspectives. The major texts state: 
@@ -105,6 +110,7 @@ The remaining text shows the Google AI search result for the query mentioned pre
               <StaticImage
                 src="../../data/art/isopod.png"
                 quality={100}
+                webpOptions={{ lossless: true }}
                 layout="constrained"
                 placeholder="blurred"
                 alt={`Image of a small isopod on concrete, next to a much larger cigarette butt with ash falling out of it.
@@ -120,6 +126,7 @@ The bottom left of the image has the classic album cover sticker PARENTAL ADVISO
               <StaticImage
                 src="../../data/art/KAT.png"
                 quality={100}
+                webpOptions={{ lossless: true }}
                 layout="constrained"
                 placeholder="blurred"
                 alt={`Edited photo of a person in duotone cyan and pink. Their body appears to be split into two phases of pink and cyan.
