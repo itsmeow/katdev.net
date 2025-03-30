@@ -29,6 +29,18 @@ const ArtIndexPage = () => {
             }
           />
           <GenericListing
+            title="escape"
+            imageAfter={
+              <StaticImage
+                src="../../data/art/escape.png"
+                quality={100}
+                layout="constrained"
+                placeholder="blurred"
+                alt={`Picture of an earth-like planet in space, with red, rounded circular tendrils surrounding it. There is a small area cleared around the planet itself as they appear to turn to face it. Large white text covers the planet: "ESCAPE."`}
+              />
+            }
+          />
+          <GenericListing
             title="bleed"
             description={<Link to="/poem/dust">dust</Link>}
             imageAfter={
@@ -43,7 +55,7 @@ const ArtIndexPage = () => {
           />
           <GenericListing
             title="Space Art - Static"
-            description="Created with paint.net!"
+            description="Created with paint.net"
             imageAfter={
               <StaticImage
                 src="../../data/art/space-static.jpg"
@@ -56,7 +68,6 @@ const ArtIndexPage = () => {
           />
           <GenericListing
             title="change"
-            description="Edited with paint.net! Shot on a Google Pixel 6."
             imageAfter={
               <StaticImage
                 src="../../data/art/change.jpg"
@@ -72,7 +83,6 @@ Text states: CHANGE YOURSELF, and know that you'll be fine. Hidden behind the te
           />
           <GenericListing
             title="masking"
-            description="Created with paint.net!"
             imageAfter={
               <StaticImage
                 src="../../data/art/masking.png"
@@ -91,7 +101,6 @@ The remaining text shows the Google AI search result for the query mentioned pre
           />
           <GenericListing
             title="ISOPOD CIGARETTES"
-            description="Edited with paint.net! Shot on a Google Pixel 6."
             imageAfter={
               <StaticImage
                 src="../../data/art/isopod.png"
@@ -107,7 +116,6 @@ The bottom left of the image has the classic album cover sticker PARENTAL ADVISO
           />
           <GenericListing
             title="K A T"
-            description="Edited with paint.net! Shot on a Google Pixel 6."
             imageAfter={
               <StaticImage
                 src="../../data/art/KAT.png"
