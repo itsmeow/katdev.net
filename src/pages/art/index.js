@@ -29,6 +29,19 @@ const ArtIndexPage = () => {
             }
           />
           <GenericListing
+            title="hell"
+            imageAfter={
+              <StaticImage
+                src="../../data/art/hell.png"
+                quality={100}
+                webpOptions={{ lossless: true }}
+                layout="constrained"
+                placeholder="blurred"
+                alt={`Picture of an alien planet surface with strange trees with human-shaped white branches laid atop their trunks, distorted by a large, unwordly, lovecraftian 4-slit eye containing fractal patterns, with a red diamond protruding outward toward a black vortex lined with orange and green hues. Overlaid text states "H E L L ?" "I CAN'T SEE" in Century Gothic font, while Webdings encoded text says "SURELY" "I CAN'T". Barely visible through the chaos on screen is a collection of arrows (Webdings 3 text) which cannot easily be decoded.`}
+              />
+            }
+          />
+          <GenericListing
             title="escape"
             imageAfter={
               <StaticImage
