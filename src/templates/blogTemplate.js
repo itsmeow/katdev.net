@@ -62,11 +62,14 @@ const BlogTemplate = ({
             <></>
           )}
           <div
-            className={
+            className={[
+              frontmatter.mono ? "mono" : null,
               frontmatter.poem && frontmatter.format_poem !== false
                 ? "poem"
-                : null
-            }
+                : null,
+            ]
+              .filter(c => c !== null)
+              .join(" ")}
             id="blog-text"
             dangerouslySetInnerHTML={{ __html: html }}
           />
@@ -119,6 +122,7 @@ export const pageQuery = graphql`
         toc
         poem
         format_poem
+        mono
         image_svg_file {
           publicURL
         }

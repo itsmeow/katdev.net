@@ -107,6 +107,12 @@ main {
           letter-spacing: 0.1rem;
         }
       }
+      &.mono,
+      &.poem.mono {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 1.05rem;
+        line-height: 2rem;
+      }
       a.before.anchor svg {
         fill: $link-color;
       }

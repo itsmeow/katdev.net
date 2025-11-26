@@ -79,6 +79,7 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
     toc: Boolean
     poem: Boolean
     format_poem: Boolean
+    mono: Boolean
   }
   type MarkdownRemark implements Node {
     frontmatter: MarkdownRemarkFrontmatter
