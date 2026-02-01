@@ -59,6 +59,7 @@ const Navbar = ({ eventkey }) => {
                   alt="rainbow infinity (square) katdev.net"
                   height={42}
                   width={42}
+                  viewBox="0 0 264.58 264.58"
                 />
               </div>
             </div>

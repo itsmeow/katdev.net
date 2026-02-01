@@ -13,12 +13,14 @@ const Footer = () => {
             height={80}
             width={320}
             alt="katdev linear logo"
+            viewBox="0 0 529.17 132.29"
           />
           <IconSquare
             className="footer-small"
             height={80}
             width={80}
             alt="katdev square logo"
+            viewBox="0 0 264.58 264.58"
           />
         </Link>
         <div className="github">

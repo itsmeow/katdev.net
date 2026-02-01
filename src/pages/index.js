@@ -112,6 +112,7 @@ const IndexPage = () => {
                       aria-label="Trakt"
                     >
                       <TraktBlack
+                        viewBox="0 0 48 48"
                         width="1em"
                         height="1em"
                         aria-label="Trakt link"
