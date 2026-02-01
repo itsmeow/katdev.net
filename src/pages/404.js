@@ -1,7 +1,6 @@
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
-import { Button } from "react-bootstrap"
 
 const NotFoundPage = () => (
   <Layout eventkey="404">
@@ -17,10 +16,9 @@ const NotFoundPage = () => (
     >
       <h1>Error 404: Page not found</h1>
       <Link to="/" className="link-no-style">
-        <Button variant="primary">Take me home!</Button>
+        <button>Take me home!</button>
       </Link>
-      <Button
-        variant="primary"
+      <button
         style={{ margin: "10px" }}
         onClick={() => {
           if (typeof window !== "undefined") {
@@ -29,7 +27,7 @@ const NotFoundPage = () => (
         }}
       >
         Go back to my last page!
-      </Button>
+      </button>
     </main>
   </Layout>
 )

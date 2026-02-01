@@ -1,7 +1,7 @@
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { StaticImage } from "gatsby-plugin-image"
-import { FaBluesky, FaLink, FaEnvelope, FaLastfm, FaKey } from "react-icons/fa6"
+import { FaBluesky, FaLink, FaEnvelope, FaLastfm } from "react-icons/fa6"
 import TraktBlack from "../data/svg/trakt-icon-black.inline.svg"
 import BackgroundSpace from "../components/backgroundSpace"
 import ClientOnly from "../components/clientonly"
@@ -65,6 +65,7 @@ const IndexPage = () => {
                   <div className="separator"> • </div>
                   <div>
                     <button
+                      className="button-no-style"
                       onClick={event => {
                         setShowEmail(eml => !eml)
                         event.preventDefault()

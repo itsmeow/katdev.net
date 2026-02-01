@@ -1,6 +1,80 @@
+html {
+  background-color: $primary-background;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  color: $text-color;
+}
+
+div {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+p {
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+button {
+  text-transform: none;
+  -webkit-appearance: button;
+  appearance: button;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: var(--gothic-stack);
+  border: 1px solid #af0f5a;
+  background-color: #090316;
+  color: white;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: 0 0 5px #af0f5a;
+  transition: all 0.2s ease-in-out;
+  width: 9rem;
+  &:hover:not(:disabled) {
+    background-color: #342061;
+    box-shadow: 0 0 10px #af0f5a;
+  }
+  &:disabled {
+    color: gray;
+  }
+}
+
+button.button-no-style {
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  width: inherit;
+  &:hover:not(:disabled) {
+    background-color: inherit;
+    box-shadow: inherit;
+  }
+  &:disabled {
+    color: inherit;
+  }
+}
+
 a {
+  color: $link-color;
   text-decoration: none;
   &:hover {
+    color: $link-color-hover;
     text-decoration: underline;
   }
 }
@@ -29,6 +103,7 @@ hr {
   width: 100%;
   box-shadow: 0 0 5px $hr-color;
   opacity: 1;
+  margin: 1rem 0;
 }
 
 h1,
@@ -45,7 +120,11 @@ h5,
 h6 {
   font-family: var(--gothic-stack);
   font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
 }
+
 h1 {
   font-size: 2.25rem;
 }
@@ -65,19 +144,15 @@ h6 {
   font-size: 1rem;
 }
 
-div.main {
+div.main-wrapper {
   min-height: 100vh;
   padding-bottom: $footer-height;
 }
 
 @media (max-width: 500px) {
-  div.main {
+  div.main-wrapper {
     padding-bottom: $footer-height-small;
   }
-}
-
-.no-gutters {
-  --bs-gutter-x: 0;
 }
 
 .monospace {
@@ -98,4 +173,21 @@ code {
   font-size: inherit;
   font-family: "Courier New", Courier, monospace;
   font-size: 1rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+img,
+svg {
+  vertical-align: middle;
 }

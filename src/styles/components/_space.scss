@@ -1,25 +1,9 @@
 .background-space-button,
 .background-space-button-2 {
-  font-family: var(--gothic-stack);
-  border: 1px solid #af0f5a;
-  background-color: #090316;
-  color: white;
   position: fixed;
-  padding: 10px;
   bottom: 8px;
   right: 8px;
   z-index: 50;
-  border-radius: 2px;
-  box-shadow: 0 0 5px #af0f5a;
-  transition: all 0.2s ease-in-out;
-  width: 9rem;
-  &:hover:not(:disabled) {
-    background-color: #342061;
-    box-shadow: 0 0 10px #af0f5a;
-  }
-  &:disabled {
-    color: gray;
-  }
 }
 .background-space-button-2 {
   right: calc(9rem + 16px);

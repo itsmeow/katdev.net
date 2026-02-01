@@ -6,8 +6,8 @@
   "author": "itsmeow",
   "dependencies": {
     "@babel/core": "^7.20.12",
+    "@headlessui/react": "^2.2.9",
     "animate.css": "^4.1.0",
-    "bootstrap": "^5.2.3",
     "canvas": "^3.1.0",
     "date-fns": "^2.29.3",
     "gatsby": "^5.13.6",
@@ -28,7 +28,6 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-animate-on-scroll": "^2.1.5",
-    "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.5.0",
     "simplex-noise": "^4.0.3"
@@ -68,5 +67,10 @@
   "bugs": {
     "url": "https://github.com/itsmeow/katdev.net/issues"
   },
+  "browserslist": [
+    "last 2 versions",
+    "> 0.25%",
+    "not dead"
+  ],
   "packageManager": "yarn@4.12.0"
 }

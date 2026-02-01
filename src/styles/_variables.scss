@@ -31,7 +31,9 @@ $footer-github-width: 100px;
 // Navbar
 $navbar-background: #00000070;
 $navbar-border-color: $hr-color;
-$navbar-height: 50px;
+$navbar-height: 56px;
+$navbar-text-color: rgba(255, 255, 255, 0.55);
+$navbar-text-hover-color: rgba(255, 255, 255, 0.75);
 $navbar-background-scrolled: #000000c0;
 $navbar-border-color-scrolled: transparent;
 $navbar-text-color-scrolled: $text-color;
