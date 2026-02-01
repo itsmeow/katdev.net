@@ -1,15 +1,24 @@
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { StaticImage } from "gatsby-plugin-image"
-import { FaInstagram, FaLink, FaEnvelope, FaLastfm } from "react-icons/fa"
+import { FaBluesky, FaLink, FaEnvelope, FaLastfm, FaKey } from "react-icons/fa6"
 import TraktBlack from "../data/svg/trakt-icon-black.inline.svg"
 import BackgroundSpace from "../components/backgroundSpace"
 import ClientOnly from "../components/clientonly"
+import Dimmer from "../components/Dimmer"
+import EmailPopup from "../components/EmailPopup"
+import { useState } from "react"
 
 const IndexPage = () => {
+  const [showEmail, setShowEmail] = useState(false)
   return (
     <Layout eventkey="index">
       <main>
+        {showEmail && (
+          <Dimmer>
+            <EmailPopup close={() => setShowEmail(false)} />
+          </Dimmer>
+        )}
         <div className="mainpage-profile-container">
           <ClientOnly>
             <BackgroundSpace />
@@ -45,21 +54,33 @@ const IndexPage = () => {
                 <div className="socials">
                   <div>
                     <a
-                      href="https://www.instagram.com/kat.main/"
+                      href="https://bsky.app/profile/katdev.net"
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="Instagram"
+                      aria-label="Bluesky"
                     >
-                      <FaInstagram aria-label="Instagram link" />
+                      <FaBluesky aria-label="Instagram link" />
                     </a>
                   </div>
-                  <div className="seperator"> • </div>
+                  <div className="separator"> • </div>
                   <div>
-                    <a href="mailto:kat@katdev.net" aria-label="Email">
+                    <button
+                      onClick={event => {
+                        setShowEmail(eml => !eml)
+                        event.preventDefault()
+                      }}
+                      onKeyUp={event => {
+                        if (event.key === "Enter") {
+                          setShowEmail(eml => !eml)
+                          event.preventDefault()
+                        }
+                      }}
+                      aria-label="Email"
+                    >
                       <FaEnvelope aria-label="Email link" />
-                    </a>
+                    </button>
                   </div>
-                  <div className="seperator"> • </div>
+                  <div className="separator"> • </div>
                   <div>
                     <a
                       href="https://itsmeow.dev/"
@@ -70,7 +91,7 @@ const IndexPage = () => {
                       <FaLink aria-label="Brand Website link" />
                     </a>
                   </div>
-                  <div className="seperator"> • </div>
+                  <div className="separator"> • </div>
                   <div>
                     <a
                       href="https://www.last.fm/user/katdevfm"
@@ -81,7 +102,7 @@ const IndexPage = () => {
                       <FaLastfm aria-label="LastFM link" />
                     </a>
                   </div>
-                  <div className="seperator"> • </div>
+                  <div className="separator"> • </div>
                   <div>
                     <a
                       href="https://trakt.tv/users/katdev"

@@ -67,26 +67,39 @@ main {
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-around;
-            div.seperator {
+            button {
+              background: none;
+              border: none;
+              display: inline;
+              padding: 0;
+              margin: 0;
+            }
+            div.separator {
               margin: 0.2rem;
               flex-basis: 0px;
             }
             font-size: 3rem;
-            svg {
-              overflow: visible;
-              color: $link-color;
-              transition-duration: 0.25s;
-              &:hover {
-                color: $link-color-hover;
-                filter: drop-shadow(0 0 5px $link-color-hover);
-              }
-              filter: drop-shadow(0 0 5px $link-color-glow);
-            }
           }
         }
       }
     }
   }
+}
+
+.socials svg,
+svg.glow-icon {
+  overflow: visible;
+  color: $link-color;
+  transition-duration: 0.25s;
+  &:hover {
+    color: $link-color-hover;
+    filter: drop-shadow(0 0 5px $link-color-hover);
+  }
+  &:active {
+    filter: drop-shadow(0 0 5px $link-color-active);
+    color: $link-color-active;
+  }
+  filter: drop-shadow(0 0 5px $link-color-glow);
 }
 
 @media (max-width: 500px) {
@@ -113,7 +126,7 @@ main {
           .mainpage-profile-text {
             .socials {
               font-size: 2.5rem;
-              div.seperator {
+              div.separator {
                 margin: 0.1rem;
               }
             }

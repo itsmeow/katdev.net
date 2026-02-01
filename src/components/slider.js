@@ -44,10 +44,10 @@ import { GatsbyImage } from "gatsby-plugin-image"
  */
 const BackgroundSlider = ({
   callbacks,
-  images,
-  duration,
-  transition,
-  initDelay,
+  images = null,
+  duration = 5,
+  transition = 2,
+  initDelay = 5,
   query,
   children,
   ...gatsbyImageProps
@@ -186,13 +186,6 @@ const BackgroundSlider = ({
   useEffect(initEffect, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return <React.Fragment>{imgs}</React.Fragment>
-}
-
-BackgroundSlider.defaultProps = {
-  images: null,
-  duration: 5,
-  transition: 2,
-  initDelay: 5,
 }
 
 BackgroundSlider.propTypes = {

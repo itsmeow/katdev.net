@@ -2,9 +2,9 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({
-  description,
-  lang,
-  keywords,
+  description = "",
+  lang = "en",
+  keywords = [],
   title,
   image,
   rawTitle,
@@ -108,17 +108,9 @@ function SEO({
   )
 }
 
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  keywords: [],
-  description: ``,
-}
-
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string,
   rawTitle: PropTypes.bool,

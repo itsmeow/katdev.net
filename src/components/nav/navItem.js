@@ -3,7 +3,7 @@ import { Nav } from "react-bootstrap"
 import PropTypes from "prop-types"
 import { FaExternalLinkAlt } from "react-icons/fa"
 
-const NavItem = ({ to, eventkey, external, children }) => {
+const NavItem = ({ to, eventkey, external = false, children }) => {
   return (
     <Nav.Item>
       {external ? (
@@ -42,10 +42,6 @@ NavItem.propTypes = {
   to: PropTypes.string.isRequired,
   eventkey: PropTypes.string,
   external: PropTypes.bool,
-}
-
-NavItem.defaultProps = {
-  external: false,
 }
 
 export default NavItem

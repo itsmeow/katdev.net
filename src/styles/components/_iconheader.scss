@@ -1,0 +1,42 @@
+.icon-header {
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  .icon-header-text {
+    font-size: 2rem;
+    line-height: 40px;
+    font-family: var(--gothic-stack);
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+  }
+  .icon-header-splitter {
+    flex-grow: 1;
+  }
+  .icon-header-icon {
+    font-size: 1.8rem;
+    line-height: 28px;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+.icon-header-2 {
+  .icon-header-text {
+    font-size: 1.8rem;
+  }
+  .icon-header-icon {
+    font-size: 1.6rem;
+  }
+}
+.icon-header-3 {
+  .icon-header-text {
+    font-size: 1.5rem;
+  }
+  .icon-header-icon {
+    font-size: 1.5rem;
+  }
+}
