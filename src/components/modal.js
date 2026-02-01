@@ -19,7 +19,7 @@ const Modal = ({ title, children, close }) => {
                   event.preventDefault()
                 }
               }}
-              className="modal-c-close"
+              className="modal-c-close button-no-style"
               aria-label="Close"
             >
               <FaX aria-label="Close" />

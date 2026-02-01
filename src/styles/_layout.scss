@@ -10,9 +10,20 @@ body {
   padding: 0;
   margin: 0;
   line-height: 1.5;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-    "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    "Noto Sans",
+    "Liberation Sans",
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
   font-size: 1rem;
   color: variables.$text-color;
 }
@@ -34,6 +45,7 @@ p {
 }
 
 button {
+  cursor: pointer;
   text-transform: none;
   -webkit-appearance: button;
   appearance: button;
@@ -192,4 +204,25 @@ code {
 img,
 svg {
   vertical-align: middle;
+}
+
+pre {
+  display: block;
+  font-size: 0.875em;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  overflow: auto;
+}
+
+code {
+  font-family:
+    Courier New,
+    Courier,
+    monospace;
+}
+
+pre code {
+  color: inherit;
+  font-size: inherit;
+  word-break: normal;
 }

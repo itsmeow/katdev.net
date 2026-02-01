@@ -5,7 +5,7 @@ const gatsbyRequiredRules = path.join(
   "gatsby",
   "dist",
   "utils",
-  "eslint-rules"
+  "eslint-rules",
 )
 module.exports = {
   pathPrefix: "/",
@@ -52,6 +52,9 @@ module.exports = {
       resolve: `gatsby-plugin-sass`,
       options: {
         implementation: require("sass"),
+        sassOptions: {
+          api: "modern-compiler",
+        },
       },
     },
     {
@@ -110,7 +113,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
     `gatsby-plugin-netlify`,
-    `babel-preset-gatsby`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

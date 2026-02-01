@@ -45,7 +45,12 @@ const Navbar = ({ eventkey }) => {
           <div className="navbar-nav">
             <div className="navbar-brand">
               <div className="navbar-brand-large">
-                <Infinity alt="rainbow infinity" height={50} width={50} />{" "}
+                <Infinity
+                  viewBox="0 0 264.58 264.58"
+                  alt="rainbow infinity"
+                  height={50}
+                  width={50}
+                />{" "}
                 katdev.net
                 <span className="navbar-brand-terminal">_</span>
               </div>

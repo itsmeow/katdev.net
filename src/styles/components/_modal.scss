@@ -20,10 +20,13 @@
       font-size: 1.8rem;
       line-height: 28px;
       background: none;
-      color: #ffffff;
+      color: #878787;
       border: none;
       padding: 0;
       margin: 0;
+      &:hover {
+        color: #ffffff;
+      }
     }
     .modal-c-content {
       text-align: left;

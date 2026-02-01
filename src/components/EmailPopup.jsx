@@ -23,18 +23,15 @@ const EmailPopup = ({ close }) => {
           </a>
         }
       />
-      <h5>Fingerprint</h5>
       <pre>
-        <code>{`E58DEDB6B8C845136CA9F027C1C3434600A66860`}</code>
+        <code>{`Fingerprint: E58DEDB6B8C845136CA9F027C1C3434600A66860
+Certification: C1C3434600A66860 Kat S <kat@katdev.net>
+Valid from:	1/16/26 10:13 PM PST (UTC-8)
+Valid until:	1/16/29 12:00 PM PST (UTC-8)`}</code>
       </pre>
-      <h5>Certification</h5>
-      <pre>
-        <code>{`C1C3434600A66860 Kat S <kat@katdev.net>`}</code>
-      </pre>
+      <h5>Key</h5>
       <pre>
         <code>{`-----BEGIN PGP PUBLIC KEY BLOCK-----
-Comment: Valid from:	1/16/26 10:13 PM
-Comment: Valid until:	1/16/29 12:00 PM
 
 xjMEaWsomhYJKwYBBAHaRw8BAQdABbywusgYnRZlAek54r4HYhEGfZSa8a48HVHU
 okPSEF/NFkthdCBTIDxrYXRAa2F0ZGV2Lm5ldD7ClgQTFgoAPhYhBOWN7ba4yEUT
