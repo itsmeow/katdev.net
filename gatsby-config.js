@@ -108,14 +108,6 @@ module.exports = {
     `gatsby-transformer-json`,
     `gatsby-plugin-meta-redirect`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-gtag`,
-      options: {
-        trackingId: `G-S1CT8K8BV2`,
-        head: true,
-        anonymize: false,
-      },
-    },
     `gatsby-plugin-image`,
     `gatsby-plugin-netlify`,
     `babel-preset-gatsby`,

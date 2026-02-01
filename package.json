@@ -11,7 +11,6 @@
     "canvas": "^3.1.0",
     "date-fns": "^2.29.3",
     "gatsby": "^5.13.6",
-    "gatsby-plugin-gtag": "^1.0.13",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-meta-redirect": "^1.1.1",
@@ -69,5 +68,5 @@
   "bugs": {
     "url": "https://github.com/itsmeow/katdev.net/issues"
   },
-  "packageManager": "yarn@4.3.1"
+  "packageManager": "yarn@4.12.0"
 }
