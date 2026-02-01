@@ -61,7 +61,6 @@ function SEO({
       {site.siteMetadata.author && (
         <meta name="twitter:creator" content={site.siteMetadata.author} />
       )}
-
       <link
         rel="preload"
         href="/fonts/Abaddon Light.woff2"
@@ -69,7 +68,6 @@ function SEO({
         type="font/woff2"
         crossOrigin="anonymous"
       />
-      {children}
       {/*<link
         rel="preload"
         href="/fonts/URWGothic-Book.woff2"
@@ -98,12 +96,7 @@ function SEO({
         type="font/woff2"
         crossOrigin="anonymous"
       />*/}
-      <link
-        rel="stylesheet preload"
-        href="/fonts.css"
-        as="style"
-        type="text/css"
-      />
+      {children}
     </>
   )
 }
