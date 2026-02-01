@@ -1,3 +1,5 @@
+@use "variables";
+
 @use "sass:math";
 @use "sass:color";
 
@@ -8,15 +10,15 @@
   z-index: 1030;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  background-color: $navbar-background;
+  background-color: variables.$navbar-background;
   line-height: 1.5;
   padding: 0;
   margin: 0;
   width: 100%;
   font-size: 32px;
-  border-bottom: 1px solid $navbar-border-color;
-  box-shadow: 0 0 5px $navbar-border-color;
-  min-height: $navbar-height;
+  border-bottom: 1px solid variables.$navbar-border-color;
+  box-shadow: 0 0 5px variables.$navbar-border-color;
+  min-height: variables.$navbar-height;
   transition: background-color 0.1s, border-bottom-color 0.1s;
   transition-timing-function: linear, linear;
   font-family: "Abaddon Light", "Courier New", Courier, monospace;
@@ -33,12 +35,12 @@
     user-select: none;
     margin-right: 16px;
     padding: 0 15px;
-    height: $navbar-height;
-    line-height: $navbar-height;
+    height: variables.$navbar-height;
+    line-height: variables.$navbar-height;
     font-size: 32px;
     font-weight: bold;
-    color: $navbar-brand-color;
-    text-shadow: 0 0 5px $navbar-brand-color;
+    color: variables.$navbar-brand-color;
+    text-shadow: 0 0 5px variables.$navbar-brand-color;
     padding-top: 1px;
     .navbar-brand-terminal {
       animation: terminal 1.25s steps(1, end) infinite;
@@ -53,7 +55,7 @@
         #r > #an,
         #r > #ar {
           > path:empty {
-            fill: $link-color !important;
+            fill: variables.$link-color !important;
           }
         }
       }
@@ -73,18 +75,18 @@
       padding: 0;
       height: 100%;
       flex-direction: row;
-      line-height: $navbar-height;
+      line-height: variables.$navbar-height;
       justify-content: flex-start;
       .nav-item {
         margin-right: 24px;
-        height: $navbar-height;
+        height: variables.$navbar-height;
         .nav-link {
           padding: 8px;
           padding-top: 4px;
           display: block;
           height: 100%;
           padding-bottom: 0;
-          height: $navbar-height;
+          height: variables.$navbar-height;
         }
       }
     }
@@ -100,9 +102,9 @@
         transition-duration: 0.1s;
         transition-property: color;
         padding-bottom: 0;
-        color: $navbar-text-color;
+        color: variables.$navbar-text-color;
         &:hover {
-          color: $navbar-text-hover-color;
+          color: variables.$navbar-text-hover-color;
         }
         &.active {
           color: white;
@@ -134,12 +136,12 @@
     box-shadow: none;
     color: #7e7e7e;
   }
-  @media (min-width: calc($bootstrap-md + 1px)) {
+  @media (min-width: calc(variables.$bootstrap-md + 1px)) {
     .navbar-items-mobile {
       display: none !important;
     }
   }
-  @media (max-width: $bootstrap-md) {
+  @media (max-width: variables.$bootstrap-md) {
     .navbar-items-desktop .nav-item {
       display: none !important;
     }
@@ -147,16 +149,16 @@
       display: block;
     }
     &:not(.scrolled) {
-      background-color: $navbar-background-scrolled;
+      background-color: variables.$navbar-background-scrolled;
       .nav-link {
-        color: $navbar-text-color-scrolled-prehover !important;
+        color: variables.$navbar-text-color-scrolled-prehover !important;
       }
       .nav-link:hover,
       .nav-link.active {
-        color: $navbar-text-color-scrolled !important;
+        color: variables.$navbar-text-color-scrolled !important;
       }
       .navbar-brand {
-        color: $navbar-brand-color-scrolled;
+        color: variables.$navbar-brand-color-scrolled;
       }
     }
     .navbar-nav {
@@ -180,26 +182,26 @@
 }
 
 #site-navbar.scrolled {
-  background-color: $navbar-background-scrolled;
-  border-bottom-color: $navbar-border-color-scrolled;
+  background-color: variables.$navbar-background-scrolled;
+  border-bottom-color: variables.$navbar-border-color-scrolled;
   box-shadow: none;
   .navbar-brand {
     text-shadow: 0 0 5px
-      color.adjust($navbar-brand-color-scrolled, $lightness: -20%);
+      color.adjust(variables.$navbar-brand-color-scrolled, $lightness: -20%);
     .navbar-brand-terminal {
       animation: none;
       opacity: 0;
     }
   }
   .nav-link {
-    color: $navbar-text-color-scrolled-prehover !important;
+    color: variables.$navbar-text-color-scrolled-prehover !important;
   }
   .nav-link:hover,
   .nav-link.active {
-    color: $navbar-text-color-scrolled !important;
+    color: variables.$navbar-text-color-scrolled !important;
   }
   .navbar-brand {
-    color: $navbar-brand-color-scrolled;
+    color: variables.$navbar-brand-color-scrolled;
   }
 }
 

@@ -1,5 +1,7 @@
+@use "../variables";
+
 main {
-  margin-top: $navbar-height;
+  margin-top: variables.$navbar-height;
   padding-left: 5%;
   padding-right: 5%;
   > hr {
@@ -8,5 +10,5 @@ main {
 }
 
 .page-header {
-  margin-top: $navbar-height + 10px;
+  margin-top: variables.$navbar-height + 10px;
 }

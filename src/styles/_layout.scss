@@ -1,5 +1,7 @@
+@use "variables";
+
 html {
-  background-color: $primary-background;
+  background-color: variables.$primary-background;
   padding: 0;
   margin: 0;
 }
@@ -12,7 +14,7 @@ body {
     "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
-  color: $text-color;
+  color: variables.$text-color;
 }
 
 div {
@@ -71,10 +73,10 @@ button.button-no-style {
 }
 
 a {
-  color: $link-color;
+  color: variables.$link-color;
   text-decoration: none;
   &:hover {
-    color: $link-color-hover;
+    color: variables.$link-color-hover;
     text-decoration: underline;
   }
 }
@@ -99,9 +101,9 @@ a.link-unstyle {
 hr {
   border: 0;
   height: 1px;
-  background-color: $hr-color;
+  background-color: variables.$hr-color;
   width: 100%;
-  box-shadow: 0 0 5px $hr-color;
+  box-shadow: 0 0 5px variables.$hr-color;
   opacity: 1;
   margin: 1rem 0;
 }
@@ -146,12 +148,12 @@ h6 {
 
 div.main-wrapper {
   min-height: 100vh;
-  padding-bottom: $footer-height;
+  padding-bottom: variables.$footer-height;
 }
 
 @media (max-width: 500px) {
   div.main-wrapper {
-    padding-bottom: $footer-height-small;
+    padding-bottom: variables.$footer-height-small;
   }
 }
 
@@ -169,7 +171,7 @@ small {
 }
 
 code {
-  color: $code-color;
+  color: variables.$code-color;
   font-size: inherit;
   font-family: "Courier New", Courier, monospace;
   font-size: 1rem;

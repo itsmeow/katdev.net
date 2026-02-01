@@ -1,5 +1,6 @@
 // Init
-@import "variables";
+@use "sass:meta";
+@use "variables";
 
 // Fonts
 :root {
@@ -10,19 +11,19 @@
 }
 
 // Component styles
-@import "layout";
-@import "footer";
-@import "navbar";
-@import "components/blogListing";
-@import "components/dimmer";
-@import "components/iconheader";
-@import "components/modal";
-@import "components/space";
+@include meta.load-css("layout");
+@include meta.load-css("footer");
+@include meta.load-css("navbar");
+@include meta.load-css("components/blogListing");
+@include meta.load-css("components/dimmer");
+@include meta.load-css("components/iconheader");
+@include meta.load-css("components/modal");
+@include meta.load-css("components/space");
 
 // Per-page styles
 #page-index,
 #page-footer-index {
-  @import "pages/index";
+  @include meta.load-css("pages/index");
 }
 #page-blog,
 #page-footer-blog,
@@ -30,15 +31,15 @@
 #page-footer-poems,
 #page-art,
 #page-footer-art {
-  @import "pages/blog";
+  @include meta.load-css("pages/blog");
 }
 #page-blog-page,
 #page-footer-blog-page {
-  @import "pages/blog-page";
+  @include meta.load-css("pages/blog-page");
 }
 #page-space {
   main {
-    min-height: calc(100vh - $navbar-height - $footer-height) !important;
+    min-height: calc(100vh - variables.$navbar-height - variables.$footer-height) !important;
     height: 100vh;
     .background-stars-wrapper {
       position: static; // return to normal layout

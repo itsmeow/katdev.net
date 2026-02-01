@@ -1,17 +1,19 @@
+@use "variables";
+
 @use "sass:math";
 footer {
   width: 100%;
-  background-color: $footer-background;
-  color: $footer-text-color;
+  background-color: variables.$footer-background;
+  color: variables.$footer-text-color;
   clear: both;
-  height: $footer-height;
-  margin-top: -$footer-height;
+  height: variables.$footer-height;
+  margin-top: -(variables.$footer-height);
   overflow: hidden;
 }
 
 footer .topfooter {
-  border-top: 1px solid $footer-border-top-color;
-  height: $footer-top-height;
+  border-top: 1px solid variables.$footer-border-top-color;
+  height: variables.$footer-top-height;
 }
 
 footer .topfooter,
@@ -20,8 +22,8 @@ footer .bottomfooter {
 }
 
 footer .bottomfooter {
-  background-color: $footer-bottom-background;
-  height: $footer-bottom-height;
+  background-color: variables.$footer-bottom-background;
+  height: variables.$footer-bottom-height;
 }
 
 .bottomfooter .left-text {
@@ -38,13 +40,13 @@ footer .bottomfooter {
   #an,
   #ar {
     g path:nth-child(2) {
-      fill: $link-color !important;
+      fill: variables.$link-color !important;
     }
   }
   #r > #an,
   #r > #ar {
     > path:empty {
-      fill: $link-color !important;
+      fill: variables.$link-color !important;
     }
   }
 }
@@ -55,17 +57,17 @@ footer .bottomfooter {
 
 @media (max-width: 500px) {
   footer {
-    height: $footer-height-small;
-    margin-top: -$footer-height-small;
+    height: variables.$footer-height-small;
+    margin-top: -(variables.$footer-height-small);
   }
   footer .topfooter {
-    height: $footer-top-height-small;
+    height: variables.$footer-top-height-small;
   }
   footer .bottomfooter {
-    height: $footer-bottom-height-small;
+    height: variables.$footer-bottom-height-small;
   }
   .topfooter .github {
-    margin-top: math.div($footer-top-height-small, 4);
+    margin-top: math.div(variables.$footer-top-height-small, 4);
   }
   .topfooter svg.footer-small {
     display: inline;
@@ -77,19 +79,19 @@ footer .bottomfooter {
 }
 
 .topfooter .github {
-  margin-top: math.div($footer-top-height, 4);
-  width: $footer-github-width;
+  margin-top: math.div(variables.$footer-top-height, 4);
+  width: variables.$footer-github-width;
   float: right;
 }
 
 .topfooter .github * {
   transition-duration: 0.1s;
-  color: $footer-text-color;
+  color: variables.$footer-text-color;
   text-decoration: none;
 }
 
 .topfooter .github:hover * {
-  color: $link-color;
+  color: variables.$link-color;
 }
 
 .topfooter .github span {
@@ -100,9 +102,9 @@ footer .bottomfooter {
 }
 
 .topfooter .github a {
-  color: $footer-text-color;
+  color: variables.$footer-text-color;
 }
 
 .topfooter .github a:hover {
-  color: $link-color;
+  color: variables.$link-color;
 }

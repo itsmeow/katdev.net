@@ -1,27 +1,29 @@
+@use "../variables";
+
 @use "sass:color";
 
 #site-navbar:not(.scrolled) {
   .nav-link {
-    color: $navbar-text-color-scrolled-prehover !important;
+    color: variables.$navbar-text-color-scrolled-prehover !important;
   }
   .nav-link:hover,
   .nav-link.active {
-    color: $navbar-text-color-scrolled !important;
+    color: variables.$navbar-text-color-scrolled !important;
   }
   .navbar-brand {
-    color: $navbar-brand-color-scrolled;
+    color: variables.$navbar-brand-color-scrolled;
   }
 }
 
 main {
   //background-color: #0a0a0a;
-  margin-top: $navbar-height;
+  margin-top: variables.$navbar-height;
   $blog-content-padding-y: 50px;
   padding-top: $blog-content-padding-y;
   padding-bottom: $blog-content-padding-y;
   #blog-content-wrapper {
     min-height: calc(
-      100vh - #{$navbar-height} - #{$footer-height} -
+      100vh - #{variables.$navbar-height} - #{variables.$footer-height} -
         (2 * #{$blog-content-padding-y})
     );
     max-width: 65rem;
@@ -31,9 +33,9 @@ main {
     margin-top: 0;
     padding-top: 15px;
     padding-bottom: 95px;
-    background-color: color.change($primary-background, $alpha: 0.7);
-    border: 1px solid $box-border-color;
-    box-shadow: 0 0 5px $box-border-color;
+    background-color: color.change(variables.$primary-background, $alpha: 0.7);
+    border: 1px solid variables.$box-border-color;
+    box-shadow: 0 0 5px variables.$box-border-color;
     padding-left: 2rem;
     padding-right: 2rem;
     border-radius: 5px;
@@ -63,13 +65,13 @@ main {
       font-size: 2.5rem;
     }
     #blog-meta {
-      color: $text-color-half;
+      color: variables.$text-color-half;
     }
     #blog-table-of-contents {
       padding: 10px;
       background-color: #0a0a0a;
-      border: 1px solid $box-border-color;
-      box-shadow: 0 0 5px $box-border-color;
+      border: 1px solid variables.$box-border-color;
+      box-shadow: 0 0 5px variables.$box-border-color;
       font-family: var(--gothic-stack);
       font-size: 1.1rem;
       #blog-table-of-contents-title {
@@ -114,13 +116,13 @@ main {
         line-height: 2rem;
       }
       a.before.anchor svg {
-        fill: $link-color;
+        fill: variables.$link-color;
       }
       @mixin block {
         background-color: #0a0a0a;
         padding: 10px;
-        border-top: 1px solid $box-border-color;
-        border-bottom: 1px solid $box-border-color;
+        border-top: 1px solid variables.$box-border-color;
+        border-bottom: 1px solid variables.$box-border-color;
       }
       blockquote {
         @include block;
@@ -147,13 +149,13 @@ main {
     #blog-end {
       font-family: var(--gothic-stack);
       position: relative;
-      color: $text-color-half;
+      color: variables.$text-color-half;
       bottom: -$blog-content-padding-y - 15px;
     }
   }
 }
 
-@media (min-width: ($bootstrap-lg + 136px)) {
+@media (min-width: (variables.$bootstrap-lg + 136px)) {
   .background-space-button,
   .background-space-button-2 {
     bottom: inherit;
@@ -167,7 +169,7 @@ main {
     #blog-content-wrapper {
       $blog-content-padding-y: 50px;
       min-height: calc(
-        100vh - #{$navbar-height} - #{$footer-height-small} -
+        100vh - #{variables.$navbar-height} - #{variables.$footer-height-small} -
           (2 * #{$blog-content-padding-y})
       );
     }
@@ -193,7 +195,7 @@ main {
   main {
     height: 100%;
     margin: 0;
-    background-color: $primary-background;
+    background-color: variables.$primary-background;
     #blog-content-wrapper {
       border: none;
       box-shadow: none;
