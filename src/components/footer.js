@@ -7,22 +7,20 @@ const Footer = () => {
   return (
     <footer>
       <div className="topfooter">
-        <Link to="/" className="link-no-style">
-          <IconLinear
-            className="footer-large"
-            height={80}
-            width={320}
-            alt="katdev linear logo"
-            viewBox="0 0 529.17 132.29"
-          />
-          <IconSquare
-            className="footer-small"
-            height={80}
-            width={80}
-            alt="katdev square logo"
-            viewBox="0 0 264.58 264.58"
-          />
-        </Link>
+        <IconLinear
+          className="footer-large"
+          height={80}
+          width={320}
+          alt="katdev linear logo"
+          viewBox="0 0 529.17 132.29"
+        />
+        <IconSquare
+          className="footer-small"
+          height={80}
+          width={80}
+          alt="katdev square logo"
+          viewBox="0 0 264.58 264.58"
+        />
         <div className="github">
           <a
             href="https://github.com/itsmeow/katdev.net"
