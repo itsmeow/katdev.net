@@ -49,13 +49,6 @@ main {
                 display: inline-block;
                 max-width: calc(65rem - 128px - 84px);
             }
-            #blog-image,
-            .gatsby-image-wrapper {
-                width: 128px;
-                height: 128px;
-                float: left;
-                margin-right: 20px;
-            }
         }
         #blog-title {
             margin-top: 0;
@@ -63,34 +56,6 @@ main {
         }
         #blog-meta {
             color: variables.$text-color-half;
-        }
-        #blog-table-of-contents {
-            padding: 10px;
-            background-color: #0a0a0a;
-            border: 1px solid variables.$box-border-color;
-            box-shadow: 0 0 5px variables.$box-border-color;
-            font-family: var(--gothic-stack);
-            font-size: 1.1rem;
-            #blog-table-of-contents-title {
-                font-size: 1.5rem;
-                margin-top: 0;
-            }
-            ul {
-                list-style: disc;
-            }
-            ul li {
-                margin-top: 10px;
-                margin-bottom: 10px;
-            }
-            ul li a {
-                padding: 5px;
-                border-radius: 8px;
-            }
-            p {
-                margin: 0;
-                padding: 0;
-            }
-            margin-bottom: 10px;
         }
         #blog-text {
             &:not(.poem) {
