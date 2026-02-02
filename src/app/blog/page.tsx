@@ -3,6 +3,7 @@ import { getAllGrayMatterData, GrayMatterData } from '../../util/posts'
 import BlogListing from '../../components/BlogListing'
 import Navbar from '../../components/nav/NavBar'
 import Footer from '../../components/Footer'
+import { Metadata } from 'next'
 
 const blogsDirectory = path.join(process.cwd(), 'src/data/blogs/')
 
@@ -34,6 +35,17 @@ const PoemsPage = async () => {
             </div>
         </>
     )
+}
+
+export const metadata: Metadata = {
+    title: 'Blog',
+    openGraph: {
+        title: 'Blog',
+    },
+    twitter: {
+        card: 'summary',
+        title: 'Blog',
+    },
 }
 
 export default PoemsPage

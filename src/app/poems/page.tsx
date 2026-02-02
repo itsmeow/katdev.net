@@ -1,6 +1,7 @@
 import path from 'path'
 import { getAllGrayMatterData, GrayMatterData } from '../../util/posts'
 import BlogListing from '../../components/BlogListing'
+import { Metadata } from 'next'
 
 const poemsDirectory = path.join(process.cwd(), 'src/data/poems/')
 
@@ -21,6 +22,17 @@ const PoemsPage = async () => {
             </main>
         </div>
     )
+}
+
+export const metadata: Metadata = {
+    title: 'Poems',
+    openGraph: {
+        title: 'Poems',
+    },
+    twitter: {
+        card: 'summary',
+        title: 'Poems',
+    },
 }
 
 export default PoemsPage
