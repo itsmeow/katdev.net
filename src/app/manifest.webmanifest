@@ -1,0 +1,31 @@
+{
+    "name": "katdev.net",
+    "short_name": "katdev.net",
+    "description": "Kat's Blog",
+    "start_url": "/",
+    "background_color": "#121212",
+    "theme_color": "#ff00dd",
+    "display": "browser",
+    "icons": [
+        {
+            "src": "/icon-192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/icon-maskable.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/icon-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "/icon.svg",
+            "sizes": "any"
+        }
+    ]
+}

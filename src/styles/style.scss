@@ -1,29 +1,30 @@
 // Init
-@use "sass:meta";
-@use "variables";
+@use 'sass:meta';
+@use 'variables';
 
 // Fonts
 :root {
-  --gothic-stack: "Century Gothic", "URW Gothic", system-ui, -apple-system,
-    "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    "Noto Color Emoji";
+    --gothic-stack:
+        'Century Gothic', 'URW Gothic', system-ui, -apple-system, 'Segoe UI',
+        Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial,
+        sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
 }
 
 // Component styles
-@include meta.load-css("layout");
-@include meta.load-css("footer");
-@include meta.load-css("navbar");
-@include meta.load-css("components/blogListing");
-@include meta.load-css("components/dimmer");
-@include meta.load-css("components/iconheader");
-@include meta.load-css("components/modal");
-@include meta.load-css("components/space");
+@include meta.load-css('layout');
+@include meta.load-css('footer');
+@include meta.load-css('navbar');
+@include meta.load-css('components/blogListing');
+@include meta.load-css('components/dimmer');
+@include meta.load-css('components/iconheader');
+@include meta.load-css('components/modal');
+@include meta.load-css('components/space');
 
 // Per-page styles
 #page-index,
 #page-footer-index {
-  @include meta.load-css("pages/index");
+    @include meta.load-css('pages/index');
 }
 #page-blog,
 #page-footer-blog,
@@ -31,20 +32,22 @@
 #page-footer-poems,
 #page-art,
 #page-footer-art {
-  @include meta.load-css("pages/blog");
+    @include meta.load-css('pages/blog');
 }
 #page-blog-page,
 #page-footer-blog-page {
-  @include meta.load-css("pages/blog-page");
+    @include meta.load-css('pages/blog-page');
 }
 #page-space {
-  main {
-    min-height: calc(100vh - variables.$navbar-height - variables.$footer-height) !important;
-    height: 100vh;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: calc(
+        100vh - variables.$navbar-height - variables.$footer-height
+    ) !important;
+    height: 100vh !important;
     .background-stars-wrapper {
-      position: static; // return to normal layout
-      height: 100% !important;
-      max-height: 100vh !important;
+        position: static; // return to normal layout
+        height: 100% !important;
+        max-height: 100vh !important;
     }
-  }
 }

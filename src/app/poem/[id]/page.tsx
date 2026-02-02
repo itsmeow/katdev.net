@@ -1,0 +1,110 @@
+import path from 'path'
+import {
+    getPageGrayMatterData,
+    GrayMatterData,
+    generateStaticParamsForDirectory,
+} from '../../../util/posts'
+import { notFound } from 'next/navigation'
+import ClientOnly from '../../../components/ClientOnly'
+import BackgroundSpace from '../../../components/BackgroundSpace'
+import { format } from 'date-fns'
+import { Metadata } from 'next'
+
+const poemsDirectory = path.join(process.cwd(), 'src/data/poems/')
+
+export async function generateStaticParams() {
+    return generateStaticParamsForDirectory(poemsDirectory)
+}
+
+export const dynamic = 'force-static'
+export const dynamicParams = false
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ id: string }>
+}): Promise<Metadata> {
+    const id = (await params).id
+
+    const data: GrayMatterData | undefined = await getPageGrayMatterData(
+        poemsDirectory,
+        `${id}.md`
+    )
+    // Render 404 if set to ignore
+    if (!data || data.meta.ignore) {
+        return notFound()
+    }
+
+    return {
+        title: data.meta.title,
+        description: data.meta.description,
+        openGraph: {
+            title: data.meta.title,
+            description: data.meta.description,
+        },
+        twitter: {
+            card: 'summary',
+            title: data.meta.title,
+            description: data.meta.description,
+        },
+        keywords: data.meta.keywords,
+    }
+}
+
+export default async function Page({
+    params,
+}: {
+    params: Promise<{ id: string }>
+}) {
+    const { id } = await params
+    const data: GrayMatterData | undefined = await getPageGrayMatterData(
+        poemsDirectory,
+        `${id}.md`
+    )
+    // Render 404 if set to ignore
+    if (!data || data.meta.ignore) {
+        return notFound()
+    }
+    const formattedDate = format(data.meta.dateParsed, 'PPPP')
+    return (
+        <main>
+            <ClientOnly>
+                <BackgroundSpace />
+            </ClientOnly>
+            <article id="blog-content-wrapper">
+                <div id="blog-top">
+                    <div id="blog-info">
+                        <h1 id="blog-title">{data.meta.header}</h1>
+                        <div id="blog-meta">
+                            {formattedDate} - {data.wordCount} words
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                {data.meta.toc ? (
+                    <div
+                        id="blog-table-of-contents"
+                        dangerouslySetInnerHTML={{
+                            __html:
+                                '<h2 id="blog-table-of-contents-title">Table of Contents</h2>' +
+                                'data.tableOfContents',
+                        }}
+                    />
+                ) : (
+                    <></>
+                )}
+                <div
+                    className={[
+                        data.meta.mono ? 'mono' : null,
+                        data.meta.format_poem ? 'poem' : null,
+                    ]
+                        .filter((c) => c !== null)
+                        .join(' ')}
+                    id="blog-text"
+                    dangerouslySetInnerHTML={{ __html: data.remarkHTML }}
+                />
+                <div id="blog-end">Written by Kat. Thank you for reading.</div>
+            </article>
+        </main>
+    )
+}

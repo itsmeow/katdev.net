@@ -1,74 +1,64 @@
 {
-  "name": "katdev.net",
-  "private": true,
-  "description": "Personal website",
-  "version": "1.0.0",
-  "author": "itsmeow",
-  "dependencies": {
-    "@babel/core": "^7.29.0",
-    "@headlessui/react": "^2.2.9",
-    "animate.css": "^4.1.0",
-    "canvas": "^3.1.0",
-    "date-fns": "^2.29.3",
-    "gatsby": "^5.16.0",
-    "gatsby-plugin-image": "^3.16.0",
-    "gatsby-plugin-manifest": "^5.16.0",
-    "gatsby-plugin-meta-redirect": "^1.1.1",
-    "gatsby-plugin-netlify": "^5.1.1",
-    "gatsby-plugin-offline": "^6.16.0",
-    "gatsby-plugin-react-svg": "^3.3.0",
-    "gatsby-plugin-sass": "^6.16.0",
-    "gatsby-plugin-sharp": "^5.16.0",
-    "gatsby-remark-autolink-headers": "^6.16.0",
-    "gatsby-source-filesystem": "^5.16.0",
-    "gatsby-transformer-json": "^5.16.0",
-    "gatsby-transformer-remark": "^6.16.0",
-    "gatsby-transformer-sharp": "^5.16.0",
-    "konva": "^9.3.18",
-    "prop-types": "^15.8.1",
-    "react": "^19.2.4",
-    "react-animate-on-scroll": "^2.1.9",
-    "react-dom": "^19.2.4",
-    "react-icons": "^5.5.0",
-    "simplex-noise": "^4.0.3"
-  },
-  "devDependencies": {
-    "@babel/eslint-parser": "^7.19.1",
-    "@davcri/webpack-glsl-loader": "^1.0.2",
-    "babel-preset-gatsby": "^3.16.0",
-    "eslint": "^8.32.0",
-    "eslint-plugin-react": "^7.32.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-webpack-plugin": "^3.2.0",
-    "gatsby-plugin-eslint": "^4.0.4",
-    "lygia": "1.3.0",
-    "prettier": "^3.8.1",
-    "sass": "^1.57.1"
-  },
-  "engines": {
-    "node": ">=25.0.0"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "lint": "eslint .",
-    "prettier-check": "prettier --config .prettierrc.cjs --check .",
-    "prettier-write": "prettier --config .prettierrc.cjs --write ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/itsmeow/katdev.net"
-  },
-  "bugs": {
-    "url": "https://github.com/itsmeow/katdev.net/issues"
-  },
-  "packageManager": "yarn@4.12.0"
+    "name": "katdev.net",
+    "packageManager": "yarn@4.12.0",
+    "author": "itsmeow",
+    "description": "Personal website",
+    "private": true,
+    "version": "2.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "next dev",
+        "prebuild": "yarn run lint",
+        "build": "tsc -b && next build",
+        "start": "next start",
+        "lint": "eslint .",
+        "prettier-check": "prettier --config .prettierrc.cjs --check .",
+        "prettier-write": "prettier --config .prettierrc.cjs --write ."
+    },
+    "dependencies": {
+        "@headlessui/react": "^2.2.9",
+        "@heroicons/react": "^2.2.0",
+        "@svgr/webpack": "^8.1.0",
+        "date-fns": "^4.1.0",
+        "gray-matter": "^4.0.3",
+        "konva": "^10.2.0",
+        "next": "^16.1.6",
+        "react": "^19.2.4",
+        "react-dom": "^19.2.4",
+        "react-icons": "^5.5.0",
+        "remark": "^15.0.1",
+        "remark-html": "^16.0.1",
+        "sass": "^1.97.3",
+        "simplex-noise": "^4.0.3",
+        "strip-markdown": "^6.0.0"
+    },
+    "devDependencies": {
+        "@davcri/webpack-glsl-loader": "^1.0.2",
+        "@eslint/js": "^9.39.2",
+        "@next/eslint-plugin-next": "^16.1.6",
+        "@types/node": "^25.2.0",
+        "@types/react": "^19.2.10",
+        "@types/react-dom": "^19.2.3",
+        "eslint": "^9.39.2",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-react-hooks": "^7.0.1",
+        "eslint-plugin-react-refresh": "^0.5.0",
+        "globals": "^16.0.0",
+        "lygia": "^1.4.0",
+        "prettier": "^3.8.1",
+        "raw-loader": "^4.0.2",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.54.0"
+    },
+    "engines": {
+        "node": ">=25.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/itsmeow/katdev.net"
+    },
+    "bugs": {
+        "url": "https://github.com/itsmeow/katdev.net/issues"
+    }
 }

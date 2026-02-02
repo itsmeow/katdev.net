@@ -3,11 +3,9 @@
         "**/.yarn": true,
         "**/.pnp.*": true
     },
-    "[javascript][javascriptreact][typescript][typescriptreact][json][scss][css]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
-    "[markdown]": {
-        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "prettier.configPath": ".prettierrc.cjs",
+    "[typescriptreact][typescript][javascript][javascriptreact][json][css][scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }

@@ -1,204 +1,202 @@
-@use "../variables";
+@use '../variables';
 
-@use "sass:color";
+@use 'sass:color';
 
 #site-navbar:not(.scrolled) {
-  .nav-link {
-    color: variables.$navbar-text-color-scrolled-prehover !important;
-  }
-  .nav-link:hover,
-  .nav-link.active {
-    color: variables.$navbar-text-color-scrolled !important;
-  }
-  .navbar-brand {
-    color: variables.$navbar-brand-color-scrolled;
-  }
+    .nav-link {
+        color: variables.$navbar-text-color-scrolled-prehover !important;
+    }
+    .nav-link:hover,
+    .nav-link.active {
+        color: variables.$navbar-text-color-scrolled !important;
+    }
+    .navbar-brand {
+        color: variables.$navbar-brand-color-scrolled;
+    }
 }
 
 main {
-  //background-color: #0a0a0a;
-  margin-top: variables.$navbar-height;
-  $blog-content-padding-y: 50px;
-  padding-top: $blog-content-padding-y;
-  padding-bottom: $blog-content-padding-y;
-  #blog-content-wrapper {
-    min-height: calc(
-      100vh - #{variables.$navbar-height} - #{variables.$footer-height} -
-        (2 * #{$blog-content-padding-y})
-    );
-    max-width: 65rem;
-    min-width: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0;
-    padding-top: 15px;
-    padding-bottom: 95px;
-    background-color: color.change(variables.$primary-background, $alpha: 0.7);
-    border: 1px solid variables.$box-border-color;
-    box-shadow: 0 0 5px variables.$box-border-color;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    border-radius: 5px;
-    height: 100%;
-    &.no-image {
-      #blog-top {
-        min-height: 0;
-      }
-    }
-    #blog-top {
-      min-height: 128px;
-      font-family: var(--gothic-stack);
-      #blog-info {
-        display: inline-block;
-        max-width: calc(65rem - 128px - 84px);
-      }
-      #blog-image,
-      .gatsby-image-wrapper {
-        width: 128px;
-        height: 128px;
-        float: left;
-        margin-right: 20px;
-      }
-    }
-    #blog-title {
-      margin-top: 0;
-      font-size: 2.5rem;
-    }
-    #blog-meta {
-      color: variables.$text-color-half;
-    }
-    #blog-table-of-contents {
-      padding: 10px;
-      background-color: #0a0a0a;
-      border: 1px solid variables.$box-border-color;
-      box-shadow: 0 0 5px variables.$box-border-color;
-      font-family: var(--gothic-stack);
-      font-size: 1.1rem;
-      #blog-table-of-contents-title {
-        font-size: 1.5rem;
+    //background-color: #0a0a0a;
+    margin-top: variables.$navbar-height;
+    $blog-content-padding-y: 50px;
+    padding-top: $blog-content-padding-y;
+    padding-bottom: $blog-content-padding-y;
+    #blog-content-wrapper {
+        min-height: calc(
+            100vh - #{variables.$navbar-height} - #{variables.$footer-height} -
+                (2 * #{$blog-content-padding-y})
+        );
+        max-width: 65rem;
+        min-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
         margin-top: 0;
-      }
-      ul {
-        list-style: disc;
-      }
-      ul li {
-        margin-top: 10px;
-        margin-bottom: 10px;
-      }
-      ul li a {
-        padding: 5px;
-        border-radius: 8px;
-      }
-      p {
-        margin: 0;
-        padding: 0;
-      }
-      margin-bottom: 10px;
-    }
-    #blog-text {
-      &:not(.poem) {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      &.poem {
-        font-family: var(--gothic-stack);
-        white-space: pre-wrap;
-        padding-top: 25px;
-        font-size: 1.05rem;
-        line-height: 1.75rem;
-        blockquote {
-          letter-spacing: 0.1rem;
-        }
-      }
-      &.mono,
-      &.poem.mono {
-        font-family: "Courier New", Courier, monospace;
-        font-size: 1.05rem;
-        line-height: 2rem;
-      }
-      a.before.anchor svg {
-        fill: variables.$link-color;
-      }
-      @mixin block {
-        background-color: #0a0a0a;
-        padding: 10px;
-        border-top: 1px solid variables.$box-border-color;
-        border-bottom: 1px solid variables.$box-border-color;
-      }
-      blockquote {
-        @include block;
-        &:not(.noquote) {
-          p {
-            font-style: italic;
-            &:first-child::before {
-              content: "“";
-              display: inline;
+        padding-top: 15px;
+        padding-bottom: 95px;
+        background-color: color.change(
+            variables.$primary-background,
+            $alpha: 0.7
+        );
+        border: 1px solid variables.$box-border-color;
+        box-shadow: 0 0 5px variables.$box-border-color;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        border-radius: 5px;
+        height: 100%;
+        #blog-top {
+            font-family: var(--gothic-stack);
+            #blog-info {
+                display: inline-block;
+                max-width: calc(65rem - 128px - 84px);
             }
-            &:last-child::after {
-              content: "”";
-              display: inline;
+            #blog-image,
+            .gatsby-image-wrapper {
+                width: 128px;
+                height: 128px;
+                float: left;
+                margin-right: 20px;
             }
-          }
         }
-        p {
-          &:last-child {
-            margin-bottom: 0;
-          }
+        #blog-title {
+            margin-top: 0;
+            font-size: 2.5rem;
         }
-      }
+        #blog-meta {
+            color: variables.$text-color-half;
+        }
+        #blog-table-of-contents {
+            padding: 10px;
+            background-color: #0a0a0a;
+            border: 1px solid variables.$box-border-color;
+            box-shadow: 0 0 5px variables.$box-border-color;
+            font-family: var(--gothic-stack);
+            font-size: 1.1rem;
+            #blog-table-of-contents-title {
+                font-size: 1.5rem;
+                margin-top: 0;
+            }
+            ul {
+                list-style: disc;
+            }
+            ul li {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            ul li a {
+                padding: 5px;
+                border-radius: 8px;
+            }
+            p {
+                margin: 0;
+                padding: 0;
+            }
+            margin-bottom: 10px;
+        }
+        #blog-text {
+            &:not(.poem) {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            &.poem {
+                font-family: var(--gothic-stack);
+                white-space: pre-wrap;
+                padding-top: 25px;
+                font-size: 1.05rem;
+                line-height: 1.75rem;
+                blockquote {
+                    letter-spacing: 0.1rem;
+                }
+            }
+            &.mono,
+            &.poem.mono {
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1.05rem;
+                line-height: 2rem;
+            }
+            a.before.anchor svg {
+                fill: variables.$link-color;
+            }
+            @mixin block {
+                background-color: #0a0a0a;
+                padding: 10px;
+                border-top: 1px solid variables.$box-border-color;
+                border-bottom: 1px solid variables.$box-border-color;
+            }
+            blockquote {
+                @include block;
+                &:not(.noquote) {
+                    p {
+                        font-style: italic;
+                        &:first-child::before {
+                            content: '“';
+                            display: inline;
+                        }
+                        &:last-child::after {
+                            content: '”';
+                            display: inline;
+                        }
+                    }
+                }
+                p {
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+        #blog-end {
+            font-family: var(--gothic-stack);
+            position: relative;
+            color: variables.$text-color-half;
+            bottom: -$blog-content-padding-y - 15px;
+        }
     }
-    #blog-end {
-      font-family: var(--gothic-stack);
-      position: relative;
-      color: variables.$text-color-half;
-      bottom: -$blog-content-padding-y - 15px;
-    }
-  }
 }
 
 @media (min-width: (variables.$bootstrap-lg + 136px)) {
-  .background-space-button,
-  .background-space-button-2 {
-    bottom: inherit;
-    top: 5px;
-    z-index: 1032;
-  }
+    .background-space-button,
+    .background-space-button-2 {
+        bottom: inherit;
+        top: 5px;
+        z-index: 1032;
+    }
 }
 
 @media (max-width: 500px) {
-  main {
-    #blog-content-wrapper {
-      $blog-content-padding-y: 50px;
-      min-height: calc(
-        100vh - #{variables.$navbar-height} - #{variables.$footer-height-small} -
-          (2 * #{$blog-content-padding-y})
-      );
+    main {
+        #blog-content-wrapper {
+            $blog-content-padding-y: 50px;
+            min-height: calc(
+                100vh - #{variables.$navbar-height} -
+                    #{variables.$footer-height-small} -
+                    (2 * #{$blog-content-padding-y})
+            );
+        }
     }
-  }
 }
 
 @media (max-width: 400px) {
-  main {
-    #blog-content-wrapper {
-      padding-left: 5%;
-      padding-right: 5%;
+    main {
+        #blog-content-wrapper {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
     }
-  }
 }
 
 @media (max-width: 65rem) {
-  #background-space,
-  #background-space-webgl,
-  .background-space-button,
-  .background-space-button-2 {
-    display: none;
-  }
-  main {
-    height: 100%;
-    margin: 0;
-    background-color: variables.$primary-background;
-    #blog-content-wrapper {
-      border: none;
-      box-shadow: none;
+    #background-space,
+    #background-space-webgl,
+    .background-space-button,
+    .background-space-button-2 {
+        display: none;
     }
-  }
+    main {
+        height: 100%;
+        margin: 0;
+        background-color: variables.$primary-background;
+        #blog-content-wrapper {
+            border: none;
+            box-shadow: none;
+        }
+    }
 }

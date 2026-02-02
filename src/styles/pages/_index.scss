@@ -1,32 +1,37 @@
-@use "../variables";
+@use '../variables';
 
-main {
-  .mainpage-profile-container {
+.mainpage-profile-container {
     height: 100vh;
     width: 100%;
     /*background: linear-gradient(rgba(0, 93, 121, 0.5), rgba(110, 70, 114, 0.5));*/
     .mainpage-profile-vert {
-      width: 100%;
-      margin: 0;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      .mainpage-profile {
-        max-width: 500px;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: #000000;
-        border: 1px solid variables.$box-border-color;
-        box-shadow: 0 0 15px variables.$box-border-color;
-        border-radius: 2px;
-        padding: 20px;
-        .mainpage-profile-image {
-          max-height: 100%;
-          div.gatsby-image-wrapper {
-            width: auto;
-            border-radius: 1000px;
-            background: #ff0095; /*linear-gradient(
+        width: 100%;
+        margin: 0;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        .mainpage-profile {
+            max-width: 500px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #000000;
+            border: 1px solid variables.$box-border-color;
+            box-shadow: 0 0 15px variables.$box-border-color;
+            border-radius: 2px;
+            padding: 20px;
+            .mainpage-profile-image {
+                max-height: 100%;
+                div {
+                    padding: 0;
+                    margin: 0;
+                    display: inline-block;
+                    vertical-align: top;
+                    position: relative;
+                    overflow: hidden;
+                    width: auto;
+                    border-radius: 1000px;
+                    background: #ff0095; /*linear-gradient(
               to right,
               red,
               orange,
@@ -36,117 +41,114 @@ main {
               blue,
               violet
             );*/
-            img {
-              max-height: 40vh;
-              width: auto;
-              padding: 5px;
-              border-radius: 1000px;
+                    img {
+                        max-height: 40vh;
+                        width: auto;
+                        padding: 5px;
+                        border-radius: 1000px;
+                    }
+                }
             }
-          }
+            .mainpage-profile-text {
+                font-family: var(--gothic-stack);
+                .mainpage-profile-name {
+                    font-weight: bold;
+                    font-size: 3.5rem;
+                    letter-spacing: 0.3rem;
+                }
+                .pronouns {
+                    display: inline-block;
+                    font-size: 1.2rem;
+                }
+                .pronouns-link {
+                    position: relative;
+                    display: inline-block;
+                    font-size: 1rem;
+                    padding-left: 0.25rem;
+                }
+                hr {
+                    max-width: 90vw;
+                }
+                .socials {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    button {
+                        background: none;
+                        border: none;
+                        display: inline;
+                        padding: 0;
+                        margin: 0;
+                    }
+                    div.separator {
+                        margin: 0.2rem;
+                        flex-basis: 0px;
+                    }
+                    font-size: 3rem;
+                }
+            }
         }
-        .mainpage-profile-text {
-          font-family: var(--gothic-stack);
-          .mainpage-profile-name {
-            font-weight: bold;
-            font-size: 3.5rem;
-            letter-spacing: 0.3rem;
-          }
-          .pronouns {
-            display: inline-block;
-            font-size: 1.2rem;
-          }
-          .pronouns-link {
-            position: relative;
-            display: inline-block;
-            font-size: 1rem;
-            padding-left: 0.25rem;
-          }
-          hr {
-            max-width: 90vw;
-          }
-          .socials {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            button {
-              background: none;
-              border: none;
-              display: inline;
-              padding: 0;
-              margin: 0;
-            }
-            div.separator {
-              margin: 0.2rem;
-              flex-basis: 0px;
-            }
-            font-size: 3rem;
-          }
-        }
-      }
     }
-  }
 }
 
 .socials svg,
 svg.glow-icon {
-  overflow: visible;
-  color: variables.$link-color;
-  transition-duration: 0.25s;
-  &:hover {
-    color: variables.$link-color-hover;
-    filter: drop-shadow(0 0 5px variables.$link-color-hover);
-  }
-  &:active {
-    filter: drop-shadow(0 0 5px variables.$link-color-active);
-    color: variables.$link-color-active;
-  }
-  filter: drop-shadow(0 0 5px variables.$link-color-glow);
+    overflow: visible;
+    color: variables.$link-color;
+    transition-duration: 0.25s;
+    &:hover {
+        color: variables.$link-color-hover;
+        filter: drop-shadow(0 0 5px variables.$link-color-hover);
+    }
+    &:active {
+        filter: drop-shadow(0 0 5px variables.$link-color-active);
+        color: variables.$link-color-active;
+    }
+    filter: drop-shadow(0 0 5px variables.$link-color-glow);
 }
 
 @media (max-width: 500px) {
-  main {
     .mainpage-profile-container {
-      height: 100%;
-      .background-slider {
-        display: none;
-      }
-      .mainpage-profile-vert {
         height: 100%;
-        top: 0;
-        transform: none;
-        .mainpage-profile {
-          margin: 0;
-          margin-top: variables.$navbar-height;
-          height: 100%;
-          background-color: transparent;
-          border: none;
-          box-shadow: none;
-          border-radius: 0;
-          padding: 20px;
-          padding-bottom: 40px;
-          .mainpage-profile-text {
-            .socials {
-              font-size: 2.5rem;
-              div.separator {
-                margin: 0.1rem;
-              }
-            }
-          }
-          .mainpage-profile-image {
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 300px;
-            div.gatsby-image-wrapper {
-              img {
-                width: 100% !important;
-                height: 100% !important;
-                max-height: none !important;
-              }
-            }
-          }
+        .background-slider {
+            display: none;
         }
-      }
+        .mainpage-profile-vert {
+            height: 100%;
+            top: 0;
+            transform: none;
+            .mainpage-profile {
+                margin: 0;
+                margin-top: variables.$navbar-height;
+                height: 100%;
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
+                border-radius: 0;
+                padding: 20px;
+                padding-bottom: 40px;
+                .mainpage-profile-text {
+                    .socials {
+                        font-size: 2.5rem;
+                        div.separator {
+                            margin: 0.1rem;
+                        }
+                    }
+                }
+                .mainpage-profile-image {
+                    margin-left: auto;
+                    margin-right: auto;
+                    max-width: 300px;
+                    div {
+                        img {
+                            width: 100% !important;
+                            height: 100% !important;
+                            max-height: none !important;
+                        }
+                    }
+                }
+            }
+        }
     }
-  }
 }
