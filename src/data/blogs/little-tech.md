@@ -111,9 +111,11 @@ I really like Thunderbird, and there's a few extensions I feel are necessary:
 
 Here's a fun example of Paranoia - looks like Tumblr sent my mail unencrypted internally but it was encrypted on the way to my server:
 
+```
 ✓ LMTPS: vps2.itsmeow.dev (using ==> vps2.itsmeow.dev
 ✓ ESMTPS: smtp6-3.dca.tumblr.com ==> vps2.itsmeow.dev
 ✗ ESMTP: smtp-outbound.tumblr.net ==> smtp6.tumblr.dca.wordpress.com
+```
 
 And also let me say, Tumblr is the only social media I actually enjoy using lately. I have control over tags I see, there's lots of great fandom content... do recommend. You can't have my blog name though.
 
