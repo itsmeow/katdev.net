@@ -142,7 +142,7 @@ I wrote a giant hate post about this elsewhere, but I'd like to link to some ver
 
 * [I'm an American software developer and the "broligarchs" don't speak for me](https://ratfactor.com/tech-nope)
 * [Never Forgive Them](https://www.wheresyoured.at/never-forgive-them/)
-* ["You can't code away their wealth".](www.youtube.com/watch?v=FEU632_Em3g)
+* ["You can't code away their wealth"](https://www.youtube.com/watch?v=FEU632_Em3g)
 
 ## Conclusion
 
