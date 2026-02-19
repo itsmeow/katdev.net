@@ -102,6 +102,8 @@ That is also not accounting for the fact that some senders just don't follow spe
 
 Should I mention that Google is also piloting a NEW protocol extension for forwarding mail called [Declare All Recipients and Affirm (DARA)](https://www.ietf.org/archive/id/draft-chuang-replay-resistant-arc-11.html), which breaks OpenDMARC!?!? Yes, they're SENDING MAIL with an INTERNET DRAFT protocol header inside. So silly. Stop it, Google...
 
+Here's some good reading on email security in general: [Email Security: Where We Are and What the Future Holds](https://www.privacyguides.org/articles/2025/11/15/email-security/#authentication)
+
 ### Thunderbird Extensions
 
 I really like Thunderbird, and there's a few extensions I feel are necessary:
