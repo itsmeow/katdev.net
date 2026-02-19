@@ -12,7 +12,7 @@ I have always been a fan of self-hosting, I've hosted Minecraft servers since th
 
 This, and a growing frusturation with changes made to cloud platforms (e.g. enshittification) and a general distaste for Big Tech has thrown me deep into the world of selfhosting, degoogling, and data privacy.
 
-I'm writing this to share my toolkit and the path that I've forged myself, in a hope that this list of applications, tools, and methods can be useful for someone engaging on their own journey. The best thing I have found in this journey is that I have learned so much about the open internet, deepend my Linux adminstration knowledge, and begun to love using computers in a way that has been missing for me recently.
+I'm writing this to share my toolkit and the path that I've forged myself, in a hope that this list of applications, tools, and methods can be useful for someone engaging on their own journey. The best thing I have found in this journey is that I have learned so much about the open internet, deepened my Linux administration knowledge, and begun to love using computers in a way that has been missing for me recently.
 
 Let's get started.
 
