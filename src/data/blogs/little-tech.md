@@ -52,7 +52,7 @@ Now let's rapid fire some changes I've made:
 * Google Search -> [DuckDuckGo](https://github.com/9001/copyparty), with AI stuff turned off. You can create a sync code for using settings on new devices.
 * Cloudflare DNS -> dnscrypt-proxy + unbound using oDoH through an anonymized relay
 * [Mullvad VPN](https://mullvad.net/) with Wireguard (Linux), the only VPN worth using
-* partiful -> I just wrote my own called [rsvp-micro](https://github.com/itsmeow/rsvp-micro) that connects with my email server and then wrote an HTML page for advertise the event on the same domain that has a form for this backend service.
+* partiful -> I just wrote my own called [rsvp-micro](https://github.com/itsmeow/rsvp-micro) that connects with my email server and then wrote an HTML page to advertise the event on the same domain that has a form for this backend service.
 * Any other password manager / no password manager -> [Vaultwarden](https://github.com/dani-garcia/vaultwarden), a wonderful selfhosted open-source backend implementing the Bitwarden client protocol.
 * Any other browser -> Firefox (or LibreWolf), with uBlock Origin, Enhanced Tracking protection enabled, Decentraleyes, Privacy Badger, and ClearURLs.
 * Instagram. God I love Instagram, but it's killing my brain. I can't delete it, because I keep up with so many friends there, but there is an extension called [IGPlus](https://github.com/ptjaworski/igplus-extension) that you can install on Firefox for Android, uninstall the app, and install the webpage as a [Progressive Web App](https://web.dev/learn/pwa/progressive-web-apps/). This lets you disable algorithmic content, reels, and lots of other negative functionality.
