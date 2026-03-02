@@ -38,4 +38,4 @@ I consider magenta to be the color of the future - of progress and growth. It's 
 
 ## Conclusion
 
-It is not just one of the qualities that makes magenta the best color. It's all of them, together. If it were just one of these, it would fall flat before reaching its potential. It requires the strength of an entire spectrum to take victory, and magenta captures every color from red to violet.
+It is not just one of these qualities that makes magenta the best color. It's all of them, together. If it were just one of these, it would fall flat before reaching its potential. It requires the strength of an entire spectrum to take victory, and magenta captures every color from red to violet.
