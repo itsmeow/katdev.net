@@ -2,6 +2,8 @@
 import { renderCanvas } from './backgroundSpaceCanvas'
 import { useEffect, useRef, useState } from 'react'
 import { renderCanvasWebGL } from './backgroundSpaceWebGL'
+import { FaAngleDoubleRight } from 'react-icons/fa'
+import { FaGears } from 'react-icons/fa6'
 
 const BackgroundSpace = () => {
     const konvaContainerRef = useRef(null)
@@ -14,6 +16,7 @@ const BackgroundSpace = () => {
     const [showPreview, setShowPreview] = useState(true)
     const [webGLUnsupported, setWebGLUnsupported] = useState(false)
     const [fps, setFPS] = useState(45)
+    const [buttonsVisible, setButtonsVisible] = useState(false)
 
     function debounce(func, delay) {
         let timeoutId
@@ -150,24 +153,41 @@ const BackgroundSpace = () => {
         <>
             <button
                 type="button"
-                className="background-space-button"
-                onClick={async () => {
-                    if (showPreview) return
-                    debouncedRenderCanvas()
+                className="background-space-button-collapse"
+                style={{
+                    right: !buttonsVisible ? '8px' : undefined,
                 }}
+                onClick={() => setButtonsVisible((v) => !v)}
             >
-                {showPreview ? '...' : 'Regenerate'}
+                {!buttonsVisible ? <FaGears /> : <FaAngleDoubleRight />}
             </button>
             {webGLUnsupported ? null : (
                 <button
                     type="button"
                     className="background-space-button-2"
+                    style={{
+                        right: !buttonsVisible ? '-120vw' : undefined,
+                    }}
                     onClick={debouncedSwitchUse}
-                    disabled={fps === -1}
+                    disabled={fps === -1 || !buttonsVisible}
                 >
                     {fps > 0 ? `WebGL (${fps}FPS)` : 'WebGL (Static)'}
                 </button>
             )}
+            <button
+                type="button"
+                className="background-space-button"
+                style={{
+                    right: !buttonsVisible ? '-120vw' : undefined,
+                }}
+                onClick={async () => {
+                    if (showPreview || !buttonsVisible) return
+                    debouncedRenderCanvas()
+                }}
+                disabled={!buttonsVisible}
+            >
+                {showPreview ? '...' : 'Regenerate'}
+            </button>
             <div
                 className={`background-stars-wrapper ${
                     showPreview

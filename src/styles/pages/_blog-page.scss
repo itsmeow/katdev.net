@@ -117,15 +117,6 @@ main {
     }
 }
 
-@media (min-width: (variables.$bootstrap-lg + 136px)) {
-    .background-space-button,
-    .background-space-button-2 {
-        bottom: inherit;
-        top: 5px;
-        z-index: 1032;
-    }
-}
-
 @media (max-width: 500px) {
     main {
         #blog-content-wrapper {
@@ -151,7 +142,8 @@ main {
     #background-space,
     #background-space-webgl,
     .background-space-button,
-    .background-space-button-2 {
+    .background-space-button-2,
+    .background-space-button-collapse {
         display: none;
     }
     main {
