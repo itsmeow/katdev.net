@@ -41,9 +41,7 @@
 #page-space {
     margin: 0 !important;
     padding: 0 !important;
-    min-height: calc(
-        100vh - variables.$navbar-height - variables.$footer-height
-    ) !important;
+    min-height: calc(100vh - variables.$navbar-height) !important;
     height: 100vh !important;
     .background-stars-wrapper {
         position: static; // return to normal layout

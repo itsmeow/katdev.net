@@ -23,7 +23,7 @@ main {
     padding-bottom: $blog-content-padding-y;
     #blog-content-wrapper {
         min-height: calc(
-            100vh - #{variables.$navbar-height} - #{variables.$footer-height} -
+            100vh - #{variables.$navbar-height} -
                 (2 * #{$blog-content-padding-y})
         );
         max-width: 65rem;
@@ -132,7 +132,6 @@ main {
             $blog-content-padding-y: 50px;
             min-height: calc(
                 100vh - #{variables.$navbar-height} -
-                    #{variables.$footer-height-small} -
                     (2 * #{$blog-content-padding-y})
             );
         }

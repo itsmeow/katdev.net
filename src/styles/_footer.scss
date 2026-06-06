@@ -1,110 +1,141 @@
-@use "variables";
+@use 'variables';
 
-@use "sass:math";
+@use 'sass:math';
 footer {
-  width: 100%;
-  background-color: variables.$footer-background;
-  color: variables.$footer-text-color;
-  clear: both;
-  height: variables.$footer-height;
-  margin-top: -(variables.$footer-height);
-  overflow: hidden;
-}
+    width: 100%;
+    background-color: variables.$footer-background;
+    color: variables.$footer-text-color;
+    border-top: 1px solid variables.$footer-border-top-color;
+    margin-top: -40px;
 
-footer .topfooter {
-  border-top: 1px solid variables.$footer-border-top-color;
-  height: variables.$footer-top-height;
-}
+    .topfooter {
+        svg {
+            #an,
+            #ar {
+                g path:nth-child(2) {
+                    fill: variables.$link-color !important;
+                }
+            }
+            #r > #an,
+            #r > #ar {
+                > path:empty {
+                    fill: variables.$link-color !important;
+                }
+            }
+        }
+        .github {
+            margin-top: 25px;
+            * {
+                transition-duration: 0.1s;
+                color: variables.$footer-text-color;
+                text-decoration: none;
+            }
+            &:hover * {
+                color: variables.$link-color;
+            }
+            span {
+                margin-left: 5px;
+                margin-right: 5px;
+                font-family: var(--gothic-stack);
+                font-size: 0.9rem;
+            }
+            a {
+                color: variables.$footer-text-color;
+            }
+            a:hover {
+                color: variables.$link-color;
+            }
+        }
+        .footer-small {
+            display: none;
+        }
+        .footer-large {
+            display: block;
+            .footer-banner-flex {
+                align-items: center;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+        .footer-lr-wrapper {
+            display: block;
+            .footer-left {
+                width: calc(100vw - variables.$footer-github-width - 5px);
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .footer-right {
+                display: inline-block;
+                width: variables.$footer-github-width;
+                vertical-align: top;
+            }
+        }
 
-footer .topfooter,
-footer .bottomfooter {
-  width: 100%;
-}
-
-footer .bottomfooter {
-  background-color: variables.$footer-bottom-background;
-  height: variables.$footer-bottom-height;
-}
-
-.bottomfooter .left-text {
-  font-family: var(--gothic-stack);
-  height: 100%;
-  font-size: 0.9rem;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 12px;
-  padding-bottom: 4px;
-}
-
-.topfooter svg {
-  #an,
-  #ar {
-    g path:nth-child(2) {
-      fill: variables.$link-color !important;
+        .banners {
+            margin-left: 5px;
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1;
+            flex-wrap: wrap;
+            max-width: 100vw;
+            vertical-align: top;
+            align-items: start;
+            gap: 5px;
+            .collapse-banners.medium {
+                .banner:last-child {
+                    margin-top: -5px;
+                }
+            }
+            .collapse-banners {
+                .banner {
+                    &:first-child {
+                        padding-bottom: 0;
+                    }
+                    &:last-child {
+                        padding-top: 0;
+                    }
+                }
+            }
+            .banner {
+                img {
+                    vertical-align: top;
+                    image-rendering: pixelated;
+                }
+                &.middle {
+                    align-self: center;
+                    margin-top: -2px;
+                }
+            }
+        }
     }
-  }
-  #r > #an,
-  #r > #ar {
-    > path:empty {
-      fill: variables.$link-color !important;
-    }
-  }
-}
 
-.topfooter svg.footer-small {
-  display: none;
+    .bottomfooter {
+        .left-text {
+            font-family: var(--gothic-stack);
+            height: 100%;
+            font-size: 0.9rem;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 12px;
+            padding-bottom: 4px;
+        }
+    }
 }
 
 @media (max-width: 500px) {
-  footer {
-    height: variables.$footer-height-small;
-    margin-top: -(variables.$footer-height-small);
-  }
-  footer .topfooter {
-    height: variables.$footer-top-height-small;
-  }
-  footer .bottomfooter {
-    height: variables.$footer-bottom-height-small;
-  }
-  .topfooter .github {
-    margin-top: math.div(variables.$footer-top-height-small, 4);
-  }
-  .topfooter svg.footer-small {
-    display: inline;
-    margin-left: 5px;
-  }
-  .topfooter svg.footer-large {
-    display: none;
-  }
-}
-
-.topfooter .github {
-  margin-top: math.div(variables.$footer-top-height, 4);
-  width: variables.$footer-github-width;
-  float: right;
-}
-
-.topfooter .github * {
-  transition-duration: 0.1s;
-  color: variables.$footer-text-color;
-  text-decoration: none;
-}
-
-.topfooter .github:hover * {
-  color: variables.$link-color;
-}
-
-.topfooter .github span {
-  margin-left: 5px;
-  margin-right: 5px;
-  font-family: var(--gothic-stack);
-  font-size: 0.9rem;
-}
-
-.topfooter .github a {
-  color: variables.$footer-text-color;
-}
-
-.topfooter .github a:hover {
-  color: variables.$link-color;
+    footer {
+        margin-top: -25px;
+        .topfooter {
+            .footer-small {
+                display: block;
+            }
+            .footer-large {
+                display: none;
+            }
+            .banners {
+                margin-top: 8px;
+            }
+        }
+    }
 }

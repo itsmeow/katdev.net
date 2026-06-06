@@ -9,6 +9,7 @@ import Navbar from '../components/nav/NavBar.tsx'
 import Footer from '../components/Footer.tsx'
 import { useState } from 'react'
 import Image from 'next/image'
+import mePicture from '../../public/images/picture.jpg'
 
 const MainPageContents = () => {
     const [showEmail, setShowEmail] = useState(false)
@@ -35,7 +36,7 @@ const MainPageContents = () => {
                                 <div className="mainpage-profile-image">
                                     <div>
                                         <Image
-                                            src="/images/picture.jpg"
+                                            src={mePicture}
                                             alt="Me"
                                             placeholder="empty"
                                             width={374}
@@ -142,7 +143,7 @@ const MainPageContents = () => {
                 </div>
             </div>
             <div id="page-footer-index">
-                <Footer />
+                <Footer banners />
             </div>
         </>
     )
