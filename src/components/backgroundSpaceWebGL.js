@@ -457,14 +457,19 @@ export function renderCanvasWebGL(
             droppedFrames = 0
             frozeLastRender.current = false
         }
+
+        let timeSinceLastFrame = now - lastFrameTime
+        let targetFPSDerivedFromFrameDuration =
+            targetFPS === 0 ? 0 : Math.round(1000 / timeSinceLastFrame) - 5
         if (droppedFrames > maxDroppedFrames) {
             droppedFrames = 0
-            // The minimum framerate is 20FPS. If your device is slower than that, FREEZE!!
-            const fpsReduction = targetFPS <= 20 ? targetFPS : 5
-            const newFPS = Math.max(targetFPS - fpsReduction, 0)
-            console.log(
-                `More than ${maxDroppedFrames} dropped frames, which is indicative of performance issues. Lowering target FPS to ${newFPS}`
+            const newFPS = Math.min(
+                60,
+                Math.max(targetFPSDerivedFromFrameDuration, 0)
             )
+            /*console.log(
+                `More than ${maxDroppedFrames} dropped frames, which is indicative of performance issues. Lowering target FPS to ${newFPS}`
+            )*/
             targetFPS = newFPS
             // We're too slow to animate. Don't animate at all.
             if (targetFPS <= 0) {
@@ -478,7 +483,6 @@ export function renderCanvasWebGL(
             setFPS(newFPS)
         }
 
-        let timeSinceLastFrame = now - lastFrameTime
         let targetFrameDuration = targetFPS === 0 ? 0 : 1000 / targetFPS
         if (timeSinceLastFrame >= targetFrameDuration) {
             // If there is a failure to achieve framerate (device is slow).
@@ -489,20 +493,22 @@ export function renderCanvasWebGL(
                 timeSinceLastFrame < 10_000
             ) {
                 droppedFrames += 1
-                console.log(
+                /*console.log(
                     `Last frame was ${Math.round(
                         timeSinceLastFrame
                     )}ms ago - the target is ${Math.round(
                         targetFrameDuration
                     )}ms (${targetFPS} FPS)!`
-                )
+                )*/
             }
             doRender(now)
             lastFrameTime = now
         }
-        animationLoopID.current = window.requestAnimationFrame(
-            animationFrameHandler
-        )
+        if (fps > 0) {
+            animationLoopID.current = window.requestAnimationFrame(
+                animationFrameHandler
+            )
+        }
     }
 
     if (fps > 0) {

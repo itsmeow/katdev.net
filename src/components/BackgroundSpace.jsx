@@ -15,7 +15,7 @@ const BackgroundSpace = () => {
 
     const [showPreview, setShowPreview] = useState(true)
     const [webGLUnsupported, setWebGLUnsupported] = useState(false)
-    const [fps, setFPS] = useState(45)
+    const [fps, setFPS] = useState(0)
     const [buttonsVisible, setButtonsVisible] = useState(false)
 
     function debounce(func, delay) {
@@ -46,7 +46,7 @@ const BackgroundSpace = () => {
         }
     }
 
-    const renderCanvasInternal = (rerender = true, fps = 45) => {
+    const renderCanvasInternal = (rerender = true, fps = 0) => {
         cleanup()
         const gl = webGLUnsupported
             ? null
@@ -100,7 +100,7 @@ const BackgroundSpace = () => {
                 return 0
             } else {
                 cleanup()
-                renderCanvasInternal(true, 45)
+                renderCanvasInternal(true, 20)
                 return 45
             }
         })
